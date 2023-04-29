@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./GlobalStyle";
+import Header from "./Componentes/Header"
+import Home from "./Pages/Home";
+import NewCategoria from "./Pages/NewCategoria";
+import NewVideo from "./Pages/NewVideo";
+import Error404 from "./Pages/error404";
+import Footer from "./Componentes/Footer";
+
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 
 function App() {
+
+  const location = window.localStorage.pathname;
+  console.log(location)
+
+  const grupoCategoria = [
+    { 
+        categorias: 'Grupo', 
+        colorFondoBorde : "#6BD1FF"
+    },
+    { 
+        categorias: 'Solista',
+        colorFondoBorde : "#FF8C2A"
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GlobalStyle />
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home card={grupoCategoria}/>} />
+        <Route path='/NewCategorie' element={<NewCategoria card={grupoCategoria} />} />
+        <Route path='/NewVideo' element={<NewVideo card={grupoCategoria} />} />
+        <Route path='*' element={<Error404 />} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 

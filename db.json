@@ -1,0 +1,152 @@
+{
+  "categorias": [
+    {
+      "id": "solistas",
+      "nombre": "Solista",
+      "subcategorias": [
+        "chicas",
+        "chicos"
+      ]
+    },
+    {
+      "id": "grupos",
+      "nombre": "Grupo",
+      "subcategorias": [
+        "chicas",
+        "chicos",
+        "mixto"
+      ]
+    },
+    {
+      "titulo": "Hfgfhgfgfhgh",
+      "colorFondoBorde": "#b72424",
+      "descripcion": "Hghfgghfhfgfgh",
+      "usuario": "ghttrhtrht",
+      "id": "rg3EUHh"
+    },
+    {
+      "titulo": "Weeewrerwr",
+      "colorFondoBorde": "#bf3131",
+      "descripcion": "Fdsfsdfsdfsd",
+      "usuario": "Fdsfsdffd",
+      "id": "TMjR4Hn"
+    },
+    {
+      "titulo": "Fdsfdsfdsfsd",
+      "colorFondoBorde": "#d11f1f",
+      "descripcion": "Dfdsfsdsdf       dsffsdsdf",
+      "usuario": "fdsfsdfsdf",
+      "id": "bVuJ5Mp"
+    }
+  ],
+  "cards": [
+    {
+      "titulo": "Like Crazy",
+      "video": "https://www.youtube.com/watch?v=nOI67IDlNMQ&list=RDnOI67IDlNMQ&start_radio=1",
+      "imgVideo": "https://www.lyrical-nonsense.com/wp-content/uploads/2023/02/Jimin-FACE.jpg",
+      "descripcion": "Una de las canciones de Park Jimin",
+      "categoria": "Solista",
+      "usuario": "Jimin",
+      "id": "77ziuCt"
+    },
+    {
+      "titulo": "Kai(카이) 'Rover'",
+      "video": "https://www.youtube.com/watch?v=Qgqk96TJZyI",
+      "imgVideo": "https://th.bing.com/th/id/OIP.3TPXeHsJ1w54JmaTrBDqJwHaE8?pid=ImgDet&rs=1",
+      "descripcion": "\"Rover\" is a song recorded by South Korean singer Kai for his third extended play of the same name. It was released as the EP's lead single by SM Entertainment on March 13, 2023",
+      "categoria": "Solista",
+      "usuario": "Kai",
+      "id": "Cn6Cbuv"
+    },
+    {
+      "titulo": "Fever",
+      "video": "https://www.youtube.com/watch?v=X7d6Dt17yHk&list=RDzjVt73gD1fc&index=9",
+      "imgVideo": "https://th.bing.com/th/id/R.ab2f1c09cf0362d4e06b555cee693d64?rik=C3UYLPzZ4wLb%2fg&pid=ImgRaw&r=0",
+      "descripcion": "Canción principal de este albúm llamado carnival.",
+      "categoria": "Grupo",
+      "usuario": "Enhypen",
+      "id": "XyxRE33"
+    },
+    {
+      "titulo": "Kitsch",
+      "video": "https://www.youtube.com/watch?v=pG6iaOMV46I&list=RDpG6iaOMV46I&start_radio=1",
+      "imgVideo": "https://t2.genius.com/unsafe/163x163/https%3A%2F%2Fimages.genius.com%2F688cf5d2e8da9bd192480359deac1dc5.201x201x1.jpg",
+      "descripcion": "IVE - \"Kitsch\" (Official Music Video)\n\nPre-Release Single \"Kitsch\": https://ive.lnk.to/Kitsch\nPre-Save 1ST ALBUM \"I've IVE\": https://ive.lnk.to/IveIVE",
+      "categoria": "Grupo",
+      "usuario": "Ive",
+      "id": "cmfwvl5"
+    },
+    {
+      "titulo": "Txt 'New Rules'",
+      "video": "https://www.youtube.com/watch?v=OxtraGjrKz0&list=RDGMEMCMFH2exzjBeE_zAHHJOdxg&start_radio=1&rv=8XuyB5CNgaM",
+      "imgVideo": "https://th.bing.com/th/id/R.a0fa3cef9d48e22ba9b45785d48da175?rik=Z1c06dcqZxcGFw&riu=http%3a%2f%2fi2.hdslb.com%2fbfs%2farchive%2f159a4d5ef691877cdfa4a0ab6b24ccce54422d2c.jpg&ehk=riIg9y5Ai6STpY%2fFZDuzwA6KP5pYBS1tM2QlBNCLpqI%3d&risl=&pid=ImgRaw&r=0",
+      "descripcion": "[BE ORIGINAL] TXT 'New Rules' (4K UHD)\n[비 오리지널] 투모로우바이투게더 'New Rules' \n\n본새 943퍼 장착한 TXT 'New Rules'\n넘 멋있어서 왼발 오른발 동동 •••\n오프닝 천재 제스쳐 천재 얼굴 천재들❤",
+      "categoria": "Grupo",
+      "usuario": "Studio choom",
+      "id": "8nR8FlI"
+    },
+    {
+      "titulo": "Generation",
+      "video": "https://www.youtube.com/watch?v=0cZ7o0Wn_dc",
+      "imgVideo": "https://th.bing.com/th/id/OIP.XHg-7AS3LfBynqiQRH6r6wHaHa?pid=ImgDet&rs=1",
+      "descripcion": "Please check out the following links to hear it!\n\nSpotify : https://spoti.fi/3TIw2jV\nApple Music : https://apple.co/3gPgigr\n\nPhysical Release [ACCESS]\n2022. 11. 7.\n\nAcid Angel from Asia [ACCESS] 예약 판매 시작되었습니다!\nPlease pre-order Acid Angel from Asia [ACCESS]!",
+      "categoria": "Grupo",
+      "usuario": "tripleS AAA",
+      "id": "auCJ5t8"
+    },
+    {
+      "titulo": "SinB(GFRIEND)",
+      "video": "https://www.youtube.com/watch?v=hZ41S5-X6UE",
+      "imgVideo": "https://t2.genius.com/unsafe/440x440/https:%2F%2Fimages.genius.com%2Fd11232ab52ec467183d4e1e13ca6c069.600x600x1.jpg",
+      "descripcion": "[MV] SINB(GFRIEND)(신비(여자친구)) _ 사랑스러워(Loveable)\n\nK-POP의 모든 즐거움을 1theK(원더케이)에서 만나보세요! :)\nWelcome to the official YouTube channel of K-POP Wonderland, 1theK\n\n[Notice] 1theK YouTube is also an official channel for the MV, and music shows will count the views from this channel too.\n[공지] 1theK YouTube는 MV를 유통하는 공식 채널로, 1theK에 업로드된 MV 조회수 또한 음악방송 순위에 반영됩니다.",
+      "categoria": "Solista",
+      "usuario": "SINB(GFRIEND)",
+      "id": "C_IRduX"
+    },
+    {
+      "titulo": "Ive I am",
+      "video": "https://www.youtube.com/watch?v=cU0JrSAyy7o",
+      "imgVideo": "https://th.bing.com/th/id/R.c3df9adf280d31ab1cde3af3e2c88575?rik=ZdqTWfoWQ4U7ew&pid=ImgRaw&r=0",
+      "descripcion": "Ive 'I AM'\n[비 오리지널] 아이브 '아이 엠'\n\n아이브가 걷는 대로 길이거든💖\n(2:46) 오늘 DIVE에게 열리는 건 천국😇\n",
+      "categoria": "Grupo",
+      "usuario": "Studio Choom",
+      "id": "mEwTItQ"
+    },
+    {
+      "titulo": "She is",
+      "video": "https://www.youtube.com/watch?v=zjVt73gD1fc",
+      "imgVideo": "https://th.bing.com/th/id/OIP.5yF55MxePDx8jULbHZEN1gHaHf?w=174&h=180&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "She Is · 클래지콰이\n\n내 이름은 김삼순 (MBC 수목드라마)\n\n℗ 노트뮤직",
+      "categoria": "Solista",
+      "usuario": "clazziquai",
+      "id": "wr_V8KF"
+    },
+    {
+      "titulo": "Shoong",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
+      "categoria": "Solista",
+      "usuario": "Taeyang",
+      "id": "iUsmA4v"
+    },
+    {
+      "titulo": "What is Love?",
+      "video": "https://www.youtube.com/watch?v=i0p1bmr0EmE",
+      "imgVideo": "https://res.cloudinary.com/teepublic/image/private/s--980HgZyn--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1527675982/production/designs/2737778_0.jpg",
+      "descripcion": "TWICE(트와이스) \"What is Love?\" M/V\nSpotify https://goo.gl/jVLYYY\niTunes & Apple Music https://goo.gl/DKyKZf\nGoogle Music https://goo.gl/DxAtPd",
+      "categoria": "Grupo",
+      "usuario": "Twice",
+      "id": "ZK2EZi7"
+    },
+    {
+      "titulo": "Under the skin",
+      "video": "https://www.youtube.com/watch?v=wk-Z5iA8-Dk&list=RDQgqk96TJZyI&index=27",
+      "imgVideo": "https://th.bing.com/th/id/OIP.--GVyjV90MZyoxYHAwLkjAAAAA?w=153&h=180&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "[BE ORIGINAL] &TEAM 'Under the skin'\n[비 오리지널] &TEAM 'Under the skin'\n\n&TEAM과 스춤의 케미는 127만 점🔥\n(2:01) 아홉 늑대 인간 너무 아름다와요...",
+      "categoria": "Grupo",
+      "usuario": "AndTeam",
+      "id": "G0bjp0F"
+    }
+  ]
+}

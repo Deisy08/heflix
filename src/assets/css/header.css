@@ -1,0 +1,54 @@
+.header {
+    background-color: #000000E5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+	border-bottom: 2px solid #2A7AE4;
+	box-shadow: 0 0 10px #2A7AE4;
+}
+
+.texto_logo{
+	width: 200px;
+	height: 50px;
+	cursor: pointer;
+}  
+
+.btn_desktop{
+	background: none;
+	color: #FFFFFF;
+	padding: 10px 15px;
+	font-weight: 600;
+	font-size: 21px;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+	border: 1px solid #F5F5F5;
+	border-radius: 5px;
+	display: none;
+	cursor: pointer;
+}
+
+.btn_desktop:hover{
+	box-shadow: 0 0 20px #2A7AE4;
+	border-color: #2A7AE4;
+	font-size: 21.5px;
+	background: #2A7AE4;
+}
+ 
+@media (min-width: 768px) {
+    .header {
+       justify-content: space-between;
+	   padding: 25px 40.5px;
+	   align-items: center;
+    }
+
+	.texto_logo{
+		width: 255px;
+		height: 40px;
+	}  
+  
+    .btn_desktop{
+		display: block;
+	}
+  
+}
+  

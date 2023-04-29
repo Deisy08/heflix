@@ -1,0 +1,32 @@
+.formulario{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    
+    flex-direction: column;
+}
+
+.formulario h1 {
+    text-align: center;
+    color: white;
+}
+
+
+.Campo{
+    margin: 24px 0
+}
+
+.botonContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.botonContenido{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
