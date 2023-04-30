@@ -23,10 +23,20 @@ const SliderComponente = (props) => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 4,
         slidesToScroll: 1,
-        focusOnSelect: true
-    };
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 768, 
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      };
+      
 
     const sliderContenedor ={
         padding: "0 25px",
@@ -48,8 +58,8 @@ const SliderComponente = (props) => {
         borderColor : colorFondoBorde,
         borderRadius: "5px",
         margin:"0 5px",
-        width: "150px",
-        height:"150px",
+        width: "160px",
+        height:"160px",
         boxSizing: "border-box",
     }
 

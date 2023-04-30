@@ -60,7 +60,7 @@ const NewVideo = (props) =>{
     const manejarEnvio = (e) =>{
         e.preventDefault()
         console.log(titulo,video,imgVideo,descripcion,usuario,category);
-    
+        
         fetch('http://localhost:3000/cards', {
             method: 'POST',
             headers: {
@@ -81,6 +81,9 @@ const NewVideo = (props) =>{
             
         })
         .catch(error => console.error(error))
+
+    
+
         window.location.href = '/';
     }
    //useStates de mi formulario

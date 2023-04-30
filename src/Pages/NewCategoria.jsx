@@ -67,16 +67,15 @@ const CssTextFieldTextarea = styled(TextField)({
 const NewCategoria = (props) =>{
     const manejarEnvio = (e) =>{
         e.preventDefault()
-        console.log(titulo,color,descripcion,usuario);
+        console.log(category,color,descripcion,usuario);
 
-        
-        fetch('http://localhost:3000/categorias', {
+        fetch('http://localhost:3000/cards', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                titulo: titulo.value,
+                categoria: category.value,
                 colorFondoBorde: color.value,
                 descripcion: descripcion.value,
                 usuario: usuario.value
@@ -88,10 +87,13 @@ const NewCategoria = (props) =>{
             
         })
         .catch(error => console.error(error))
-        window.location.href = '/NewVideo';
+            
+    
+
+        //window.location.href = '/NewVideo';
     }
    //useStates de mi formulario
-    const [titulo,setTitulo]= useState({
+    const [category,setCategory]= useState({
         value : "",
         valid:null
     })
@@ -115,7 +117,7 @@ const NewCategoria = (props) =>{
     const idUnico = uuidv4();
   
     const handleFormReset = () => {
-        setTitulo({value: ""});
+        setCategory({value: ""});
         setColor({value: ""});
         setUsuario({value: ""});
         setDescripcion({value: ""});
@@ -139,13 +141,13 @@ const NewCategoria = (props) =>{
             <CssTextField  required 
                 fullWidth margin="normal" 
                 placeholder="Título..." type="text"
-                error={titulo.valid === false} 
-                helperText={titulo.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
-                value={titulo.value}
+                error={category.valid === false} 
+                helperText={category.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
+                value={category.value}
                 onChange={(input)=>{ 
-                    const titulo= input.target.value
-                    const tituloValido = validarTitulo(titulo)
-                    setTitulo({value:titulo, valid:tituloValido})
+                    const category= input.target.value
+                    const categoryValido = validarTitulo(category)
+                    setCategory({value:category, valid:categoryValido})
                 }}
             />
 

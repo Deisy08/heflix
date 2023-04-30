@@ -18,25 +18,11 @@
       ]
     },
     {
-      "titulo": "Hfgfhgfgfhgh",
-      "colorFondoBorde": "#b72424",
-      "descripcion": "Hghfgghfhfgfgh",
-      "usuario": "ghttrhtrht",
-      "id": "rg3EUHh"
-    },
-    {
-      "titulo": "Weeewrerwr",
-      "colorFondoBorde": "#bf3131",
-      "descripcion": "Fdsfsdfsdfsd",
-      "usuario": "Fdsfsdffd",
-      "id": "TMjR4Hn"
-    },
-    {
-      "titulo": "Fdsfdsfdsfsd",
-      "colorFondoBorde": "#d11f1f",
-      "descripcion": "Dfdsfsdsdf       dsffsdsdf",
-      "usuario": "fdsfsdfsdf",
-      "id": "bVuJ5Mp"
+      "categoria": "mixto",
+      "colorFondoBorde": "#3d22c3",
+      "descripcion": "Be original  완성형 아이돌의 피어리스한 퍼포❤🔥\n짱세라핌 칼군무에 미소가 절로 꽃핌\n(2:55) 데뷔부터 레전드 찍었드아아아!!!",
+      "usuario": "Studio choom",
+      "id": "9CdPE2t"
     }
   ],
   "cards": [
@@ -147,6 +133,15 @@
       "categoria": "Grupo",
       "usuario": "AndTeam",
       "id": "G0bjp0F"
+    },
+    {
+      "titulo": "Fearles",
+      "video": "https://www.youtube.com/watch?v=LiNxfFkymTk",
+      "imgVideo": "https://th.bing.com/th/id/OIP.xoP1B9_zpvUavj8GGavragHaEK?pid=ImgDet&rs=1",
+      "descripcion": "Be original  완성형 아이돌의 피어리스한 퍼포❤🔥\\n짱세라핌 칼군무에 미소가 절로 꽃핌\\n(2:55) 데뷔부터 레전드 찍었드아아아!!!",
+      "categoria": "Grupo",
+      "usuario": "Studio choom",
+      "id": "bBAnSYK"
     }
   ]
 }
