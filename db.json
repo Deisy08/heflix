@@ -23,6 +23,20 @@
       "descripcion": "Be original  완성형 아이돌의 피어리스한 퍼포❤🔥\n짱세라핌 칼군무에 미소가 절로 꽃핌\n(2:55) 데뷔부터 레전드 찍었드아아아!!!",
       "usuario": "Studio choom",
       "id": "9CdPE2t"
+    },
+    {
+      "categoria": "Mixto",
+      "colorFondoBorde": "#38e5d1",
+      "descripcion": "Mixto es mejor duo creo",
+      "usuario": "Taeyan&Lisa",
+      "id": "UMeD0nM"
+    },
+    {
+      "categoria": "Colaboración",
+      "colorFondoBorde": "#e9ec27",
+      "descripcion": "Ffdfgdfgdf",
+      "usuario": "dfgdfgdfg",
+      "id": "bwYYZ97"
     }
   ],
   "cards": [
@@ -142,6 +156,60 @@
       "categoria": "Grupo",
       "usuario": "Studio choom",
       "id": "bBAnSYK"
+    },
+    {
+      "titulo": "Official MV 손오공",
+      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4&list=RDzjVt73gD1fc&index=7",
+      "imgVideo": "https://th.bing.com/th/id/OIP.AjXfKqs_4WfAupU51QUL6gHaDA?w=293&h=142&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
+      "categoria": "Mixto",
+      "usuario": "SEVENTEEN ",
+      "id": "Yi8MFeV"
+    },
+    {
+      "titulo": "Official MV 손오공",
+      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4&list=RDzjVt73gD1fc&index=7",
+      "imgVideo": "https://th.bing.com/th/id/OIP.ILvPxnOCRfmTSNCU65zfKwHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
+      "categoria": "Mixto",
+      "usuario": "SEVENTEEN ",
+      "id": "Yi8MFeV"
+    },
+    {
+      "titulo": "Shoong",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
+      "categoria": "Mixto",
+      "usuario": "Taeyang",
+      "id": "iUsmA4v"
+    },
+    {
+      "titulo": "Shoong",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
+      "categoria": "Colaboración",
+      "usuario": "Taeyang&Lisa",
+      "id": "b8FC0ZH"
+    },
+    {
+      "titulo": "Unforgiven",
+      "video": "https://www.youtube.com/watch?v=UBURTj20HXI",
+      "imgVideo": "https://th.bing.com/th?id=OIF.UbqCn89Ljpiv6NGhlA%2be%2fQ&pid=ImgDet&rs=1",
+      "descripcion": "UNFORGIVEN (feat. Nile Rodgers)\nCreative Director : NU KIM\n \nVisual Creative Operation Managing : Yujoo Kim\nStyle Directing : Yoon Cho, Yuli Song\nBrand Experience Design : Yoovin Baek, Hyemin Yoo",
+      "categoria": "Colaboración",
+      "usuario": "LE SSERAFIM",
+      "id": "JWYtjNa"
+    },
+    {
+      "titulo": "Paro(Lyrics)",
+      "video": "https://www.youtube.com/watch?v=cNgL40UfhbA",
+      "imgVideo": "https://th.bing.com/th/id/OIP.BXZ4QPqgKAzb2W0JuoHkYgHaFj?w=283&h=212&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "NEJ' - Paro (Lyrics)\nGet it here:\n\nFollow NEJ'\n https://www.snapchat.com/add/nej3192\n https://www.instagram.com/nejofficial\n https://vm.tiktok.com/ZMe6rjPAB/\n https://www.facebook.com/nejofficiel\n https://twitter.com/NejOfficiel\n    ",
+      "categoria": "Colaboración",
+      "usuario": "NEJ'",
+      "id": "aQ2tTs7"
     }
   ]
 }

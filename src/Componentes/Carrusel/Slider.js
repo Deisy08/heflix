@@ -18,26 +18,28 @@ const SliderComponente = (props) => {
         }
         fetchCards();
     }, []);
+
+    // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
+    const filteredCards = cards.filter(card => card.categoria === categorias);
     
     const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        focusOnSelect: true,
-        responsive: [
-          {
-            breakpoint: 768, 
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: filteredCards.length >= 4 ? 4 : filteredCards.length,
+      slidesToScroll: 1,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 768, 
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
           }
-        ]
-      };
-      
-
+        }
+      ]
+    };
+    
     const sliderContenedor ={
         padding: "0 25px",
         marginBottom: "20px",
@@ -63,10 +65,7 @@ const SliderComponente = (props) => {
         boxSizing: "border-box",
     }
 
-    // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
-    const filteredCards = cards.filter(card => card.categoria === categorias);
-
-    const idUnico = uuidv4();
+    
 
     return <div style={sliderContenedor}>
 
@@ -74,7 +73,7 @@ const SliderComponente = (props) => {
 
         <Slider {...settings} >
             {filteredCards.map(card => (
-                <section key={idUnico}>
+                <section key={uuidv4()}>
                     <img style={contenedorTarjeta} src={card.imgVideo} alt={card.titulo} />
                 </section>
             ))}

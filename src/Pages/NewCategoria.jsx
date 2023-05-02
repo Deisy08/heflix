@@ -1,10 +1,10 @@
 import { Container, Box, Button ,TextField} from "@mui/material";
-import { useState } from "react";
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
-
 import { validarTitulo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
+import { useNavigate } from 'react-router-dom';
 
 const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -64,34 +64,8 @@ const CssTextFieldTextarea = styled(TextField)({
 });
 
 
-const NewCategoria = (props) =>{
-    const manejarEnvio = (e) =>{
-        e.preventDefault()
-        console.log(category,color,descripcion,usuario);
-
-        fetch('http://localhost:3000/cards', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                categoria: category.value,
-                colorFondoBorde: color.value,
-                descripcion: descripcion.value,
-                usuario: usuario.value
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Datos guardados en db.json:', data)
-            
-        })
-        .catch(error => console.error(error))
-            
-    
-
-        //window.location.href = '/NewVideo';
-    }
+const NewCategoria = ({ addCategoria }) =>{
+    const navigate = useNavigate();
    //useStates de mi formulario
     const [category,setCategory]= useState({
         value : "",
@@ -110,9 +84,36 @@ const NewCategoria = (props) =>{
         valid:null
     })
 
-    /*const card = props.card
-    console.log(card);*/
-    
+    const manejarEnvio = (e) =>{
+        e.preventDefault()
+        const categoria = {
+            categorias: category.value,
+            colorFondoBorde: color.value ,
+        };
+        addCategoria(categoria); 
+        console.log(category.value,color.value);
+        console.log(category,color,descripcion,usuario);
+        navigate('/NewVideo', { state: { categoria } }); // Redirige a NewVideo con la nueva categoría
+
+        fetch('http://localhost:3000/categorias', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                categoria: category.value,
+                colorFondoBorde: color.value,
+                descripcion: descripcion.value,
+                usuario: usuario.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos guardados en db.json:', data)
+            
+        })
+        .catch(error => console.error(error))
+    }
     // Generar el ID único
     const idUnico = uuidv4();
   
@@ -140,12 +141,12 @@ const NewCategoria = (props) =>{
 
             <CssTextField  required 
                 fullWidth margin="normal" 
-                placeholder="Título..." type="text"
+                placeholder="Categoria..." type="text"
                 error={category.valid === false} 
-                helperText={category.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
+                helperText={category.valid === false && "Escribe el nombre de la nueva categoria la cual debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
                 value={category.value}
-                onChange={(input)=>{ 
-                    const category= input.target.value
+                onChange={(e)=>{ 
+                    const category= e.target.value
                     const categoryValido = validarTitulo(category)
                     setCategory({value:category, valid:categoryValido})
                 }}
@@ -157,8 +158,8 @@ const NewCategoria = (props) =>{
                 error={color.valid === false} 
                 helperText={color.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
                 value={color.value}
-                onChange={(input)=>{ 
-                    const color= input.target.value
+                onChange={(e)=>{ 
+                    const color= e.target.value
                     setColor({value:color, valid:true})
                 }}
             />
@@ -209,6 +210,3 @@ const NewCategoria = (props) =>{
 }
 
 export default NewCategoria
-
-
-

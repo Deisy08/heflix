@@ -1,7 +1,7 @@
 import "../../src/assets/css/newVideo.css"
 import { Container, Box, Button, TextField, Autocomplete} from "@mui/material";
 import { Link } from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
@@ -55,7 +55,15 @@ const CssTextFieldTextarea = styled(TextField)({
     }
 });
 
-const NewVideo = (props) =>{
+const NewVideo = ({ card, addCategoria, location }) =>{
+    const [categorias, setCategorias] = useState(card);
+
+    useEffect(() => {
+        if (location?.state?.categoria) { // Si hay una nueva categoría en el estado de ubicación
+          addCategoria(location.state.categoria); // Agrega la nueva categoría a la lista de categorías
+          setCategorias([...categorias, location.state.categoria]); // Actualiza el estado de las categorías
+        }
+    }, [location, addCategoria, categorias]);
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
@@ -82,9 +90,7 @@ const NewVideo = (props) =>{
         })
         .catch(error => console.error(error))
 
-    
-
-        window.location.href = '/';
+       window.location.href = '/';
     }
    //useStates de mi formulario
     const [titulo,setTitulo]= useState({
@@ -111,8 +117,6 @@ const NewVideo = (props) =>{
         value: "",
         valid: true
     });
-
-    const card = props.card
 
     const options = card.map((option) => {
         const firstLetter = option.categorias[0].toUpperCase();

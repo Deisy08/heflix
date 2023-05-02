@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import GlobalStyle from "./GlobalStyle";
 import Header from "./Componentes/Header"
 import Home from "./Pages/Home";
@@ -11,28 +12,31 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
 
-  const location = window.localStorage.pathname;
-  console.log(location)
+  const [categorias, setCategorias] = useState(() => {
+    const categoriasGuardadas = localStorage.getItem('categorias');
+    return categoriasGuardadas ? JSON.parse(categoriasGuardadas) : [
+      { categorias: 'Grupo', colorFondoBorde: '#6BD1FF' },
+      { categorias: 'Solista', colorFondoBorde: '#FF8C2A' },
+    ];
+  });
+  
+  console.log(categorias);
 
-  const grupoCategoria = [
-    { 
-        categorias: 'Grupo', 
-        colorFondoBorde : "#6BD1FF"
-    },
-    { 
-        categorias: 'Solista',
-        colorFondoBorde : "#FF8C2A"
-    }
-  ];
-
+  const addCategoria = (categoria) => {
+    console.log(categoria);
+    const nuevaLista = [...categorias, categoria]
+    setCategorias(nuevaLista)
+    localStorage.setItem('categorias', JSON.stringify(nuevaLista));
+  }
+  
   return (
     <Router>
       <GlobalStyle />
       <Header />
       <Routes>
-        <Route path='/' element={<Home card={grupoCategoria}/>} />
-        <Route path='/NewCategorie' element={<NewCategoria card={grupoCategoria} />} />
-        <Route path='/NewVideo' element={<NewVideo card={grupoCategoria} />} />
+        <Route path='/' element={<Home card={categorias}/>} />
+        <Route path='/NewCategorie' element={<NewCategoria addCategoria={addCategoria} />} />
+        <Route path='/NewVideo' element={<NewVideo card={categorias} addCategoria={addCategoria}/>} />
         <Route path='*' element={<Error404 />} />
       </Routes>
       <Footer/>
