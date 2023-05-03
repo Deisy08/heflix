@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GlobalStyle from "./GlobalStyle";
 import Header from "./Componentes/Header"
 import Home from "./Pages/Home";
@@ -12,21 +12,27 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
 
-  const [categorias, setCategorias] = useState(() => {
-    const categoriasGuardadas = localStorage.getItem('categorias');
-    return categoriasGuardadas ? JSON.parse(categoriasGuardadas) : [
-      { categorias: 'Grupo', colorFondoBorde: '#6BD1FF' },
-      { categorias: 'Solista', colorFondoBorde: '#FF8C2A' },
-    ];
-  });
-  
-  console.log(categorias);
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    fetchCategorias();
+  }, []);
+
+  const fetchCategorias = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/categorias');
+      const data = await response.json();
+      setCategorias(data);
+      //localStorage.setItem('categorias', JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const addCategoria = (categoria) => {
     console.log(categoria);
     const nuevaLista = [...categorias, categoria]
     setCategorias(nuevaLista)
-    localStorage.setItem('categorias', JSON.stringify(nuevaLista));
   }
   
   return (

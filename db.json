@@ -1,24 +1,7 @@
 {
   "categorias": [
     {
-      "id": "solistas",
-      "nombre": "Solista",
-      "subcategorias": [
-        "chicas",
-        "chicos"
-      ]
-    },
-    {
-      "id": "grupos",
-      "nombre": "Grupo",
-      "subcategorias": [
-        "chicas",
-        "chicos",
-        "mixto"
-      ]
-    },
-    {
-      "categoria": "mixto",
+      "categoria": "Grupo",
       "colorFondoBorde": "#3d22c3",
       "descripcion": "Be original  완성형 아이돌의 피어리스한 퍼포❤🔥\n짱세라핌 칼군무에 미소가 절로 꽃핌\n(2:55) 데뷔부터 레전드 찍었드아아아!!!",
       "usuario": "Studio choom",
@@ -37,6 +20,13 @@
       "descripcion": "Ffdfgdfgdf",
       "usuario": "dfgdfgdfg",
       "id": "bwYYZ97"
+    },
+    {
+      "categoria": "Solista",
+      "colorFondoBorde": "#6b5be2",
+      "descripcion": "Musico o cantante que interpreta composiciones para una sola persona, o los solos de una obra coral u orquestal.",
+      "usuario": "Google",
+      "id": "JayTDTn"
     }
   ],
   "cards": [

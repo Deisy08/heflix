@@ -56,8 +56,9 @@ const CssTextFieldTextarea = styled(TextField)({
 });
 
 const NewVideo = ({ card, addCategoria, location }) =>{
+    
     const [categorias, setCategorias] = useState(card);
-
+    
     useEffect(() => {
         if (location?.state?.categoria) { // Si hay una nueva categoría en el estado de ubicación
           addCategoria(location.state.categoria); // Agrega la nueva categoría a la lista de categorías
@@ -119,7 +120,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
     });
 
     const options = card.map((option) => {
-        const firstLetter = option.categorias[0].toUpperCase();
+        const firstLetter = option.categoria[0].toUpperCase();
         return {
           firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
           ...option,
@@ -153,7 +154,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 flexDirection:"column",
             }}
             onSubmit={manejarEnvio}
-            id={idUnico}
+            key={idUnico}
         >
             <h1>Create new video</h1>
 
@@ -199,7 +200,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
            <Autocomplete 
                 options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
                 groupBy={(option) => option.firstLetter}
-                getOptionLabel= {(option) => option.categorias }
+                getOptionLabel= {(option) => option.categoria }
                 multiple={false}
                 fullWidth 
                 renderInput={(params) => <CssTextField  {...params} 

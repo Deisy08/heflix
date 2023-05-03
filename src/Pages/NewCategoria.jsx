@@ -5,6 +5,7 @@ import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
 import { validarTitulo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
 import { useNavigate } from 'react-router-dom';
+import Table from "../Componentes/Table";
 
 const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -152,9 +153,9 @@ const NewCategoria = ({ addCategoria }) =>{
                 }}
             />
 
-            <CssTextField  
-                fullWidth margin="normal" label="color"
-                type="color" required 
+            <CssTextField  required 
+                fullWidth margin="normal" label="color" 
+                type="color" 
                 error={color.valid === false} 
                 helperText={color.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
                 value={color.value}
@@ -204,6 +205,8 @@ const NewCategoria = ({ addCategoria }) =>{
                     <img src={loader} alt="loading"/>
                 </div>
             </div>
+
+            <Table />
 
         </Box> 
     </Container>
