@@ -64,7 +64,6 @@ const CssTextFieldTextarea = styled(TextField)({
 }
 });
 
-
 const NewCategoria = ({ addCategoria }) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
@@ -94,7 +93,9 @@ const NewCategoria = ({ addCategoria }) =>{
         addCategoria(categoria); 
         console.log(category.value,color.value);
         console.log(category,color,descripcion,usuario);
-        navigate('/NewVideo', { state: { categoria } }); // Redirige a NewVideo con la nueva categoría
+        
+        // Redirige a NewVideo con la nueva categoría
+        navigate('/NewVideo', { state: { categoria } }); 
 
         fetch('http://localhost:3000/categorias', {
             method: 'POST',
@@ -166,7 +167,7 @@ const NewCategoria = ({ addCategoria }) =>{
             />
         
             <CssTextFieldTextarea required 
-                placeholder="Describa el video..."
+                placeholder="Describa porque agregar esta categoria..."
                 fullWidth margin="normal" 
                 rows={4}
                 multiline

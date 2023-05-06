@@ -1,13 +1,6 @@
 {
   "categorias": [
     {
-      "categoria": "Grupo",
-      "colorFondoBorde": "#3d22c3",
-      "descripcion": "Be original  완성형 아이돌의 피어리스한 퍼포❤🔥\n짱세라핌 칼군무에 미소가 절로 꽃핌\n(2:55) 데뷔부터 레전드 찍었드아아아!!!",
-      "usuario": "Studio choom",
-      "id": "9CdPE2t"
-    },
-    {
       "categoria": "Mixto",
       "colorFondoBorde": "#38e5d1",
       "descripcion": "Mixto es mejor duo creo",
@@ -15,18 +8,25 @@
       "id": "UMeD0nM"
     },
     {
-      "categoria": "Colaboración",
-      "colorFondoBorde": "#e9ec27",
-      "descripcion": "Ffdfgdfgdf",
-      "usuario": "dfgdfgdfg",
-      "id": "bwYYZ97"
-    },
-    {
       "categoria": "Solista",
       "colorFondoBorde": "#6b5be2",
       "descripcion": "Musico o cantante que interpreta composiciones para una sola persona, o los solos de una obra coral u orquestal.",
       "usuario": "Google",
       "id": "JayTDTn"
+    },
+    {
+      "categoria": "Grupo",
+      "colorFondoBorde": "#ffca05",
+      "descripcion": "Un grupo musical hace referencia a un conjunto de músicos que decide unirse con el fin de formar una banda musical.",
+      "usuario": "fsdfsdf",
+      "id": "G0cXtRa"
+    },
+    {
+      "categoria": "Colaboración",
+      "colorFondoBorde": "#41adc8",
+      "descripcion": "Se emplea para referirse a que un cantante lanza una composición que es interpretada a dúo con otro artista.",
+      "usuario": "Fsdfsdfsdf",
+      "id": "P9AFyAW"
     }
   ],
   "cards": [
@@ -200,6 +200,15 @@
       "categoria": "Colaboración",
       "usuario": "NEJ'",
       "id": "aQ2tTs7"
+    },
+    {
+      "titulo": "Knock",
+      "video": "https://www.youtube.com/watch?v=3sCZKrxCWMo",
+      "imgVideo": "https://64.media.tumblr.com/87c9bf383aaf031664ae0de118f2bf34/5503e68650ec0758-49/s1280x1920/2ad4e5f4ecbdb0b454046b7973921ff29a7f8d98.jpg",
+      "descripcion": "LEE CHAE YEON(이채연) 2nd Mini Album \\\"Over The Moon\\\" has been released.\\n*ALBUM EVENT(4/28~4/30): https://bit.ly/3n7LyuC (video call event)",
+      "categoria": "Colaboración",
+      "usuario": "LEE CHAE YEON",
+      "id": "2Qa_YIY"
     }
   ]
 }

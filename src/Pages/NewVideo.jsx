@@ -1,9 +1,8 @@
 import "../../src/assets/css/newVideo.css"
 import { Container, Box, Button, TextField, Autocomplete} from "@mui/material";
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { v4 as uuidv4 } from 'uuid';
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
 
 const CssTextField = styled(TextField)({
@@ -64,7 +63,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
           addCategoria(location.state.categoria); // Agrega la nueva categoría a la lista de categorías
           setCategorias([...categorias, location.state.categoria]); // Actualiza el estado de las categorías
         }
-    }, [location, addCategoria, categorias]);
+    }, [location, addCategoria, categorias, card]);
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
@@ -80,7 +79,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 video: video.value,
                 imgVideo: imgVideo.value,
                 descripcion: descripcion.value,
-                categoria: category.value,
+                categoria: selectedCategory,
                 usuario: usuario.value
             })
         })
@@ -119,6 +118,13 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         valid: true
     });
 
+    const [selectedCategory, setSelectedCategory] = useState("Grupo");
+    const [isCategoryValid, setIsCategoryValid] = useState(true);
+
+
+    console.log(selectedCategory);
+    console.log(isCategoryValid);
+
     const options = card.map((option) => {
         const firstLetter = option.categoria[0].toUpperCase();
         return {
@@ -127,11 +133,9 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         };
     });
 
-    const handleCategoryChange = (event, value) => {
-        const categoryValue = value?.categorias;
-        const categoryValid = !!categoryValue ;
-        setCategory({ value: categoryValue, valid: categoryValid });
-    };
+    useEffect(() => {
+        setIsCategoryValid(Boolean(options.find((option) => option.categoria === selectedCategory)));
+    }, [options, selectedCategory]);
 
     const handleFormReset = () => {
         setTitulo({value: ""});
@@ -140,8 +144,6 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         setUsuario({value: ""});
         setDescripcion({value: ""});
     };
-
-    const idUnico = uuidv4();
 
     return <Container maxWidth="xl" className="formulario">
         <Box
@@ -154,7 +156,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 flexDirection:"column",
             }}
             onSubmit={manejarEnvio}
-            key={idUnico}
+            
         >
             <h1>Create new video</h1>
 
@@ -200,17 +202,23 @@ const NewVideo = ({ card, addCategoria, location }) =>{
            <Autocomplete 
                 options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
                 groupBy={(option) => option.firstLetter}
-                getOptionLabel= {(option) => option.categoria }
+                getOptionLabel= {(option) => option.categoria}
                 multiple={false}
                 fullWidth 
-                renderInput={(params) => <CssTextField  {...params} 
-                    required margin="normal"
+                renderInput={(params) => <CssTextField  
+                    {...params} 
+                    margin="normal" 
+                    required 
                     placeholder={"Escoja una categoría..."} 
-                    error={!category.valid }
-                    helperText={!category.valid  && "Este campo no puede estar vacio, elija una categoría."}
-                    
+                    error={!isCategoryValid }
+                    helperText={!isCategoryValid  && "Este campo no puede estar vacio, elija una categoría."}
                 />}
-                onChange={handleCategoryChange}
+                onChange={(event, value) => {
+                    setSelectedCategory(value?.categoria || "");
+                    //const categoryValue = value?.categoria;
+                    //const categoryValid = !!categoryValue ;
+                   // setCategory({value:categoryValue, valid:categoryValid})
+                }}
             />
            
             <CssTextFieldTextarea required 
@@ -256,7 +264,6 @@ const NewVideo = ({ card, addCategoria, location }) =>{
             </div>
             
         </Box> 
-        
     </Container>
 }
 

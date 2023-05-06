@@ -23,7 +23,7 @@ function App() {
       const response = await fetch('http://localhost:3000/categorias');
       const data = await response.json();
       setCategorias(data);
-      //localStorage.setItem('categorias', JSON.stringify(data));
+      localStorage.setItem('categorias', JSON.stringify(data));
     } catch (error) {
       console.error(error);
     }

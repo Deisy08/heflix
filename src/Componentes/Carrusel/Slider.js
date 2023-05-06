@@ -12,7 +12,7 @@ const SliderComponente = ({ tarjeta }) => {
     async function fetchCards() {
       const response = await fetch('http://localhost:3000/cards');
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       setCards(data);
     }
     fetchCards();
