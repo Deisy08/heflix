@@ -28,7 +28,7 @@ function App() {
       console.error(error);
     }
   };
-
+  
   const addCategoria = (categoria) => {
     console.log(categoria);
     const nuevaLista = [...categorias, categoria]

@@ -27,6 +27,13 @@
       "descripcion": "Se emplea para referirse a que un cantante lanza una composición que es interpretada a dúo con otro artista.",
       "usuario": "Fsdfsdfsdf",
       "id": "P9AFyAW"
+    },
+    {
+      "categoria": "Infantil",
+      "colorFondoBorde": "#8ae8ff",
+      "descripcion": "Para que escuchen los infantes.",
+      "usuario": "Yared",
+      "id": "h7Ihhvy"
     }
   ],
   "cards": [
@@ -209,6 +216,15 @@
       "categoria": "Colaboración",
       "usuario": "LEE CHAE YEON",
       "id": "2Qa_YIY"
+    },
+    {
+      "titulo": "Hey Tayo",
+      "video": "https://www.youtube.com/watch?v=xTCiQoZPHFM",
+      "imgVideo": "https://images.genius.com/a4671e37f3435e285275d77962e5af70.800x800x1.jpg",
+      "descripcion": "ENHYPEN (엔하이픈) X TAYO - 'HEY TAYO' Official MV\n",
+      "categoria": "Infantil",
+      "usuario": "ENHYPEN",
+      "id": "cfG_M8g"
     }
   ]
 }

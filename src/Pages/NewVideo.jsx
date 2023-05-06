@@ -67,7 +67,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
-        console.log(titulo,video,imgVideo,descripcion,usuario,category);
+        console.log(titulo,video,imgVideo,descripcion,usuario,selectedCategory);
         
         fetch('http://localhost:3000/cards', {
             method: 'POST',
@@ -113,20 +113,15 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         value : "",
         valid:null
     })
-    const [category, setCategory] = useState({
-        value: "",
-        valid: true
-    });
 
     const [selectedCategory, setSelectedCategory] = useState("Grupo");
     const [isCategoryValid, setIsCategoryValid] = useState(true);
 
-
-    console.log(selectedCategory);
-    console.log(isCategoryValid);
+    //console.log(selectedCategory);
+    //console.log(isCategoryValid);
 
     const options = card.map((option) => {
-        const firstLetter = option.categoria[0].toUpperCase();
+        const firstLetter = option.categoria?.[0]?.toUpperCase() || '';
         return {
           firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
           ...option,
