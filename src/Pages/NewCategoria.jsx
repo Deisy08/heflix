@@ -5,7 +5,7 @@ import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
 import { validarTitulo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
 import { useNavigate } from 'react-router-dom';
-import Table from "../Componentes/Table";
+import Tabla from "../Componentes/Tabla";
 
 const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -207,7 +207,7 @@ const NewCategoria = ({ addCategoria }) =>{
                 </div>
             </div>
 
-            <Table />
+            <Tabla />
 
         </Box> 
     </Container>

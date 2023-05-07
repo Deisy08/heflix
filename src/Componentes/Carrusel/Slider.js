@@ -54,7 +54,7 @@ const SliderComponente = ({ tarjeta }) => {
     fontWeight: 400,
   }
 
-  const contenedorTarjeta = { 
+  const tarjetaImg = { 
     border: "2px solid ",        
     borderColor : colorFondoBorde,
     borderRadius: "5px",        
@@ -71,7 +71,7 @@ const SliderComponente = ({ tarjeta }) => {
     <Slider {...settings} >
       {filteredCards.map(card => (
         <section key={card.id}>
-          <img style={contenedorTarjeta} src={card.imgVideo} alt={card.titulo} />
+          <img style={tarjetaImg} src={card.imgVideo} alt={card.titulo} />
         </section>
       ))}
             
