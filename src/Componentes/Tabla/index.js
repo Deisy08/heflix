@@ -39,6 +39,12 @@ const Eliminar = styled.td`
 const Tabla = () => {
     
     const [data, setData] = useState([]);
+    const [btnEditar, setBtnEditar] = useState(null);
+	const [nameCategory,setNameCategory]= useState("")
+    const [color,setColor]= useState("")
+    const [descripcion,setDescripcion]= useState("")
+
+	//console.log(nameCategory)
     
     useEffect(() => {
         fetch('http://localhost:3000/categorias')
@@ -49,8 +55,55 @@ const Tabla = () => {
 
    //visibilidad de mi modal
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () =>{
+		setShow(false);
+	};
+
+    const handleShow = (registro) => {
+		setBtnEditar(registro.id);
+		setNameCategory(registro.categoria);
+		setDescripcion(registro.descripcion);
+		setColor(registro.colorFondoBorde);
+		setShow(true);
+  	};
+
+
+    const editForm = () =>{
+        // Agregar el ID del registro seleccionado a la URL del endpoint
+        const url = `http://localhost:3000/categorias/`;
+        console.log(url);
+        console.log(btnEditar);
+
+        /*// Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
+		   fetch(url, {
+			   method: 'PUT', // o PATCH
+			   headers: {
+				   'Content-Type': 'application/json'
+			   },
+			   body: JSON.stringify({
+				   categoria: nameCategory,// Valor actualizado del nombre,
+				   descripcion: descripcion,// Valor actualizado de la descripción,
+				   color: color// Valor actualizado del color,
+			   })
+		   })
+		   .then(response => {
+                // Manejar cualquier error de la API
+                if (!response.ok) {
+                    throw new Error('Error al actualizar la categoría');
+                }
+                return response.json();
+            })
+		   .then(data => {
+			   // Actualizar el estado de los datos con la respuesta de la API.
+               console.log('Datos actualizados:', data.id);
+			   setData(data);
+			   //setBtnEditar(null);
+			   setShow(false);
+		   })
+		   .catch(error => console.error(error));*/
+           
+    }
+	
 
     const eliminar = () =>{
         let opcion = window.confirm("Realmente lo desea eliminar")
@@ -58,12 +111,16 @@ const Tabla = () => {
         return opcion
     } 
 
+	const isValidName = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(nameCategory); // Expresión regular que verifica si el primer caracter es mayúscula y los siguientes son letras.
+    const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);
+    const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
+
     return <>
         <TableContenedor>
             <CabezaTabla>
                 <tr>
                 <th style={{width:"15%"}}>Nombre</th>
-                <th style={{width:"75%"}}>Descripción</th>
+                <th style={{width:"70%"}}>Descripción</th>
                 <th>Editar</th>
                 <th>Remover</th>
                 </tr>
@@ -73,7 +130,7 @@ const Tabla = () => {
                     <tr key={item.id}>
                         <td>{item.categoria}</td>
                         <td>{item.descripcion}</td>
-                        <Editar onClick={handleShow}>Editar</Editar>
+                        <Editar onClick={() => handleShow(item)}>Editar</Editar>
                         <Eliminar onClick={eliminar} >Remover</Eliminar>
                     </tr>
                 ))}
@@ -92,47 +149,59 @@ const Tabla = () => {
             </ModalHeader>
             <ModalBody>
             <FormGroup>
-              <label>
-               Nombre:
-              </label>
-            
-              <input
-                className="form-control"
-                type="text"
-              />
+				<label>Nombre:</label>
+				<input
+					className={`form-control ${nameCategory !== null ? (isValidName ? 'is-valid' : 'is-invalid') : ''}`}
+					type="text"
+					value={nameCategory}
+					onChange={(e)=>{ 
+						setNameCategory(e.target.value)
+					}}
+				/>
+				{nameCategory !== null && !isValidName && <div className="invalid-feedback">El nombre de esta categoria debe comenzar en mayúscula.</div>}
             </FormGroup>
             
             <FormGroup>
-              <label>
-                Descripción: 
-              </label>
-              <input
-                className="form-control"
-                type="text"
-              />
-            </FormGroup>
+				<label>
+					Descripción: 
+				</label>
+				<textarea
+					className={`form-control ${descripcion !== null ? (isValidDescription ? 'is-valid' : 'is-invalid') : ''}`}
+					type="text"
+					value={descripcion}
+					onChange={(e)=>{ 
+						setDescripcion(e.target.value)
+					}}
+				/>
+				{descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar en mayúscula.</div>}
+			</FormGroup>
             
             <FormGroup>
               <label>
                 Color: 
               </label>
               <input
-                className="form-control"
+                className={`form-control ${color !== null ? (isValidColor ? 'is-valid' : 'is-invalid') : ''}`}
                 type="color"
+				value={color}
+                onChange={(e)=>{ 
+                    setColor(e.target.value)
+                }}
               />
+              {color !== null && !isValidColor && <div className="invalid-feedback">Por favor, seleccione un código de color hexadecimal válido.</div>}
             </FormGroup>
           </ModalBody>
 
           <ModalFooter>
             <Button
               color="primary"
-              onClick={handleClose}
+              onClick={editForm}
             >
               Editar
             </Button>
             <Button
               color="danger"
-              onClick={handleClose}
+              onChange={handleClose}
             >
               Cancelar
             </Button>
