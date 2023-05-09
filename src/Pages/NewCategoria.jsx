@@ -64,7 +64,7 @@ const CssTextFieldTextarea = styled(TextField)({
 }
 });
 
-const NewCategoria = ({ addCategoria }) =>{
+const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
     const [category,setCategory]= useState({
@@ -112,7 +112,7 @@ const NewCategoria = ({ addCategoria }) =>{
         .then(response => response.json())
         .then(data => {
             console.log('Datos guardados en db.json:', data)
-            
+            fetchCategorias()// Obtener la lista actualizada de categorías    
         })
         .catch(error => console.error(error))
     }
@@ -181,7 +181,7 @@ const NewCategoria = ({ addCategoria }) =>{
                 }}
             />
 
-            <CssTextField required 
+            <CssTextField  
                 fullWidth margin="normal" 
                 placeholder="Usuário..." type="Usuario"
                 error={usuario.valid === false}

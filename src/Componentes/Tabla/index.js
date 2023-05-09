@@ -40,6 +40,7 @@ const Tabla = () => {
     
     const [data, setData] = useState([]);
     const [btnEditar, setBtnEditar] = useState(null);
+    const [btnEliminar, setBtnEliminar] = useState(null);
 	const [nameCategory,setNameCategory]= useState("")
     const [color,setColor]= useState("")
     const [descripcion,setDescripcion]= useState("")
@@ -67,14 +68,13 @@ const Tabla = () => {
 		setShow(true);
   	};
 
-
     const editForm = () =>{
         // Agregar el ID del registro seleccionado a la URL del endpoint
-        const url = `http://localhost:3000/categorias/`;
+        const url = `http://localhost:3000/categorias/${btnEditar}`;
         console.log(url);
         console.log(btnEditar);
 
-        /*// Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
+        // Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
 		   fetch(url, {
 			   method: 'PUT', // o PATCH
 			   headers: {
@@ -83,7 +83,7 @@ const Tabla = () => {
 			   body: JSON.stringify({
 				   categoria: nameCategory,// Valor actualizado del nombre,
 				   descripcion: descripcion,// Valor actualizado de la descripción,
-				   color: color// Valor actualizado del color,
+				   colorFondoBorde: color// Valor actualizado del color,
 			   })
 		   })
 		   .then(response => {
@@ -95,19 +95,36 @@ const Tabla = () => {
             })
 		   .then(data => {
 			   // Actualizar el estado de los datos con la respuesta de la API.
-               console.log('Datos actualizados:', data.id);
+               console.log('Datos actualizados:', data);
 			   setData(data);
 			   //setBtnEditar(null);
 			   setShow(false);
 		   })
-		   .catch(error => console.error(error));*/
-           
+		   .catch(error => console.error(error));
+        window.location.href = '/';
     }
-	
 
-    const eliminar = () =>{
+    useEffect(() => {
+        eliminar()
+    }, []);
+	
+    const eliminar = async (registro) =>{
+        setBtnEliminar(registro.id);
         let opcion = window.confirm("Realmente lo desea eliminar")
-        console.log("eliminar elemento")
+        const url = `http://localhost:3000/categorias/${btnEliminar}`;
+        console.log(url);
+        console.log("eliminar elemento", btnEliminar);
+
+        await fetch(url,{
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+        .then(response => response.json())
+        .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
+        .catch(err => console.log(err)) // Do something with the error
+               
         return opcion
     } 
 
@@ -126,12 +143,12 @@ const Tabla = () => {
                 </tr>
             </CabezaTabla>
             <CuerpoTabla>
-                {data.map((item) => (
+                {data.length > 0 && data.map((item) => (
                     <tr key={item.id}>
                         <td>{item.categoria}</td>
                         <td>{item.descripcion}</td>
                         <Editar onClick={() => handleShow(item)}>Editar</Editar>
-                        <Eliminar onClick={eliminar} >Remover</Eliminar>
+                        <Eliminar onClick={() => eliminar(item)} >Remover</Eliminar>
                     </tr>
                 ))}
             </CuerpoTabla>
@@ -201,7 +218,7 @@ const Tabla = () => {
             </Button>
             <Button
               color="danger"
-              onChange={handleClose}
+              onClick={handleClose}
             >
               Cancelar
             </Button>

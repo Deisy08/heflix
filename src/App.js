@@ -33,6 +33,7 @@ function App() {
     console.log(categoria);
     const nuevaLista = [...categorias, categoria]
     setCategorias(nuevaLista)
+    fetchCategorias();// Llama a fetchCategorias para actualizar los datos
   }
   
   return (
@@ -41,7 +42,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home card={categorias}/>} />
-        <Route path='/NewCategorie' element={<NewCategoria addCategoria={addCategoria} />} />
+        <Route path='/NewCategorie' element={<NewCategoria addCategoria={addCategoria}  fetch={fetchCategorias}/>} />
         <Route path='/NewVideo' element={<NewVideo card={categorias} addCategoria={addCategoria}/>} />
         <Route path='*' element={<Error404 />} />
       </Routes>
