@@ -37,7 +37,6 @@ const Eliminar = styled.td`
 `
 
 const Tabla = () => {
-    
     const [data, setData] = useState([]);
     const [btnEditar, setBtnEditar] = useState(null);
     const [btnEliminar, setBtnEliminar] = useState(null);
@@ -104,17 +103,10 @@ const Tabla = () => {
         window.location.href = '/';
     }
 
-    useEffect(() => {
-        eliminar()
-    }, []);
-	
-    const eliminar = async (registro) =>{
-        setBtnEliminar(registro.id);
-        let opcion = window.confirm("Realmente lo desea eliminar")
-        const url = `http://localhost:3000/categorias/${btnEliminar}`;
+    const eliminar = async (item) =>{
+        setBtnEliminar(item.id);
+        const url = `http://localhost:3000/categorias/${item.id}`;
         console.log(url);
-        console.log("eliminar elemento", btnEliminar);
-
         await fetch(url,{
             method: "DELETE",
             headers: {
@@ -122,11 +114,14 @@ const Tabla = () => {
             }
         })
         .then(response => response.json())
-        .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
-        .catch(err => console.log(err)) // Do something with the error
-               
-        return opcion
-    } 
+        .then(data => {
+            console.log('Datos actualizados:', data);
+            setData(data);
+            setBtnEliminar(null);
+        })
+        .catch(err => console.log(err)) 
+        window.location.href = '/';
+    }
 
 	const isValidName = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(nameCategory); // Expresión regular que verifica si el primer caracter es mayúscula y los siguientes son letras.
     const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);

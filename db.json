@@ -2,42 +2,37 @@
   "categorias": [
     {
       "categoria": "Mixto",
-      "colorFondoBorde": "#38e5d1",
-      "descripcion": "Mixto es mejor duo creo",
-      "usuario": "Taeyan&Lisa",
-      "id": "UMeD0nM"
+      "colorFondoBorde": "#ce4646",
+      "descripcion": "Personas que trabajan en conjunto.\n",
+      "usuario": "",
+      "id": 1
     },
     {
       "categoria": "Solista",
-      "colorFondoBorde": "#6b5be2",
-      "descripcion": "Musico o cantante que interpreta composiciones para una sola persona, o los solos de una obra coral u orquestal.",
-      "usuario": "Google",
-      "id": "JayTDTn"
+      "colorFondoBorde": "#a14dac",
+      "descripcion": "La persona que canta sola.",
+      "usuario": "",
+      "id": 2
+    },
+    {
+      "categoria": "Grupo",
+      "colorFondoBorde": "#25bec1",
+      "descripcion": "Grupo de personas que cantan en armonia.",
+      "usuario": "",
+      "id": 3
     },
     {
       "categoria": "Colaboración",
-      "descripcion": "Se emplea para referirse a que un cantante lanza una composición que es interpretada a dúo con otro artista.",
-      "colorFondoBorde": "#c85c14",
-      "id": "P9AFyAW"
+      "colorFondoBorde": "#99ac39",
+      "descripcion": "Colaboracion de cantantes.",
+      "usuario": "",
+      "id": 4
     },
     {
       "categoria": "Infantil",
-      "descripcion": "Para que escuchen los infantes(niños) y puedan aprender diversas cosas.",
-      "colorFondoBorde": "#68bb81",
-      "id": "h7Ihhvy"
-    },
-    {
-      "categoria": "Niños Educación",
-      "descripcion": "Video educativo, también llamado Video-Lección, es un material audiovisual con alto grado de utilidad en los proceso de enseñanza y de aprendizaje.",
-      "colorFondoBorde": "#e854db",
-      "id": "ngavWTH"
-    },
-    {
-      "categoria": "Fdsfsdfsdf",
-      "colorFondoBorde": "#bd2e2e",
-      "descripcion": "Fsdfsdfsdfsd",
-      "usuario": "dsfsdfsdfsdf",
-      "id": "8XTEKX6"
+      "descripcion": "Musica que escuchan los niños(infantes).",
+      "colorFondoBorde": "#5f5ea6",
+      "id": 5
     }
   ],
   "cards": [
