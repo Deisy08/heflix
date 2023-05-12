@@ -56,7 +56,7 @@
     },
     {
       "titulo": "Fever",
-      "video": "https://www.youtube.com/watch?v=X7d6Dt17yHk&list=RDzjVt73gD1fc&index=9",
+      "video": "https://www.youtube.com/watch?v=X7d6Dt17yHk",
       "imgVideo": "https://th.bing.com/th/id/R.ab2f1c09cf0362d4e06b555cee693d64?rik=C3UYLPzZ4wLb%2fg&pid=ImgRaw&r=0",
       "descripcion": "Canción principal de este albúm llamado carnival.",
       "categoria": "Grupo",
@@ -65,7 +65,7 @@
     },
     {
       "titulo": "Kitsch",
-      "video": "https://www.youtube.com/watch?v=pG6iaOMV46I&list=RDpG6iaOMV46I&start_radio=1",
+      "video": "https://www.youtube.com/watch?v=pG6iaOMV46I",
       "imgVideo": "https://t2.genius.com/unsafe/163x163/https%3A%2F%2Fimages.genius.com%2F688cf5d2e8da9bd192480359deac1dc5.201x201x1.jpg",
       "descripcion": "IVE - \"Kitsch\" (Official Music Video)\n\nPre-Release Single \"Kitsch\": https://ive.lnk.to/Kitsch\nPre-Save 1ST ALBUM \"I've IVE\": https://ive.lnk.to/IveIVE",
       "categoria": "Grupo",
@@ -119,7 +119,7 @@
     },
     {
       "titulo": "Shoong",
-      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
       "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Solista",
@@ -155,7 +155,7 @@
     },
     {
       "titulo": "Official MV 손오공",
-      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4&list=RDzjVt73gD1fc&index=7",
+      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4",
       "imgVideo": "https://th.bing.com/th/id/OIP.AjXfKqs_4WfAupU51QUL6gHaDA?w=293&h=142&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
       "categoria": "Mixto",
@@ -164,7 +164,7 @@
     },
     {
       "titulo": "Official MV 손오공",
-      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4&list=RDzjVt73gD1fc&index=7",
+      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4",
       "imgVideo": "https://th.bing.com/th/id/OIP.ILvPxnOCRfmTSNCU65zfKwHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
       "categoria": "Mixto",
@@ -173,16 +173,16 @@
     },
     {
       "titulo": "Shoong",
-      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
       "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Mixto",
-      "usuario": "Taeyang",
+      "usuario": "Taeyang&Lisa",
       "id": "iUsmA4v"
     },
     {
       "titulo": "Shoong",
-      "video": "https://www.youtube.com/watch?v=NFnAuiklEug&list=RDzjVt73gD1fc&index=11",
+      "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
       "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Colaboración",

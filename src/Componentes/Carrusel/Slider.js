@@ -79,19 +79,25 @@ const SliderComponente = ({ tarjeta }) => {
     }
   `;
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
-  const handleImageClick = (i) => {
-    setSelectedVideoIndex(i);
+  //console.log(selectedVideoIndex); todas la tarjetas
+  const handleImageClick = (video) => {
+    console.log({ url: video.video })
+    setSelectedVideoIndex({ url: video.video });
 
   };
   //console.log(cards.length>0 && cards.map((item) => item.video))
-  const VideoPlayer = ({ onClose ,video}) => {
+  const VideoPlayer = ({ onClose, url }) => {
     
+    console.log(url);
     return (
       <div>
         <ReactPlayer 
-            url={video}
+            url={url}
             controls
             volume="0.5"
+            playing={true}
+            width="500px"
+            height="300px"
         />
         <button onClick={onClose}>Close</button>
       
@@ -104,27 +110,18 @@ const SliderComponente = ({ tarjeta }) => {
     <Titulo >{categoria}</Titulo>
 
     <Slider {...settings} style={slider} >
-      {cards.length>0 && filteredCards.map((video,i) => (
+      {cards.length>0 && filteredCards.map((video) => (
         <ContenedorImg key={video.id} >
           <p>{video.titulo}</p>
-          <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video.video)}/>
+          <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
           <p>{video.usuario}</p>
         </ContenedorImg>
       ))}
     </Slider>
-    {selectedVideoIndex !== null && (
-        <VideoPlayer video={filteredCards[selectedVideoIndex]} onClose={() => setSelectedVideoIndex(null)} />
+    {selectedVideoIndex  && (
+        <VideoPlayer url={selectedVideoIndex.url} onClose={() => setSelectedVideoIndex(null)} />
     )}
 
-    <Slider {...settings} style={slider} >
-      {filteredCards.map(card => (
-        <ContenedorImg key={card.id} >
-          <TarjetaImg  src={card.imgVideo} alt={card.titulo} />
-        </ContenedorImg>
-      ))}
-
-    </Slider>
-        
   </SliderContenedor>
 }
 
