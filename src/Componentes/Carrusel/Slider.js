@@ -1,8 +1,10 @@
 import React,{ useState, useEffect } from 'react';
 import Slider from "react-slick";
+import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-//import Card from "./VideoCard"
+import ReactPlayer from "react-player";
+//import VideoCard from './videoCard';
 
 const SliderComponente = ({ tarjeta }) => {
   const {colorFondoBorde,categoria} = tarjeta
@@ -12,7 +14,6 @@ const SliderComponente = ({ tarjeta }) => {
     async function fetchCards() {
       const response = await fetch('http://localhost:3000/cards');
       const data = await response.json();
-      //console.log(data);
       setCards(data);
     }
     fetchCards();
@@ -20,7 +21,7 @@ const SliderComponente = ({ tarjeta }) => {
 
   // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
   const filteredCards = cards.filter(card => card.categoria === categoria);
-    
+ 
   const settings = {
     dots: false,
     infinite: true,
@@ -39,45 +40,92 @@ const SliderComponente = ({ tarjeta }) => {
     ]
   };
     
-  const sliderContenedor ={
-    padding: "0 25px",
-    marginBottom: "20px",
+  const SliderContenedor = styled.div`
+    padding: 0 25px;
+    margin-bottom: 20px;
+  `
+  const Titulo= styled.h3`
+    background: ${colorFondoBorde};
+    padding: 10px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 400;
+  `
+  const ContenedorImg = styled.section`
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  `
+
+  const slider = {
+    padding: "0 10px",
   }
 
-  const obj = { 
-    background: colorFondoBorde,
-    padding: "10px 25px",
-    borderRadius: "5px",
-    display: "inline-block",
-    marginBottom: "20px",
-    fontStyle: "normal",
-    fontWeight: 400,
-  }
+  const TarjetaImg = styled.img`
+    border: 2px solid ${colorFondoBorde};
+    border-radius: 5px;
+    width: 160px;
+    height: 160px;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid ${colorFondoBorde};
+      width: 175px;
+      height: 175px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px ${colorFondoBorde};
+    }
+  `;
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
+  const handleImageClick = (i) => {
+    setSelectedVideoIndex(i);
 
-  const tarjetaImg = { 
-    border: "2px solid ",        
-    borderColor : colorFondoBorde,
-    borderRadius: "5px",        
-    margin:"0 5px",
-    width: "160px",       
-    height:"160px",
-    boxSizing: "border-box",
-  }
+  };
+  //console.log(cards.length>0 && cards.map((item) => item.video))
+  const VideoPlayer = ({ onClose ,video}) => {
+    
+    return (
+      <div>
+        <ReactPlayer 
+            url={video}
+            controls
+            volume="0.5"
+        />
+        <button onClick={onClose}>Close</button>
+      
+    </div>
+    );
+  };
 
-  return <div style={sliderContenedor}>
+  return <SliderContenedor >
 
-    <h3 style={obj}>{categoria}</h3>
+    <Titulo >{categoria}</Titulo>
 
-    <Slider {...settings} >
-      {filteredCards.map(card => (
-        <section key={card.id}>
-          <img style={tarjetaImg} src={card.imgVideo} alt={card.titulo} />
-        </section>
+    <Slider {...settings} style={slider} >
+      {cards.length>0 && filteredCards.map((video,i) => (
+        <ContenedorImg key={video.id} >
+          <p>{video.titulo}</p>
+          <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video.video)}/>
+          <p>{video.usuario}</p>
+        </ContenedorImg>
       ))}
-            
+    </Slider>
+    {selectedVideoIndex !== null && (
+        <VideoPlayer video={filteredCards[selectedVideoIndex]} onClose={() => setSelectedVideoIndex(null)} />
+    )}
+
+    <Slider {...settings} style={slider} >
+      {filteredCards.map(card => (
+        <ContenedorImg key={card.id} >
+          <TarjetaImg  src={card.imgVideo} alt={card.titulo} />
+        </ContenedorImg>
+      ))}
+
     </Slider>
         
-  </div>
+  </SliderContenedor>
 }
 
 export default SliderComponente

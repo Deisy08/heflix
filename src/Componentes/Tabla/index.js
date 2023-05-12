@@ -37,6 +37,7 @@ const Eliminar = styled.td`
 `
 
 const Tabla = () => {
+
     const [data, setData] = useState([]);
     const [btnEditar, setBtnEditar] = useState(null);
     const [btnEliminar, setBtnEliminar] = useState(null);

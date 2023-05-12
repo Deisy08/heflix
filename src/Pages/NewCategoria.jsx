@@ -64,6 +64,10 @@ const CssTextFieldTextarea = styled(TextField)({
 }
 });
 
+const Mensaje =styled.h5`
+    margin-bottom: 10px;
+`
+
 const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
@@ -206,6 +210,8 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                     <img src={loader} alt="loading"/>
                 </div>
             </div>
+
+            <Mensaje>* Aquí se puede editar o eliminar por categoria </Mensaje>
 
             <Tabla />
 
