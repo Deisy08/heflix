@@ -106,6 +106,10 @@ const Tabla = () => {
 
     const eliminar = async (item) =>{
         setBtnEliminar(item.id);
+        const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
+        if (!confirmed) {
+            return; 
+        }
         const url = `http://localhost:3000/categorias/${item.id}`;
         console.log(url);
         await fetch(url,{

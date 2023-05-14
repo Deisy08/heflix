@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player";
-//import VideoCard from './videoCard';
+import { HiOutlinePencilAlt, HiPencilAlt } from "react-icons/hi"
+import { AiOutlineDelete, AiTwotoneDelete } from "react-icons/ai"
+
 
 const SliderComponente = ({ tarjeta }) => {
+
   const {colorFondoBorde,categoria} = tarjeta
   const [cards, setCards] = useState([ ]);
     
@@ -18,6 +21,40 @@ const SliderComponente = ({ tarjeta }) => {
     }
     fetchCards();
   }, []);
+
+  //estilos 
+  const SliderContenedor = styled.div`
+   padding: 0 25px;
+   margin-bottom: 20px;
+  `
+  const Titulo= styled.h3`
+   background: ${colorFondoBorde};
+   padding: 10px 25px;
+   border-radius: 5px;
+   display: inline-block;
+   margin-bottom: 20px;
+   font-style: normal;
+   font-weight: 400;
+  `
+ const ContenedorImg = styled.section`
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   position: relative;
+ `
+ const eliminar = {
+  position: "absolute",
+  right: "30px",
+  top: "60px",
+  cursor: "pointer"
+ }
+
+ const editar = {
+  position: "absolute",
+  right: "50px",
+  top: "60px",
+  cursor: "pointer"
+ }
 
   // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
   const filteredCards = cards.filter(card => card.categoria === categoria);
@@ -39,25 +76,6 @@ const SliderComponente = ({ tarjeta }) => {
       }
     ]
   };
-    
-  const SliderContenedor = styled.div`
-    padding: 0 25px;
-    margin-bottom: 20px;
-  `
-  const Titulo= styled.h3`
-    background: ${colorFondoBorde};
-    padding: 10px 25px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-style: normal;
-    font-weight: 400;
-  `
-  const ContenedorImg = styled.section`
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  `
 
   const slider = {
     padding: "0 10px",
@@ -79,16 +97,14 @@ const SliderComponente = ({ tarjeta }) => {
     }
   `;
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
-  //console.log(selectedVideoIndex); todas la tarjetas
+  
   const handleImageClick = (video) => {
-    console.log({ url: video.video })
-    setSelectedVideoIndex({ url: video.video });
-
+    //console.log(video);
+    setSelectedVideoIndex({ url: video.video});
   };
-  //console.log(cards.length>0 && cards.map((item) => item.video))
-  const VideoPlayer = ({ onClose, url }) => {
-    
-    console.log(url);
+
+  const VideoPlayer = ({ onClose, url ,titulo}) => {
+    console.log(titulo);
     return (
       <div>
         <ReactPlayer 
@@ -100,19 +116,39 @@ const SliderComponente = ({ tarjeta }) => {
             height="300px"
         />
         <button onClick={onClose}>Close</button>
-      
     </div>
+    
     );
   };
 
+  //editar tarjeta
+
+  const editarCard = (id) =>{
+    const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
+      if (!confirmed) {
+        return; 
+      }
+    console.log("editar tarjeta", id);
+  }
+
+  // eliminar tarjeta
+
+  const eliminarCard = (id) =>{
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
+      if (!confirmed) {
+        return; 
+      }
+    console.log("eliminar tarjeta", id);
+  }
+
   return <SliderContenedor >
-
     <Titulo >{categoria}</Titulo>
-
     <Slider {...settings} style={slider} >
       {cards.length>0 && filteredCards.map((video) => (
         <ContenedorImg key={video.id} >
-          <p>{video.titulo}</p>
+          <p>{video.titulo}</p> 
+          <HiOutlinePencilAlt style={editar} onClick={() => editarCard(video.id)} /> 
+          <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
           <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
           <p>{video.usuario}</p>
         </ContenedorImg>

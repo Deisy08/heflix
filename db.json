@@ -23,15 +23,15 @@
     },
     {
       "categoria": "Colaboración",
-      "colorFondoBorde": "#99ac39",
       "descripcion": "Colaboracion de cantantes.",
-      "usuario": "",
+      "colorFondoBorde": "#a1b53b",
       "id": 4
     },
     {
       "categoria": "Infantil",
-      "descripcion": "Musica que escuchan los niños(infantes).",
-      "colorFondoBorde": "#5f5ea6",
+      "colorFondoBorde": "#484a8e",
+      "descripcion": "La música que le gusta a los niños(infantes)",
+      "usuario": "",
       "id": 5
     }
   ],
@@ -120,7 +120,7 @@
     {
       "titulo": "Shoong",
       "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Solista",
       "usuario": "Taeyang",
@@ -174,7 +174,7 @@
     {
       "titulo": "Shoong",
       "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Mixto",
       "usuario": "Taeyang&Lisa",
@@ -183,7 +183,7 @@
     {
       "titulo": "Shoong",
       "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.RYf1QqgYhcIOc95tN9iSZQ?pid=ImgDet&rs=1",
+      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
       "categoria": "Colaboración",
       "usuario": "Taeyang&Lisa",
