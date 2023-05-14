@@ -6,7 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player";
 import { HiOutlinePencilAlt, HiPencilAlt } from "react-icons/hi"
 import { AiOutlineDelete, AiTwotoneDelete } from "react-icons/ai"
-
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SliderComponente = ({ tarjeta }) => {
 
@@ -121,23 +122,35 @@ const SliderComponente = ({ tarjeta }) => {
     );
   };
 
-  //editar tarjeta
+  //visibilidad de mi modal
+  const [show, setShow] = useState(false);
+  const [btnEditar, setBtnEditar] = useState(null);
+  const [btnEliminar, setBtnEliminar] = useState(null);
+  const handleClose = () =>{
+  setShow(false);
+  };
+  const handleShow = (video) => {
+    setBtnEditar(video.id)
+		setShow(true);
+  };
 
-  const editarCard = (id) =>{
-    const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
+  //editar tarjeta
+  const editarCard = () =>{
+    /*const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
       if (!confirmed) {
         return; 
-      }
-    console.log("editar tarjeta", id);
+      }*/
+      const url = `http://localhost:3000/cards/${btnEditar}`;
+      console.log(url);
+      console.log(btnEditar);
   }
 
   // eliminar tarjeta
-
   const eliminarCard = (id) =>{
-    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
+    /*const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {
         return; 
-      }
+      }*/
     console.log("eliminar tarjeta", id);
   }
 
@@ -147,7 +160,7 @@ const SliderComponente = ({ tarjeta }) => {
       {cards.length>0 && filteredCards.map((video) => (
         <ContenedorImg key={video.id} >
           <p>{video.titulo}</p> 
-          <HiOutlinePencilAlt style={editar} onClick={() => editarCard(video.id)} /> 
+          <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
           <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
           <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
           <p>{video.usuario}</p>
@@ -157,8 +170,73 @@ const SliderComponente = ({ tarjeta }) => {
     {selectedVideoIndex  && (
         <VideoPlayer url={selectedVideoIndex.url} onClose={() => setSelectedVideoIndex(null)} />
     )}
+    <Modal 
+      size="lg"
+      show={show} 
+      dialogClassName="modal-90w"
+      onHide={handleClose}
+      centered
+      style={{color:"black"}}
+    >
+      <ModalHeader closeButton>
+        <Modal.Title>Editar cartilla</Modal.Title>
+      </ModalHeader>
+      <ModalBody>
+        <FormGroup>
+          <label>Nombre:</label>
+          <input
+            className="form-control "
+              type="text"
+              onChange={(e)=>{ 
+                console.log("nombre");
+            }}
+          />
+        </FormGroup>
+              
+        <FormGroup>
+          <label>
+            Descripción: 
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            onChange={(e)=>{ 
+              console.log("descripcion");
+            }}
+          />
+        </FormGroup>
+              
+        <FormGroup>
+          <label>
+            Color: 
+          </label>
+          <input
+          className="form-control "
+          type="color"
+          onChange={(e)=>{ 
+            console.log("color");
+          }}
+          />
+        </FormGroup>
+      </ModalBody>
 
+      <ModalFooter>
+        <Button
+          color="primary"
+          onClick={editarCard}
+        >
+          Editar
+        </Button>
+        <Button
+          color="danger"
+          onClick={handleClose}
+        >
+          Cancelar
+        </Button>
+      </ModalFooter>
+    </Modal>
   </SliderContenedor>
+  
 }
 
 export default SliderComponente
