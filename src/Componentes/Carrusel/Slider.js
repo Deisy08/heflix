@@ -131,7 +131,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [video,setVideo]= useState("")
   const [imgVideo,setImgVideo]= useState("")
   const [descripcion,setDescripcion]= useState("")
-  const [categotia,setCategotia]= useState("")
+  const [cate,setCate]= useState("")
   const [usuario,setUsuario]= useState("")
 
   const handleClose = () =>{
@@ -143,7 +143,7 @@ const SliderComponente = ({ tarjeta }) => {
     setVideo(item.video)
     setImgVideo(item.imgVideo)
     setDescripcion(item.descripcion)
-    setCategotia(item.categoria)
+    setCate(item.categoria)
     setUsuario(item.usuario)
 		setShow(true);
   };
@@ -179,26 +179,27 @@ const SliderComponente = ({ tarjeta }) => {
   const isValidCategoria = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
   const isValidUsuario = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
   
-  return <SliderContenedor >
-    <Titulo >{categoria}</Titulo>
-    <Slider {...settings} style={slider} >
-      {cards.length>0 && filteredCards.map((video) => (
-        <ContenedorImg key={video.id} >
-          <p>{video.titulo}</p> 
-          <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
-          <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
-          <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
-          <p>{video.usuario}</p>
-        </ContenedorImg>
-      ))}
-    </Slider>
-    {selectedVideoIndex  && (
-        <VideoPlayer url={selectedVideoIndex.url} onClose={() => setSelectedVideoIndex(null)} />
-    )}
+  return <>
+    <SliderContenedor >
+      <Titulo >{categoria}</Titulo>
+      <Slider {...settings} style={slider} >
+        {cards.length>0 && filteredCards.map((video) => (
+          <ContenedorImg key={video.id} >
+            <p>{video.titulo}</p> 
+            <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
+            <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
+            <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
+            <p>{video.usuario}</p>
+          </ContenedorImg>
+        ))}
+      </Slider>
+      {selectedVideoIndex  && (
+          <VideoPlayer url={selectedVideoIndex.url} onClose={() => setSelectedVideoIndex(null)} />
+      )}
+    </SliderContenedor>
     <Modal 
       size="lg"
       show={show} 
-      dialogClassName="modal-90w"
       onHide={handleClose}
       centered
       style={{color:"black"}}
@@ -270,14 +271,14 @@ const SliderComponente = ({ tarjeta }) => {
             Categoria: 
           </label>
           <input
-          className={`form-control ${categoria !== null ? (isValidCategoria ? 'is-valid' : 'is-invalid') : ''}`}
+          className={`form-control ${cate !== null ? (isValidCategoria ? 'is-valid' : 'is-invalid') : ''}`}
           type="text"
-          value={categoria}
+          value={cate}
           onChange={(e)=>{ 
-            setCategotia(e.target.value);
+            setCate(e.target.value);
           }}
           />
-          {categoria !== null && !isValidCategoria && <div className="invalid-feedback">La categoria debe de existir.</div>}
+          {cate !== null && !isValidCategoria && <div className="invalid-feedback">La categoria debe de existir.</div>}
         </FormGroup>
         
         <FormGroup>
@@ -311,7 +312,7 @@ const SliderComponente = ({ tarjeta }) => {
         </Button>
       </ModalFooter>
     </Modal>
-  </SliderContenedor>
+  </>
   
 }
 
