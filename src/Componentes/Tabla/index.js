@@ -127,7 +127,7 @@ const Tabla = () => {
         .catch(err => console.log(err)) 
         window.location.href = '/';
     }
-
+    //validaciones
 	const isValidName = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(nameCategory); // Expresión regular que verifica si el primer caracter es mayúscula y los siguientes son letras.
     const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);
     const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)

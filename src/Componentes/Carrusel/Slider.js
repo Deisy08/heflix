@@ -126,11 +126,25 @@ const SliderComponente = ({ tarjeta }) => {
   const [show, setShow] = useState(false);
   const [btnEditar, setBtnEditar] = useState(null);
   const [btnEliminar, setBtnEliminar] = useState(null);
+  //inputs de mi cartilla
+  const [titulo,setTitulo]= useState("")
+  const [video,setVideo]= useState("")
+  const [imgVideo,setImgVideo]= useState("")
+  const [descripcion,setDescripcion]= useState("")
+  const [categotia,setCategotia]= useState("")
+  const [usuario,setUsuario]= useState("")
+
   const handleClose = () =>{
   setShow(false);
   };
-  const handleShow = (video) => {
-    setBtnEditar(video.id)
+  const handleShow = (item) => {
+    setBtnEditar(item.id)
+    setTitulo(item.titulo)
+    setVideo(item.video)
+    setImgVideo(item.imgVideo)
+    setDescripcion(item.descripcion)
+    setCategotia(item.categoria)
+    setUsuario(item.usuario)
 		setShow(true);
   };
 
@@ -147,13 +161,24 @@ const SliderComponente = ({ tarjeta }) => {
 
   // eliminar tarjeta
   const eliminarCard = (id) =>{
+    setBtnEliminar(id)
+    const url = `http://localhost:3000/cards/${btnEliminar}`;
+      console.log(url);
+      console.log("eliminar tarjeta", btnEliminar);
     /*const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {
         return; 
       }*/
-    console.log("eliminar tarjeta", id);
   }
 
+  //validaciones
+  const isValidTitulo = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(titulo);
+  const isValidVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(video);
+  const isValidImgVideo = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(imgVideo);
+  const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);
+  const isValidCategoria = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
+  const isValidUsuario = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
+  
   return <SliderContenedor >
     <Titulo >{categoria}</Titulo>
     <Slider {...settings} style={slider} >
@@ -183,40 +208,91 @@ const SliderComponente = ({ tarjeta }) => {
       </ModalHeader>
       <ModalBody>
         <FormGroup>
-          <label>Nombre:</label>
+          <label>Titulo:</label>
           <input
-            className="form-control "
-              type="text"
-              onChange={(e)=>{ 
-                console.log("nombre");
+            className={`form-control ${titulo !== null ? (isValidTitulo ? 'is-valid' : 'is-invalid') : ''}`}
+            type="text"
+            value={titulo}
+            onChange={(e)=>{ 
+              setTitulo(e.target.value);
             }}
           />
+          {titulo !== null && !isValidTitulo && <div className="invalid-feedback">El nombre de esta categoria debe comenzar en mayúscula.</div>}
         </FormGroup>
               
+        <FormGroup>
+          <label>
+            Video: 
+          </label>
+          <input
+            className={`form-control ${video !== null ? (isValidVideo ? 'is-valid' : 'is-invalid') : ''}`}
+            type="text"
+            value={video}
+            onChange={(e)=>{ 
+              setVideo(e.target.value);
+            }}
+          />
+          {video !== null && !isValidVideo && <div className="invalid-feedback">El video de esta categoria debe ser la original.</div>}
+        </FormGroup>
+              
+        <FormGroup>
+          <label>
+            Imagen del video: 
+          </label>
+          <input
+          className={`form-control ${imgVideo !== null ? (isValidImgVideo ? 'is-valid' : 'is-invalid') : ''}`}
+          type="text"
+          value={imgVideo}
+          onChange={(e)=>{ 
+            setImgVideo(e.target.value);
+          }}
+          />
+          {imgVideo !== null && !isValidImgVideo && <div className="invalid-feedback">La imagen del video.</div>}
+        </FormGroup>
+
         <FormGroup>
           <label>
             Descripción: 
           </label>
-          <input
-            className="form-control"
-            type="text"
-            onChange={(e)=>{ 
-              console.log("descripcion");
-            }}
-          />
-        </FormGroup>
-              
-        <FormGroup>
-          <label>
-            Color: 
-          </label>
-          <input
-          className="form-control "
-          type="color"
+          <textarea
+          className={`form-control ${descripcion !== null ? (isValidDescription ? 'is-valid' : 'is-invalid') : ''}`}
+          type="text"
+          value={descripcion}
           onChange={(e)=>{ 
-            console.log("color");
+            setDescripcion(e.target.value);
           }}
           />
+          {descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar en mayúscula.</div>}
+        </FormGroup>
+
+        <FormGroup>
+          <label>
+            Categoria: 
+          </label>
+          <input
+          className={`form-control ${categoria !== null ? (isValidCategoria ? 'is-valid' : 'is-invalid') : ''}`}
+          type="text"
+          value={categoria}
+          onChange={(e)=>{ 
+            setCategotia(e.target.value);
+          }}
+          />
+          {categoria !== null && !isValidCategoria && <div className="invalid-feedback">La categoria debe de existir.</div>}
+        </FormGroup>
+        
+        <FormGroup>
+          <label>
+            Usuario: 
+          </label>
+          <input
+          className={`form-control ${usuario !== null ? (isValidUsuario ? 'is-valid' : 'is-invalid') : ''}`}
+          type="text"
+          value={usuario}
+          onChange={(e)=>{ 
+            setUsuario(e.target.value);
+          }}
+          />
+          {usuario !== null && !isValidUsuario && <div className="invalid-feedback">La usuario debe de existir.</div>}
         </FormGroup>
       </ModalBody>
 
