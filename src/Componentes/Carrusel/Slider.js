@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player";
-import { HiOutlinePencilAlt, HiPencilAlt } from "react-icons/hi"
-import { AiOutlineDelete, AiTwotoneDelete } from "react-icons/ai"
+import { HiOutlinePencilAlt } from "react-icons/hi"
+import { AiOutlineDelete } from "react-icons/ai"
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -64,17 +64,31 @@ const SliderComponente = ({ tarjeta }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: filteredCards.length >= 4 ? 4 : filteredCards.length,
+    slidesToShow: filteredCards.length >= 5 ? 5 : filteredCards.length,
     slidesToScroll: 1,
     focusOnSelect: true,
     responsive: [
+      {
+        breakpoint: 508, 
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
       {
         breakpoint: 768, 
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1
         }
-      }
+      },
+      {
+        breakpoint: 1024, 
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
     ]
   };
 
@@ -84,17 +98,27 @@ const SliderComponente = ({ tarjeta }) => {
 
   const TarjetaImg = styled.img`
     border: 2px solid ${colorFondoBorde};
+    background: ${colorFondoBorde};
+    padding: 0 5px;
     border-radius: 5px;
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    height: 260px;
     box-sizing: border-box;
     cursor: pointer;
-    &:hover {
+    /*&:hover {
       border: 2px solid ${colorFondoBorde};
       width: 175px;
       height: 175px;
       border-radius: 5px;
       box-shadow: 0 0 10px ${colorFondoBorde};
+    }*/
+    @media (min-width: 768px){
+      width: 100%;
+      height: 225px;
+    }
+    @media (min-width: 1024px){
+      width: 100%;
+      height: 200px;
     }
   `;
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
@@ -198,8 +222,7 @@ const SliderComponente = ({ tarjeta }) => {
   const eliminarCard = async (id) =>{
     setBtnEliminar(id)
     const url = `http://localhost:3000/cards/${id}`;
-      console.log(url);
-      console.log("eliminar tarjeta", btnEliminar);
+    //console.log(url);
     const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {
         return; 
