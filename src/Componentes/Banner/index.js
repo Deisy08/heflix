@@ -1,5 +1,34 @@
 import { Link } from "react-router-dom"
-import styled from "styled-components"
+import img_m1 from "../../assets/img/banner_m1.jpg"
+import img_m2 from "../../assets/img/banner_m2.jpg"
+import img_m3 from "../../assets/img/banner_m3.jpg"
+import img_m4 from "../../assets/img/banner_m4.jpg"
+import img_t1 from "../../assets/img/banner3.jpg"
+import img_t2 from "../../assets/img/banner6.jpg"
+import img_t3 from "../../assets/img/banner5.jpg"
+import img_t4 from "../../assets/img/banner4.jpg"
+import img_t5 from "../../assets/img/banner2.jpg"
+import styled, { keyframes } from "styled-components"
+
+const bannerM = keyframes`
+    0%,20%{ background-image: url(${img_m1})}
+    25%,45%{ background-image: url(${img_m2})}
+    50%,70%{background-image: url(${img_m3})}
+    75%,100%{background-image: url(${img_m4})}
+`
+const bannerT = keyframes`
+    0%,20%{ background-image: url(${img_t1})}
+    25%,45%{ background-image: url(${img_t2});}
+    50%,70%{background-image: url(${img_t3})}
+    75%,100%{background-image: url(${img_t4});}
+`
+
+const bannerD = keyframes`
+    0%,20%{ background-image: url(${img_t5})}
+    25%,45%{ background-image: url(${img_t3});}
+    50%,70%{background-image: url(${img_t2})}
+    75%,100%{background-image: url(${img_t4});}
+`
 
 const BannerContenedor = styled.section`
     position: relative;
@@ -8,65 +37,22 @@ const BannerContenedor = styled.section`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: banner 20s infinite linear alternate;
-    @keyframes banner {
-        0%,20%{
-            background-image: url(../img/banner_m1.jpg);
-        }
-        25%,45%{
-        background-image: url(../img/banner_m2.jpg);
-        }
-        50%,70%{
-            background-image: url(../img/banner_m3.jpg);
-        }
-        75%,100%{
-            background-image: url(../img/banner_m4.jpg);
-        }
-    }
+    animation: ${bannerM} 20s infinite linear alternate;
+   
     
     @media (min-width: 768px) {
         background-size: cover;
-        height: calc(50vh - 190px);
-        
-        @keyframes banner {
-            0%,20%{
-                background-image: url(../img/banner3.jpg);
-            }
-            25%,45%{
-            background-image: url(../img/banner6.jpg);
-            }
-            50%,70%{
-                background-image: url(../img/banner5.jpg);
-            }
-            75%,100%{
-                background-image: url(../img/banner4.jpg);
-            }
-        }
+        height: 300px;
+        animation: ${bannerT} 20s infinite linear alternate;
     }
 
     @media (min-width: 1024px) {
         background-size: cover;
         height: calc(100vh - 500px);
-        @keyframes banner {
-            0%,20%{
-                background-image: url(../img/banner2.jpg);
-            }
-            25%,40%{
-            background-image: url(../img/banner5.jpg);
-            }
-            45%,65%{
-                background-image: url(../img/banner5.jpg);
-            }
-            70%,81%{
-                background-image: url(../img/banner6.jpg);
-            }
-            84%,100%{
-                background-image: url(../img/banner4.jpg);
-            }
-        }
+        animation: ${bannerD} 20s infinite linear alternate;
+        
     }
 `
-
 const Contenedor = styled.div`
     width: 100%;
     height: 100%;
@@ -76,7 +62,6 @@ const Contenedor = styled.div`
     background: rgba(0, 0, 0, 0.6);
     
 `
-
 const Contenido = styled.div`
     margin: 0;
     padding: 0;
@@ -99,7 +84,6 @@ const Contenido = styled.div`
     }
 
 `
-
 const H1 = styled(Contenido)`
     margin: 20px;
     font-size: 30px;
@@ -142,6 +126,9 @@ const Enlace = styled.button`
         display: none;
     }
 `
+
+
+
 function Banner() {
     return <BannerContenedor>
         <Contenedor>
