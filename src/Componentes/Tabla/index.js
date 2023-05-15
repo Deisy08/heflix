@@ -41,12 +41,11 @@ const Tabla = () => {
     const [data, setData] = useState([]);
     const [btnEditar, setBtnEditar] = useState(null);
     const [btnEliminar, setBtnEliminar] = useState(null);
+    //elementos de mi modal
 	const [nameCategory,setNameCategory]= useState("")
     const [color,setColor]= useState("")
     const [descripcion,setDescripcion]= useState("")
 
-	//console.log(nameCategory)
-    
     useEffect(() => {
         fetch('http://localhost:3000/categorias')
         .then(response => response.json())
@@ -72,8 +71,7 @@ const Tabla = () => {
         // Agregar el ID del registro seleccionado a la URL del endpoint
         const url = `http://localhost:3000/categorias/${btnEditar}`;
         console.log(url);
-        console.log(btnEditar);
-
+        //console.log(btnEditar);
         // Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
 		   fetch(url, {
 			   method: 'PUT', // o PATCH
@@ -81,13 +79,12 @@ const Tabla = () => {
 				   'Content-Type': 'application/json'
 			   },
 			   body: JSON.stringify({
-				   categoria: nameCategory,// Valor actualizado del nombre,
-				   descripcion: descripcion,// Valor actualizado de la descripción,
-				   colorFondoBorde: color// Valor actualizado del color,
+				   categoria: nameCategory,// Valor actualizado 
+				   descripcion: descripcion,
+				   colorFondoBorde: color
 			   })
 		   })
 		   .then(response => {
-                // Manejar cualquier error de la API
                 if (!response.ok) {
                     throw new Error('Error al actualizar la categoría');
                 }
@@ -111,7 +108,7 @@ const Tabla = () => {
             return; 
         }
         const url = `http://localhost:3000/categorias/${item.id}`;
-        console.log(url);
+        //console.log(url);
         await fetch(url,{
             method: "DELETE",
             headers: {

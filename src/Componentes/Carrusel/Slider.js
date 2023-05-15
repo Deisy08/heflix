@@ -123,6 +123,7 @@ const SliderComponente = ({ tarjeta }) => {
   };
 
   //visibilidad de mi modal
+  const [data, setData] = useState([]);
   const [show, setShow] = useState(false);
   const [btnEditar, setBtnEditar] = useState(null);
   const [btnEliminar, setBtnEliminar] = useState(null);
@@ -133,6 +134,13 @@ const SliderComponente = ({ tarjeta }) => {
   const [descripcion,setDescripcion]= useState("")
   const [cate,setCate]= useState("")
   const [usuario,setUsuario]= useState("")
+ 
+  useEffect(() => {
+    fetch('http://localhost:3000/cards')
+    .then(response => response.json())
+    .then(data => setData(data))
+    .catch(error => console.error(error));
+  }, []);
 
   const handleClose = () =>{
   setShow(false);
@@ -150,31 +158,71 @@ const SliderComponente = ({ tarjeta }) => {
 
   //editar tarjeta
   const editarCard = () =>{
-    /*const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
+    const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
       if (!confirmed) {
         return; 
-      }*/
-      const url = `http://localhost:3000/cards/${btnEditar}`;
-      console.log(url);
-      console.log(btnEditar);
+      }
+    const url = `http://localhost:3000/cards/${btnEditar}`;
+    //console.log(url);//console.log(btnEditar);
+		  fetch(url, {
+        method: 'PUT', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          titulo: titulo,
+          video: video, 
+          imgVideo: imgVideo,
+          descripcion: descripcion,
+          categoria:cate,
+          usuario: usuario
+        })
+      })
+      .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al actualizar la cartilla');
+          }
+          return response.json();
+        })
+      .then(data => {
+        console.log('Datos actualizados:', data);
+        setData(data);
+        setShow(false);
+        
+      })
+      .catch(error => console.error(error));
+      //window.location.reload()
   }
 
   // eliminar tarjeta
-  const eliminarCard = (id) =>{
+  const eliminarCard = async (id) =>{
     setBtnEliminar(id)
-    const url = `http://localhost:3000/cards/${btnEliminar}`;
+    const url = `http://localhost:3000/cards/${id}`;
       console.log(url);
       console.log("eliminar tarjeta", btnEliminar);
-    /*const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {
         return; 
-      }*/
+      }
+    await fetch(url,{
+        method: "DELETE",
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Datos actualizados:', data);
+        setData(data);
+        setBtnEliminar(null);
+    })
+    .catch(err => console.log(err)) 
   }
 
   //validaciones
   const isValidTitulo = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(titulo);
   const isValidVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(video);
-  const isValidImgVideo = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(imgVideo);
+  const isValidImgVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(imgVideo);
   const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);
   const isValidCategoria = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
   const isValidUsuario = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
