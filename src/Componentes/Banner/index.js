@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import React, {useState} from 'react'
+import ReactPlayer from "react-player/youtube";
 import img_m1 from "../../assets/img/banner_m1.jpg"
 import img_m2 from "../../assets/img/banner_m2.jpg"
 import img_m3 from "../../assets/img/banner_m3.jpg"
@@ -9,6 +10,7 @@ import img_t3 from "../../assets/img/banner5.jpg"
 import img_t4 from "../../assets/img/banner4.jpg"
 import img_t5 from "../../assets/img/banner2.jpg"
 import styled, { keyframes } from "styled-components"
+import { Typewriter } from 'react-simple-typewriter'
 
 const bannerM = keyframes`
     0%,20%{ background-image: url(${img_m1})}
@@ -22,18 +24,16 @@ const bannerT = keyframes`
     50%,70%{background-image: url(${img_t3})}
     75%,100%{background-image: url(${img_t4});}
 `
-
 const bannerD = keyframes`
     0%,20%{ background-image: url(${img_t5})}
     25%,45%{ background-image: url(${img_t3});}
     50%,70%{background-image: url(${img_t2})}
     75%,100%{background-image: url(${img_t4});}
 `
-
 const BannerContenedor = styled.section`
     position: relative;
     widows: 100%;
-    height: calc(60vh - 50px);
+    height: 550px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,9 +48,8 @@ const BannerContenedor = styled.section`
 
     @media (min-width: 1024px) {
         background-size: cover;
-        height: calc(100vh - 500px);
+        height: calc(100vh - 400px);
         animation: ${bannerD} 20s infinite linear alternate;
-        
     }
 `
 const Contenedor = styled.div`
@@ -77,35 +76,35 @@ const Contenido = styled.div`
     
     @media (min-width: 768px) {
         text-align: left;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        padding-bottom: 10px;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-bottom: 0;
     }
 
 `
 const H1 = styled(Contenido)`
     margin: 20px;
-    font-size: 30px;
-    
+    font-size: 40px;
+    display: inline;
     @media (min-width: 768px) {
         margin-bottom: 0;
-        width: 400px;
     }
 `
-const P = styled(Contenido)`
+const P = styled.p`
     margin: 20px;
-    padding: 0 10px;
     font-size: 20px;
     margin-bottom: 30px;
     @media (min-width: 768px) {
-        width: 400px;
+        width: 350px;
     }
     @media (min-width: 1024px) {
-        width: 45%;
+        width: 75%;
+    }
+    @media (min-width: 1424px) {
+        width: 60%;
     }
 `
-
 const Enlace = styled.button`
     color: #FFF;
     background: none;
@@ -126,18 +125,105 @@ const Enlace = styled.button`
         display: none;
     }
 `
+const VideoC = styled.div`
+        
+        display: block;
+        width:19.5rem;
+        @media (min-width: 800px){
+            width: 20rem;
+            height: calc(90vh - 700px)
+        }
+        @media (min-width: 900px){
+            width: 25rem;
+            height: calc(90vh - 650px)
+        }
+        @media (min-width: 1024px){
+            width: 30rem;
 
-
-
+            height: calc(90vh - 620px)
+        }
+        @media (min-width: 1424px){
+            width: 560px;
+        }
+` 
+   
 function Banner() {
+
+    const [showVideo, setShowVideo] = useState(false);
+
+    const handleVerClick = () => {
+      setShowVideo(true);
+    };
+  
+    const handleCerrarClick = () => {
+      setShowVideo(false);
+    };
+    
+    const VideoT = styled.div`
+        display: none;
+        padding:0 30px 20px 0;
+        @media (min-width: 768px){
+            display: block;
+
+        }
+    `
+    
+    const VideoPlayer = () => {
+        return (
+        <VideoC>
+            <ReactPlayer 
+                url="https://www.youtube.com/embed/x0sASwK5t2M?enablejsapi=1"
+                controls
+                loop
+                muted
+                enablejsapi="true"
+                playing={true}
+                width="auto"
+                height="100%"
+                config={{
+                    youtube: {
+                      playerVars: { showinfo: 1 }
+                    }
+                  }}
+            />
+        </VideoC>
+        
+        );
+    };
+
     return <BannerContenedor>
         <Contenedor>
             <Contenido>
-                <H1>K-Pop</H1>
-                <P>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
-                <Link to="/NewVideo">
-                    <Enlace type="button" className="button none">Ver</Enlace>
-                </Link>
+                <div>
+                    <H1>K-Pop</H1>
+                    <P>Es un género musical que incluye diversos estilos musicales como el {" "}
+                        <span style={{ color: '#ce4646', fontWeight: 'bold' }}>
+                            <Typewriter
+                            words={['POP', 'RAP', 'Rock o R&B', 'EDM', 'Hip Hop']}
+                            loop
+                            cursor
+                            cursorStyle='<'
+                            typeSpeed={120}
+                            deleteSpeed={50}
+                        />
+                        </span> {" "}
+                        y que se refiere específicamente a la música popular de Corea del Sur.
+                    </P>
+                    {!showVideo && <Enlace type="button" onClick={handleVerClick}>Ver</Enlace>}
+                    {showVideo && (<div>
+                        <ReactPlayer
+                            url="https://www.youtube.com/embed/x0sASwK5t2M?enablejsapi=1"
+                            controls
+                            width="500px"
+                            height="300px"
+                        />
+                        <button onClick={handleCerrarClick}>Close</button>
+                        </div>)
+                    }
+                </div>
+                
+                <VideoT><VideoPlayer /></VideoT>
+                
             </Contenido>
         </Contenedor>
         

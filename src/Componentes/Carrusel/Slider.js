@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 import { HiOutlinePencilAlt } from "react-icons/hi"
 import { AiOutlineDelete } from "react-icons/ai"
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
