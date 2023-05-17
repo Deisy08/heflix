@@ -99,11 +99,13 @@ const H1 = styled(Contenido)`
     }
 `
 const P = styled.p`
-    margin: 20px;
+    margin: 20px 20px 30px;
     font-size: 20px;
-    margin-bottom: 30px;
+    text-align: center;
+    width: 95%;
     @media (min-width: 768px) {
         width: 350px;
+        text-align: start;
     }
     @media (min-width: 1024px) {
         width: 75%;

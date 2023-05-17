@@ -37,29 +37,39 @@ const SliderComponente = ({ tarjeta }) => {
    font-style: normal;
    font-weight: 400;
   `
- const ContenedorImg = styled.section`
-   padding: 10px;
-   display: flex;
-   justify-content: center;
-   position: relative;
+ const ContenedorImg = styled.div`
+    padding: 0 10px;
+    position: relative;
+    display: inline-block;
+    
+    @media (min-width: 768px) {
+      max-width: 255px;
+    }
+    @media (min-width: 1024px) {
+      max-width: 300px;
+    }
  `
  const eliminar = {
   position: "absolute",
-  right: "30px",
-  top: "60px",
-  cursor: "pointer"
+  width: "23px",
+  height:"23px",
+  right: "23px",
+  top: "50px",
+  cursor: "pointer",
+  color:colorFondoBorde,
  }
-
  const editar = {
   position: "absolute",
+  width: "23px",
+  height:"23px",
   right: "50px",
-  top: "60px",
-  cursor: "pointer"
+  top: "50px",
+  cursor: "pointer",
+  color:colorFondoBorde,
  }
-
   // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
   const filteredCards = cards.filter(card => card.categoria === categoria);
- 
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -71,52 +81,39 @@ const SliderComponente = ({ tarjeta }) => {
       {
         breakpoint: 508, 
         settings: {
-          slidesToShow: 1,
+          slidesToShow: filteredCards.length >= 1 ? 1 : filteredCards.length,
           slidesToScroll: 1
         }
       },
       {
         breakpoint: 768, 
         settings: {
-          slidesToShow: 2,
+          slidesToShow: filteredCards.length >= 2 ? 2 : filteredCards.length,
           slidesToScroll: 1
         }
       },
       {
         breakpoint: 1024, 
         settings: {
-          slidesToShow: 3,
+          slidesToShow: filteredCards.length >= 3 ? 3 : filteredCards.length,
           slidesToScroll: 1
         }
       },
     ]
   };
-
   const slider = {
     padding: "0 10px",
   }
-
   const TarjetaImg = styled.img`
     border: 2px solid ${colorFondoBorde};
     background: ${colorFondoBorde};
     padding: 0 5px;
     border-radius: 5px;
     width: 100%;
-    height: 260px;
+    height: 250px;
     box-sizing: border-box;
     cursor: pointer;
-    /*&:hover {
-      border: 2px solid ${colorFondoBorde};
-      width: 175px;
-      height: 175px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px ${colorFondoBorde};
-    }*/
     @media (min-width: 768px){
-      width: 100%;
-      height: 225px;
-    }
-    @media (min-width: 1024px){
       width: 100%;
       height: 200px;
     }
@@ -128,10 +125,17 @@ const SliderComponente = ({ tarjeta }) => {
     setSelectedVideoIndex({ url: video.video});
   };
 
+  const VideoPlayerContenedor = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+  `
+
   const VideoPlayer = ({ onClose, url ,titulo}) => {
-    console.log(titulo);
     return (
-      <div>
+      <VideoPlayerContenedor>
         <ReactPlayer 
             url={url}
             controls
@@ -140,8 +144,8 @@ const SliderComponente = ({ tarjeta }) => {
             width="500px"
             height="300px"
         />
-        <button onClick={onClose}>Close</button>
-    </div>
+        <Button onClick={onClose}>Close</Button>
+    </VideoPlayerContenedor>
     
     );
   };
@@ -255,12 +259,14 @@ const SliderComponente = ({ tarjeta }) => {
       <Titulo >{categoria}</Titulo>
       <Slider {...settings} style={slider} >
         {cards.length>0 && filteredCards.map((video) => (
-          <ContenedorImg key={video.id} >
-            <p>{video.titulo}</p> 
-            <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
-            <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
-            <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
-            <p>{video.usuario}</p>
+          <ContenedorImg  >
+            <div key={video.id}>
+              <p>{video.titulo}</p> 
+              <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
+              <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
+              <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
+              <p>{video.usuario}</p>
+            </div>
           </ContenedorImg>
         ))}
       </Slider>

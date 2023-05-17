@@ -38,7 +38,7 @@
   "cards": [
     {
       "titulo": "Like Crazy",
-      "video": "https://www.youtube.com/watch?v=nOI67IDlNMQ&list=RDnOI67IDlNMQ&start_radio=1",
+      "video": "https://www.youtube.com/watch?v=nOI67IDlNMQ",
       "imgVideo": "https://www.lyrical-nonsense.com/wp-content/uploads/2023/02/Jimin-FACE.jpg",
       "descripcion": "Una de las canciones de Park Jimin",
       "categoria": "Solista",
@@ -242,6 +242,15 @@
       "categoria": "Infantil",
       "usuario": "ENHYPEN ",
       "id": "W6g_WeC"
+    },
+    {
+      "titulo": "Masquerade",
+      "video": "https://www.youtube.com/watch?v=l19AEmRvh-Y",
+      "imgVideo": "https://th.bing.com/th?id=OIF.%2bB8V9XY6iea1ejEioVpLuw&pid=ImgDet&rs=1",
+      "descripcion": "LISTEN TO \"Masquerade\" IN 6 LANGUAGES ON YOUTUBE : \nGo to Settings ▶️ Audio Track to change the language\nAvailable languages : English, Korean, Japanese, Chinese, Spanish, Vietnamese",
+      "categoria": "Solista",
+      "usuario": "MIDNATT",
+      "id": "jZ4FuXt"
     }
   ]
 }
