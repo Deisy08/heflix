@@ -51,6 +51,11 @@ const BannerContenedor = styled.section`
         height: calc(100vh - 400px);
         animation: ${bannerD} 20s infinite linear alternate;
     }
+    @media (min-width: 1424px) {
+        background-size: cover;
+        height: calc(100vh - 350px);
+        animation: ${bannerD} 20s infinite linear alternate;
+    }
 `
 const Contenedor = styled.div`
     width: 100%;
@@ -85,7 +90,9 @@ const Contenido = styled.div`
 `
 const H1 = styled(Contenido)`
     margin: 20px;
-    font-size: 40px;
+    color: #FFF;
+    font-weight: bolder;
+    font-size: 45px;
     display: inline;
     @media (min-width: 768px) {
         margin-bottom: 0;
@@ -100,6 +107,7 @@ const P = styled.p`
     }
     @media (min-width: 1024px) {
         width: 75%;
+        font-size: 21.5px;
     }
     @media (min-width: 1424px) {
         width: 60%;
@@ -146,6 +154,14 @@ const VideoC = styled.div`
             width: 560px;
         }
 ` 
+const VideoMovilC = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+`
+
    
 function Banner() {
 
@@ -158,7 +174,7 @@ function Banner() {
     const handleCerrarClick = () => {
       setShowVideo(false);
     };
-    
+
     const VideoT = styled.div`
         display: none;
         padding:0 30px 20px 0;
@@ -167,8 +183,8 @@ function Banner() {
 
         }
     `
-    
-    const VideoPlayer = () => {
+
+    const VideoPlayerT = () => {
         return (
         <VideoC>
             <ReactPlayer 
@@ -182,23 +198,57 @@ function Banner() {
                 height="100%"
                 config={{
                     youtube: {
-                      playerVars: { showinfo: 1 }
+                    playerVars: { showinfo: 1 }
                     }
-                  }}
+                }}
             />
         </VideoC>
         
         );
     };
 
+    
+    const VideoPlayer = ({ onClose }) => {
+        const handleMediaQueryChange = (mediaQuery) => {
+        if (mediaQuery.matches) {
+            onClose();
+        }
+        };
+    
+        // Verificar el tamaño de la pantalla usando una media query
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        mediaQuery.addListener(handleMediaQueryChange);
+    
+        // Cerrar el video si se cumple la media query en el montaje inicial
+        if (mediaQuery.matches) {
+        onClose();
+        }
+    
+        return (
+        <VideoMovilC >
+            <ReactPlayer
+            url="https://www.youtube.com/watch?v=x0sASwK5t2M"
+            controls
+            width="calc(80vh - 300px)"
+            height="300px"
+            />
+            <Enlace  style={{marginTop:"25px"}} onClick={onClose}>Cerrar</Enlace>
+        </VideoMovilC>
+        );
+    };
+
     return <BannerContenedor>
         <Contenedor>
-            <Contenido>
-                <div>
-                    <H1>K-Pop</H1>
-                    <P>Es un género musical que incluye diversos estilos musicales como el {" "}
+            {showVideo ? (
+                <VideoPlayer onClose={handleCerrarClick} />
+                ) : (
+                <Contenido>
+                    <div>
+                    <H1>K-POP</H1>
+                    <P>
+                        Es un género musical que incluye diversos estilos musicales como el{' '}
                         <span style={{ color: '#ce4646', fontWeight: 'bold' }}>
-                            <Typewriter
+                        <Typewriter
                             words={['POP', 'RAP', 'Rock o R&B', 'EDM', 'Hip Hop']}
                             loop
                             cursor
@@ -206,25 +256,16 @@ function Banner() {
                             typeSpeed={120}
                             deleteSpeed={50}
                         />
-                        </span> {" "}
+                        </span>{' '}
                         y que se refiere específicamente a la música popular de Corea del Sur.
                     </P>
-                    {!showVideo && <Enlace type="button" onClick={handleVerClick}>Ver</Enlace>}
-                    {showVideo && (<div>
-                        <ReactPlayer
-                            url="https://www.youtube.com/embed/x0sASwK5t2M?enablejsapi=1"
-                            controls
-                            width="500px"
-                            height="300px"
-                        />
-                        <button onClick={handleCerrarClick}>Close</button>
-                        </div>)
-                    }
-                </div>
-                
-                <VideoT><VideoPlayer /></VideoT>
-                
-            </Contenido>
+                    <Enlace type="button" onClick={handleVerClick}>
+                        Ver
+                    </Enlace>
+                    </div>
+                    <VideoT><VideoPlayerT /></VideoT>
+                </Contenido>
+            )}
         </Contenedor>
         
     </BannerContenedor>
