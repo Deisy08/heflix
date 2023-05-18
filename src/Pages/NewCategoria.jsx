@@ -66,6 +66,9 @@ const CssTextFieldTextarea = styled(TextField)({
 
 const Mensaje =styled.h5`
     margin-bottom: 10px;
+    @media (max-width: 768px){
+      display: none;  
+    }
 `
 
 const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
