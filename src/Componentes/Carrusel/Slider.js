@@ -9,13 +9,13 @@ import { AiOutlineDelete } from "react-icons/ai"
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Enlace from '../Boton';
-
+import axios from 'axios';
 
 const SliderComponente = ({ tarjeta }) => {
 
   const {colorFondoBorde,categoria} = tarjeta
   const [cards, setCards] = useState([ ]);
-    
+
   useEffect(() => {
     async function fetchCards() {
       const response = await fetch('http://localhost:3000/cards');
@@ -187,42 +187,57 @@ const SliderComponente = ({ tarjeta }) => {
   };
 
   //editar tarjeta
-  const editarCard = () =>{
+  const editarCard = () => {
     const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
-      if (!confirmed) {
-        return; 
-      }
+    if (!confirmed) {
+      return;
+    }
+    
     const url = `http://localhost:3000/cards/${btnEditar}`;
-    //console.log(url);//console.log(btnEditar);
-		  fetch(url, {
-        method: 'PUT', 
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          titulo: titulo,
-          video: video, 
-          imgVideo: imgVideo,
-          descripcion: descripcion,
-          categoria:cate,
-          usuario: usuario
-        })
+    
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        titulo: titulo,
+        video: video,
+        imgVideo: imgVideo,
+        descripcion: descripcion,
+        categoria: cate,
+        usuario: usuario
       })
-      .then(response => {
-          if (!response.ok) {
-            throw new Error('Error al actualizar la cartilla');
-          }
-          return response.json();
-        })
-      .then(data => {
-        console.log('Datos actualizados:', data);
-        setData(data);
-        setShow(false);
-        
-      })
-      .catch(error => console.error(error));
-      window.location.reload()
-  }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al editar el elemento');
+      }
+      return response.json();
+    })
+    .then(updatedItem => {
+      const updatedData = data.map(item => {
+        if (item.id === btnEditar) {
+          return {
+            ...item,
+            titulo: updatedItem.titulo,
+            video: updatedItem.video,
+            imgVideo: updatedItem.imgVideo,
+            descripcion: updatedItem.descripcion,
+            categoria: updatedItem.categoria,
+            usuario: updatedItem.usuario
+          };
+        }
+        return item;
+      });
+      
+      console.log('Datos actualizados:', updatedData);
+      setData(updatedData);
+      setShow(false);
+      window.location.reload();
+    })
+    .catch(error => console.error(error));
+  };
 
   // eliminar tarjeta
   const eliminarCard = async (id) =>{

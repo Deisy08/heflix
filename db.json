@@ -154,12 +154,12 @@
       "id": "bBAnSYK"
     },
     {
-      "titulo": "Official MV 손오공",
-      "video": "https://www.youtube.com/watch?v=-GQg25oP0S4",
-      "imgVideo": "https://th.bing.com/th/id/OIP.AjXfKqs_4WfAupU51QUL6gHaDA?w=293&h=142&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
-      "categoria": "Mixto",
-      "usuario": "SEVENTEEN ",
+      "titulo": "Jacson 100 Ways",
+      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
+      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
+      "categoria": "Grupo",
+      "usuario": "Jackson Wang",
       "id": "Yi8Y2_5"
     },
     {
@@ -217,12 +217,12 @@
       "id": "2Qa_YIY"
     },
     {
-      "titulo": "Hey Tayo",
-      "video": "https://www.youtube.com/watch?v=xTCiQoZPHFM",
-      "imgVideo": "https://images.genius.com/a4671e37f3435e285275d77962e5af70.800x800x1.jpg",
-      "descripcion": "ENHYPEN (엔하이픈) X TAYO - 'HEY TAYO' Official MV \nsdfdsdfg",
+      "titulo": "Jacson 100 Ways",
+      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
+      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
       "categoria": "Infantil",
-      "usuario": "ENHYPEN ",
+      "usuario": "Jackson Wang",
       "id": "cfG_M8g"
     },
     {
@@ -235,12 +235,12 @@
       "id": "ZbPJXGS"
     },
     {
-      "titulo": "Hey Tayo",
-      "video": "https://www.youtube.com/watch?v=xTCiQoZPHFM",
-      "imgVideo": "https://koreajoongangdaily.joins.com/data/photo/2021/07/23/0690a562-feb2-4ec7-b561-cb20541978d7.jpg",
-      "descripcion": "ENHYPEN (엔하이픈) X TAYO - 'HEY TAYO' Official MV \\nsdfdsdfg\n",
-      "categoria": "Infantil",
-      "usuario": "ENHYPEN ",
+      "titulo": "Jacson 100 Ways",
+      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
+      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
+      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
+      "categoria": "Colaboración",
+      "usuario": "Jackson Wang",
       "id": "W6g_WeC"
     },
     {
@@ -251,6 +251,42 @@
       "categoria": "Solista",
       "usuario": "MIDNATT",
       "id": "jZ4FuXt"
+    },
+    {
+      "titulo": "Billy Poco",
+      "video": "https://www.youtube.com/watch?v=wWKu3cCLJWc",
+      "imgVideo": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
+      "descripcion": "Gdfgdfg dfgdfgdfgdfgdffg",
+      "categoria": "Infantil",
+      "usuario": "Enhypen",
+      "id": "OXikayA"
+    },
+    {
+      "titulo": "Tayo tayo",
+      "video": "https://www.youtube.com/watch?v=xTCiQoZPHFM",
+      "imgVideo": "https://th.bing.com/th/id/R.db860fde152ce46b370d759758666f6b?rik=%2fU8ChoW9h%2bEvVg&pid=ImgRaw&r=0",
+      "descripcion": "Fffffffffffffffffff",
+      "categoria": "Infantil",
+      "usuario": "Enhypen",
+      "id": "E2OQVyV"
+    },
+    {
+      "titulo": "Magenta",
+      "video": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
+      "imgVideo": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
+      "descripcion": "Gato con botas",
+      "categoria": "Infantil",
+      "usuario": "Blog para editar",
+      "id": "bKwIUSK"
+    },
+    {
+      "titulo": "Poco tiempo ",
+      "video": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
+      "imgVideo": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
+      "descripcion": "La vida es un camino para seguir",
+      "categoria": "Infantil",
+      "usuario": "Io creo",
+      "id": "Xz87wig"
     }
   ]
 }
