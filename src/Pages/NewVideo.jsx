@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
+import Footer from "../Componentes/Footer";
 
 const CssTextField = styled(TextField)({
         '& .MuiOutlinedInput-root': {
@@ -140,7 +141,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         setDescripcion({value: ""});
     };
 
-    return <Container maxWidth="xl" className="formulario">
+    return <><Container maxWidth="xl" className="formulario">
         <Box
             component="form"
             autoComplete="off"
@@ -260,6 +261,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
             
         </Box> 
     </Container>
+    <Footer/> </>
 }
 
 export default NewVideo

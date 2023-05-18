@@ -6,6 +6,7 @@ import loader from "../assets/img/loading.svg"
 import { validarTitulo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
 import { useNavigate } from 'react-router-dom';
 import Tabla from "../Componentes/Tabla";
+import Footer from "../Componentes/Footer";
 
 const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -133,7 +134,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         setDescripcion({value: ""});
     };
 
-    return <Container maxWidth="xl" className="formulario">
+    return <><Container maxWidth="xl" className="formulario">
         <Box
             component="form"
             autoComplete="off"
@@ -217,9 +218,11 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             <Mensaje>* Aquí se puede editar o eliminar por categoria </Mensaje>
 
             <Tabla />
-
         </Box> 
+        
     </Container>
+    <Footer />
+    </>
 }
 
 export default NewCategoria

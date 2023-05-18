@@ -221,7 +221,7 @@ const SliderComponente = ({ tarjeta }) => {
         
       })
       .catch(error => console.error(error));
-      //window.location.reload()
+      window.location.reload()
   }
 
   // eliminar tarjeta
@@ -246,6 +246,7 @@ const SliderComponente = ({ tarjeta }) => {
         setBtnEliminar(null);
     })
     .catch(err => console.log(err)) 
+    window.location.reload()
   }
 
   //validaciones

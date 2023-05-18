@@ -6,7 +6,7 @@ const Footer = () =>{
         display: flex;
         align-items:center;
         flex-direction:column ;
-        padding:10px 0;
+        padding-top:10px;
         border-top: 2px solid #2A7AE4;
     `
 
@@ -17,7 +17,7 @@ const Footer = () =>{
 
     return <Contenedor >
         <ImgLogo src={texto_logo} alt="nombre logo"/>
-        <p>Site hecho en #challengeAlura por TSG</p>
+        <p style={{marginBottom:"0.8rem"}}>Site hecho en #challengeAlura por TSG</p>
     </Contenedor>
 }
 
