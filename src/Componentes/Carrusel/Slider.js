@@ -8,6 +8,8 @@ import { HiOutlinePencilAlt } from "react-icons/hi"
 import { AiOutlineDelete } from "react-icons/ai"
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Enlace from '../Boton';
+
 
 const SliderComponente = ({ tarjeta }) => {
 
@@ -144,7 +146,7 @@ const SliderComponente = ({ tarjeta }) => {
             width="500px"
             height="300px"
         />
-        <Button onClick={onClose}>Close</Button>
+        <Enlace  onClick={onClose}>Close</Enlace>
     </VideoPlayerContenedor>
     
     );
