@@ -8,8 +8,31 @@ import { HiOutlinePencilAlt } from "react-icons/hi"
 import { AiOutlineDelete } from "react-icons/ai"
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Enlace from '../Boton';
+import ReactModal from 'react-modal';
 import axios from 'axios';
+
+const customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 9999,
+  },
+  content: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '470px',
+    maxHeight: '90vh',
+    border: 'none',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+    padding: '20px',
+    backgroundColor: '#000',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+};
 
 const SliderComponente = ({ tarjeta }) => {
 
@@ -135,29 +158,33 @@ const SliderComponente = ({ tarjeta }) => {
   const handleImageClick = (video) => {
     //console.log(video);
     setSelectedVideoIndex({ url: video.video});
+    
   };
 
-  const VideoPlayerContenedor = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-  `
+  const [isOpen, setIsOpen] = useState(false);
 
-  const VideoPlayer = ({ onClose, url ,titulo}) => {
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  
+  const VideoPlayer = ({ onClose, url}) => {
     return (
-      <VideoPlayerContenedor>
+      <ReactModal
+        isOpen={isOpen}
+        onRequestClose={onClose}
+        contentLabel="Video Popup"
+        style={customStyles}
+      >
         <ReactPlayer 
             url={url}
             controls
             volume="0.5"
             playing={true}
-            width="500px"
+            width="420px"
             height="300px"
         />
-        <Enlace  onClick={onClose}>Close</Enlace>
-    </VideoPlayerContenedor>
+        <button  onClick={onClose}>Close</button>
+    </ReactModal>
     
     );
   };
@@ -237,7 +264,6 @@ const SliderComponente = ({ tarjeta }) => {
     .catch(error => console.error(error));
   };
   
-
   // eliminar tarjeta
   const eliminarCard = async (id) =>{
     setBtnEliminar(id)
@@ -281,7 +307,7 @@ const SliderComponente = ({ tarjeta }) => {
               <p>{video.titulo}</p> 
               <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
               <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
-              <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => handleImageClick(video)}/>
+              <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => {handleImageClick(video); openModal()}}/>
               <p>{video.usuario}</p>
             </div>
           </ContenedorImg>
