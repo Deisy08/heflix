@@ -15,6 +15,16 @@ const SliderComponente = ({ tarjeta }) => {
 
   const {colorFondoBorde,categoria} = tarjeta
   const [cards, setCards] = useState([ ]);
+  const [reloadCards, setReloadCards] = useState(false); // Estado adicional para recargar las tarjetas
+
+  useEffect(() => {
+    async function fetchCards() {
+      const response = await fetch('http://localhost:3000/cards');
+      const data = await response.json();
+      setCards(data);
+    }
+    fetchCards();
+  }, [reloadCards]); // Agregar reloadCards como dependencia
 
   useEffect(() => {
     async function fetchCards() {
@@ -195,37 +205,25 @@ const SliderComponente = ({ tarjeta }) => {
     
     const url = `http://localhost:3000/cards/${btnEditar}`;
     
-    fetch(url, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        titulo: titulo,
-        video: video,
-        imgVideo: imgVideo,
-        descripcion: descripcion,
-        categoria: cate,
-        usuario: usuario
-      })
+    axios.put(url, {
+      titulo: titulo,
+      video: video,
+      imgVideo: imgVideo,
+      descripcion: descripcion,
+      categoria: cate,
+      usuario: usuario
     })
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al editar el elemento');
-      }
-      return response.json();
-    })
-    .then(updatedItem => {
       const updatedData = data.map(item => {
         if (item.id === btnEditar) {
           return {
             ...item,
-            titulo: updatedItem.titulo,
-            video: updatedItem.video,
-            imgVideo: updatedItem.imgVideo,
-            descripcion: updatedItem.descripcion,
-            categoria: updatedItem.categoria,
-            usuario: updatedItem.usuario
+            titulo: titulo,
+            video: video,
+            imgVideo: imgVideo,
+            descripcion: descripcion,
+            categoria: cate,
+            usuario: usuario
           };
         }
         return item;
@@ -234,10 +232,11 @@ const SliderComponente = ({ tarjeta }) => {
       console.log('Datos actualizados:', updatedData);
       setData(updatedData);
       setShow(false);
-      window.location.reload();
+      setReloadCards(!reloadCards);
     })
     .catch(error => console.error(error));
   };
+  
 
   // eliminar tarjeta
   const eliminarCard = async (id) =>{
@@ -259,9 +258,9 @@ const SliderComponente = ({ tarjeta }) => {
         console.log('Datos actualizados:', data);
         setData(data);
         setBtnEliminar(null);
+        setReloadCards(!reloadCards);
     })
     .catch(err => console.log(err)) 
-    window.location.reload()
   }
 
   //validaciones
