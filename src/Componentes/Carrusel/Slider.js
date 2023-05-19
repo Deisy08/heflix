@@ -21,13 +21,13 @@ const customStyles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '470px',
-    maxHeight: '90vh',
+    width: '80%',
+    height: '80%',
     border: 'none',
     borderRadius: '8px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-    padding: '20px',
-    backgroundColor: '#000',
+    padding: '5px 5px 10px',
+    backgroundColor: '#000000E5',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -153,24 +153,30 @@ const SliderComponente = ({ tarjeta }) => {
       height: 200px;
     }
   `;
-  const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
+  const [selectedVideoI, setSelectedVideoI] = useState(null);
   
   const handleImageClick = (video) => {
     //console.log(video);
-    setSelectedVideoIndex({ url: video.video});
+    setSelectedVideoI({ url: video.video, user: video.usuario, description:video.descripcion, title:video.titulo});
     
   };
-
+  let subtitle;
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
   };
+
+  function afterOpenModal() {
+    subtitle.style.color = colorFondoBorde;
+  }
   
-  const VideoPlayer = ({ onClose, url}) => {
+  const VideoPlayer = ({ onClose, url, usuario, descripcion, titulo}) => {
+    //console.log(usuario, descripcion, titulo);
     return (
       <ReactModal
         isOpen={isOpen}
+        onAfterOpen={afterOpenModal}
         onRequestClose={onClose}
         contentLabel="Video Popup"
         style={customStyles}
@@ -179,13 +185,15 @@ const SliderComponente = ({ tarjeta }) => {
             url={url}
             controls
             volume="0.5"
-            playing={true}
-            width="420px"
+            playing={false}
+            width="auto"
             height="300px"
         />
-        <button  onClick={onClose}>Close</button>
+        <p ref={(_subtitle) => (subtitle = _subtitle)}>{usuario}</p>
+        <p>{titulo}</p>
+        <p>{descripcion}</p>
+        <button  onClick={onClose}>Cerrar</button>
     </ReactModal>
-    
     );
   };
 
@@ -313,8 +321,8 @@ const SliderComponente = ({ tarjeta }) => {
           </ContenedorImg>
         ))}
       </Slider>
-      {selectedVideoIndex  && (
-          <VideoPlayer url={selectedVideoIndex.url} onClose={() => setSelectedVideoIndex(null)} />
+      {selectedVideoI  && (
+          <VideoPlayer url={selectedVideoI.url} usuario={selectedVideoI.user} descripcion={selectedVideoI.description} titulo={selectedVideoI.title} onClose={() => setSelectedVideoI(null)} />
       )}
     </SliderContenedor>
     <Modal 
