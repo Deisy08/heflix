@@ -10,7 +10,7 @@ import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactModal from 'react-modal';
 import axios from 'axios';
-
+// css de mi modal de video
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -22,15 +22,12 @@ const customStyles = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '80%',
-    height: '80%',
+    height: '75%',
     border: 'none',
     borderRadius: '8px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-    padding: '5px 5px 10px',
+    padding: '0',
     backgroundColor: '#000000E5',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
   },
 };
 
@@ -160,24 +157,50 @@ const SliderComponente = ({ tarjeta }) => {
     setSelectedVideoI({ url: video.video, user: video.usuario, description:video.descripcion, title:video.titulo});
     
   };
-  let subtitle;
+
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
   };
-
-  function afterOpenModal() {
-    subtitle.style.color = colorFondoBorde;
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  //css de mi modal del contenido del video
+  const title ={
+    fontWeight: "600",
+    color: colorFondoBorde,
+    fontFamily: 'Source Sans Pro',
+    padding: "10px",
   }
+
+  const User =styled.h5`
+    padding-left: 10px;
+    
+  `;
+
+  const descript ={
+    padding: "10px 20px 0",
+  }
+
+  const Btn= styled.button`
+    padding: 10px;
+    background-color: ${colorFondoBorde};
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 10px;
+    &:hover {
+      box-shadow: 0 0 10px ${colorFondoBorde};
+    }
+  `;
   
   const VideoPlayer = ({ onClose, url, usuario, descripcion, titulo}) => {
     //console.log(usuario, descripcion, titulo);
     return (
       <ReactModal
         isOpen={isOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={onClose}
+        onRequestClose={closeModal}
         contentLabel="Video Popup"
         style={customStyles}
       >
@@ -185,14 +208,14 @@ const SliderComponente = ({ tarjeta }) => {
             url={url}
             controls
             volume="0.5"
-            playing={false}
+            playing={true}
             width="auto"
-            height="300px"
+            height="calc(60vh - 200px)"
         />
-        <p ref={(_subtitle) => (subtitle = _subtitle)}>{usuario}</p>
-        <p>{titulo}</p>
-        <p>{descripcion}</p>
-        <button  onClick={onClose}>Cerrar</button>
+        <h1 style={title} >{usuario}</h1>
+        <User>{titulo}</User>
+        <p style={descript}>{descripcion}</p>
+        <Btn onClick={onClose}>Cerrar</Btn>
     </ReactModal>
     );
   };
