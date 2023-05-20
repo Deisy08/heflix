@@ -251,7 +251,7 @@ function Banner() {
                         Es un género musical que incluye diversos estilos musicales como el{' '}
                         <span style={{ color: '#ce4646', fontWeight: 'bold' }}>
                         <Typewriter
-                            words={['POP', 'RAP', 'Rock o R&B', 'EDM', 'Hip Hop']}
+                            words={['POP', 'RAP', 'Rock', 'EDM', 'Hip Hop']}
                             loop
                             cursor
                             cursorStyle='<'

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 const TableContenedor = styled.table`
+    width: 100%;
     border-collapse: collapse;
     border: 4px solid #2A7AE4;
     border-radius: 5px;
