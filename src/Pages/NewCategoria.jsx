@@ -78,7 +78,12 @@ const EspContenedor=styled.div`
     align-items: center;
     margin-top: 30px;
 `
-
+const Simg=styled.img`
+    width: 80%;
+    @media (min-width: 768px) {
+        display: none;
+    }
+`
 
 const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const navigate = useNavigate();
@@ -87,10 +92,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         value : "",
         valid:null
     })
-    const [color,setColor]= useState({
-        value : "",
-        valid:null
-    })
+    const [color,setColor]= useState("#2a7ae4")
     const [descripcion,setDescripcion]= useState({
         value : "",
         valid:null
@@ -134,6 +136,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         setColor({value: ""});
         setDescripcion({value: ""});
     };
+    const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
 
     return <><Container maxWidth="xl" className="formulario">
         <Box
@@ -164,14 +167,16 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             />
 
             <CssTextField  required 
-                fullWidth margin="normal" label="color" 
+                fullWidth margin="normal" 
                 type="color" 
-                error={color.valid === false} 
-                helperText={color.valid === false && "El título debe tener entre 2 y 25 letras y permitir mayúsculas, minúsculas, espacios, y la letra ñ."}
-                value={color.value}
+                error={!isValidColor} 
+                helperText={
+                    isValidColor === false
+                      && "Elige un color válido"}
+                  
+                value={color}
                 onChange={(e)=>{ 
-                    const color= e.target.value
-                    setColor({value:color, valid:true})
+                    setColor(e.target.value)
                 }}
             />
         
@@ -204,7 +209,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             </EspContenedor>
 
             <EspContenedor>
-                <img src={좋아} alt="img de apreciación"/>
+                <Simg src={좋아} alt="img de apreciación"/>
             </EspContenedor>
 
             <Mensaje>* Aquí se puede editar o eliminar por categoria </Mensaje>
