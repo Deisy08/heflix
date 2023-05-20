@@ -1,4 +1,3 @@
-import "../../src/assets/css/newVideo.css"
 import { Container, Box, Button, TextField, Autocomplete} from "@mui/material";
 import { Link } from "react-router-dom"
 import React, { useState, useEffect } from "react";
@@ -54,7 +53,18 @@ const CssTextFieldTextarea = styled(TextField)({
         color: "white",
     }
 });
-
+const BtnContenedor = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+`
+const BtnContenido= styled.div`
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    width: 100%;
+`
 const NewVideo = ({ card, addCategoria, location }) =>{
     
     const [categorias, setCategorias] = useState(card);
@@ -141,7 +151,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         setDescripcion({value: ""});
     };
 
-    return <><Container maxWidth="xl" className="formulario">
+    return <><Container maxWidth="xl" style={{ marginTop: "50px", marginBottom: "50px"}}>
         <Box
             component="form"
             autoComplete="off"
@@ -154,7 +164,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
             onSubmit={manejarEnvio}
             
         >
-            <h1>Create new video</h1>
+            <h1 style={{textAlign:"center"}}>Create new video</h1>
 
             <CssTextField  required 
                 fullWidth margin="normal" 
@@ -245,19 +255,19 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 }}
             />
 
-            <div className="botonContenedor">
-                <div className="botonContenido">
+            <BtnContenedor>
+                <BtnContenido>
                     <Button  variant="contained" 
                     type="submit">Guardar</Button> 
                     <Button  variant="outlined"  color="primary" type="reset"
                         onClick={handleFormReset}  >limpiar</Button>
-                </div>
+                </BtnContenido>
                 <Link to="/NewCategorie">
                     <Button  
                         variant="outlined" color="secondary" size="large"
                         >Nueva Categoría</Button>  
                 </Link>
-            </div>
+            </BtnContenedor>
             
         </Box> 
     </Container>

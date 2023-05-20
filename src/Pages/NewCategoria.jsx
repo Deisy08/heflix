@@ -84,19 +84,17 @@ const Simg=styled.img`
         display: none;
     }
 `
-
+const BtnContenido= styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+`
 const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
-    const [category,setCategory]= useState({
-        value : "",
-        valid:null
-    })
+    const [category,setCategory]= useState({value : "",valid:null})
     const [color,setColor]= useState("#2a7ae4")
-    const [descripcion,setDescripcion]= useState({
-        value : "",
-        valid:null
-    })
+    const [descripcion,setDescripcion]= useState({value : "",valid:null})
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
@@ -138,7 +136,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     };
     const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
 
-    return <><Container maxWidth="xl" className="formulario">
+    return <><Container maxWidth="xl" style={{ marginTop: "50px", marginBottom: "40px"}}>
         <Box
             component="form"
             autoComplete="off"
@@ -151,7 +149,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             onSubmit={manejarEnvio}
             id={idUnico}
         >
-            <h1>Create new category</h1>
+            <h1 style={{textAlign:"center"}}>Create new category</h1>
 
             <CssTextField  required 
                 fullWidth margin="normal" 
@@ -196,13 +194,13 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             />
 
             <EspContenedor>
-                <div className="botonContenido">
+                <BtnContenido >
                     <Button  variant="contained" 
                     type="submit" >Guardar</Button> 
                     
                     <Button  variant="outlined"  color="primary" type="reset"
                         onClick={handleFormReset}  >limpiar</Button>
-                </div>
+                </BtnContenido>
                 <div id="contact-form-loader" style={{display:"none"}}>
                     <img src={loader} alt="loading"/>
                 </div>
