@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
-import { validarTitulo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
+import 좋아 from "../assets/img/img좋아.svg"
+import { validarTitulo, validarDescripcion } from "../Componentes/validaciones";
 import { useNavigate } from 'react-router-dom';
 import Tabla from "../Componentes/Tabla";
 import Footer from "../Componentes/Footer";
@@ -71,6 +72,13 @@ const Mensaje =styled.h5`
       display: none;  
     }
 `
+const EspContenedor=styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+`
+
 
 const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const navigate = useNavigate();
@@ -80,10 +88,6 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         valid:null
     })
     const [color,setColor]= useState({
-        value : "",
-        valid:null
-    })
-    const [usuario,setUsuario]= useState({
         value : "",
         valid:null
     })
@@ -99,8 +103,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
             colorFondoBorde: color.value ,
         };
         addCategoria(categoria); 
-        console.log(category.value,color.value);
-        console.log(category,color,descripcion,usuario);
+        //console.log(category.value,color.value);
         
         // Redirige a NewVideo con la nueva categoría
         navigate('/NewVideo', { state: { categoria } }); 
@@ -114,7 +117,6 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                 categoria: category.value,
                 colorFondoBorde: color.value,
                 descripcion: descripcion.value,
-                usuario: usuario.value
             })
         })
         .then(response => response.json())
@@ -130,7 +132,6 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
     const handleFormReset = () => {
         setCategory({value: ""});
         setColor({value: ""});
-        setUsuario({value: ""});
         setDescripcion({value: ""});
     };
 
@@ -166,7 +167,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                 fullWidth margin="normal" label="color" 
                 type="color" 
                 error={color.valid === false} 
-                helperText={color.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
+                helperText={color.valid === false && "El título debe tener entre 2 y 25 letras y permitir mayúsculas, minúsculas, espacios, y la letra ñ."}
                 value={color.value}
                 onChange={(e)=>{ 
                     const color= e.target.value
@@ -180,7 +181,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                 rows={4}
                 multiline
                 error={descripcion.valid === false}
-                helperText={descripcion.valid === false && "Este campo debe comenzar con una mayúscula y luego puedes seguir poniendo mayúsculas, minúsculas y numeros, desde 10 a 115 digitos."}
+                helperText={descripcion.valid === false && "La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra ñ."}
                 value={descripcion.value}
                 onChange={(input)=>{ 
                     const descripcion= input.target.value
@@ -189,20 +190,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                 }}
             />
 
-            <CssTextField  
-                fullWidth margin="normal" 
-                placeholder="Usuário..." type="Usuario"
-                error={usuario.valid === false}
-                helperText={usuario.valid === false && "Este campo permite poner mayúsculas, minúsculas y numeros."}
-                value={usuario.value}
-                onChange={(input)=>{ 
-                    const usuario= input.target.value
-                    const usuarioValido = validarUsuario(usuario)
-                    setUsuario({value:usuario, valid:usuarioValido})
-                }}
-            />
-
-            <div className="botonContenedor">
+            <EspContenedor>
                 <div className="botonContenido">
                     <Button  variant="contained" 
                     type="submit" >Guardar</Button> 
@@ -213,7 +201,11 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
                 <div id="contact-form-loader" style={{display:"none"}}>
                     <img src={loader} alt="loading"/>
                 </div>
-            </div>
+            </EspContenedor>
+
+            <EspContenedor>
+                <img src={좋아} alt="img de apreciación"/>
+            </EspContenedor>
 
             <Mensaje>* Aquí se puede editar o eliminar por categoria </Mensaje>
 

@@ -3,7 +3,7 @@ import { Container, Box, Button, TextField, Autocomplete} from "@mui/material";
 import { Link } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones/nuevoVideo";
+import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones";
 import Footer from "../Componentes/Footer";
 
 const CssTextField = styled(TextField)({
@@ -160,7 +160,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 fullWidth margin="normal" 
                 placeholder="Título..." type="text"
                 error={titulo.valid === false} 
-                helperText={titulo.valid === false && "El nombre del título debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
+                helperText={titulo.valid === false && "El título debe tener entre 2 y 25 letras(comienza con mayúscula)  y permitir mayúsculas, minúsculas, espacios, y la letra ñ."}
                 value={titulo.value}
                 onChange={(input)=>{ 
                     const titulo= input.target.value
@@ -173,7 +173,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 fullWidth margin="normal"
                 placeholder="Link del video..." type="text"
                 error={video.valid === false}
-                helperText={video.valid === false && "Este campo es para la URL y debe ser valido."}
+                helperText={video.valid === false && "Este campo es para la URL no es válido, asegurese que sea válido."}
                 value={video.value}
                 onChange={(input)=>{ 
                     const video= input.target.value
@@ -186,7 +186,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 fullWidth margin="normal"
                 placeholder="Link de la imagen del video..." type="imgVideo"
                 error={imgVideo.valid === false}
-                helperText={imgVideo.valid === false && "Este campo es para la imagen del video, asegurece que su imagen sea valido."}
+                helperText={imgVideo.valid === false && "El enlace de imagen no es válido, asegurece que su imagen sea válido."}
                 value={imgVideo.value}
                 onChange={(input)=>{ 
                     const imgVideo= input.target.value
@@ -223,7 +223,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 rows={4}
                 multiline
                 error={descripcion.valid === false}
-                helperText={descripcion.valid === false && "Este campo debe comenzar con una mayúscula y luego puedes seguir poniendo mayúsculas, minúsculas y numeros, desde 10 a 115 digitos."}
+                helperText={descripcion.valid === false && "La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra ñ(de 5 hasta 400 caracteres)."}
                 value={descripcion.value}
                 onChange={(input)=>{ 
                     const descripcion= input.target.value
@@ -236,7 +236,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 fullWidth margin="normal" 
                 placeholder="Usuário..." type="Usuario"
                 error={usuario.valid === false}
-                helperText={usuario.valid === false && "Este campo permite poner mayúsculas, minúsculas y numeros."}
+                helperText={usuario.valid === false && "En el campo usuario puede comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|')."}
                 value={usuario.value}
                 onChange={(input)=>{ 
                     const usuario= input.target.value

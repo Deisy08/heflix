@@ -4,21 +4,18 @@
       "categoria": "Mixto",
       "colorFondoBorde": "#ce4646",
       "descripcion": "Personas que trabajan en conjunto.\n",
-      "usuario": "",
       "id": 1
     },
     {
       "categoria": "Solista",
       "colorFondoBorde": "#a14dac",
       "descripcion": "La persona que canta sola.",
-      "usuario": "",
       "id": 2
     },
     {
       "categoria": "Grupo",
       "colorFondoBorde": "#25bec1",
       "descripcion": "Grupo de personas que cantan en armonia.",
-      "usuario": "",
       "id": 3
     },
     {
@@ -31,7 +28,6 @@
       "categoria": "Infantil",
       "colorFondoBorde": "#484a8e",
       "descripcion": "La música que le gusta a los niños(infantes)",
-      "usuario": "",
       "id": 5
     }
   ],

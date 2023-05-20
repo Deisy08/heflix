@@ -36,6 +36,8 @@ const SliderComponente = ({ tarjeta }) => {
   const {colorFondoBorde,categoria} = tarjeta
   const [cards, setCards] = useState([ ]);
   const [reloadCards, setReloadCards] = useState(false); // Estado adicional para recargar las tarjetas
+  const [selectedVideoI, setSelectedVideoI] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     async function fetchCards() {
@@ -45,15 +47,6 @@ const SliderComponente = ({ tarjeta }) => {
     }
     fetchCards();
   }, [reloadCards]); // Agregar reloadCards como dependencia
-
-  useEffect(() => {
-    async function fetchCards() {
-      const response = await fetch('http://localhost:3000/cards');
-      const data = await response.json();
-      setCards(data);
-    }
-    fetchCards();
-  }, []);
 
   //estilos 
   const SliderContenedor = styled.div`
@@ -99,8 +92,33 @@ const SliderComponente = ({ tarjeta }) => {
   cursor: "pointer",
   color:colorFondoBorde,
  }
-  // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
-  const filteredCards = cards.filter(card => card.categoria === categoria);
+ //css de mi modal del contenido del video
+ const title ={
+  fontWeight: "600",
+  color: colorFondoBorde,
+  fontFamily: 'Source Sans Pro',
+  padding: "10px",
+ }
+  const User =styled.h5`
+    padding-left: 10px;
+    
+  `;
+  const descript ={
+    padding: "10px 20px 0",
+  }
+  const Btn= styled.button`
+    padding: 10px;
+    background-color: ${colorFondoBorde};
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 10px;
+    &:hover {
+      box-shadow: 0 0 10px ${colorFondoBorde};
+    }
+  `;
+
+  const filteredCards = cards.filter(card => card.categoria === categoria);  // Filtrar las tarjetas que pertenecen a la categoría del tipo de artista
   
   const settings = {
     dots: false,
@@ -150,15 +168,11 @@ const SliderComponente = ({ tarjeta }) => {
       height: 200px;
     }
   `;
-  const [selectedVideoI, setSelectedVideoI] = useState(null);
-  
+
   const handleImageClick = (video) => {
     //console.log(video);
     setSelectedVideoI({ url: video.video, user: video.usuario, description:video.descripcion, title:video.titulo});
-    
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
@@ -166,34 +180,6 @@ const SliderComponente = ({ tarjeta }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
-  //css de mi modal del contenido del video
-  const title ={
-    fontWeight: "600",
-    color: colorFondoBorde,
-    fontFamily: 'Source Sans Pro',
-    padding: "10px",
-  }
-
-  const User =styled.h5`
-    padding-left: 10px;
-    
-  `;
-
-  const descript ={
-    padding: "10px 20px 0",
-  }
-
-  const Btn= styled.button`
-    padding: 10px;
-    background-color: ${colorFondoBorde};
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    margin-left: 10px;
-    &:hover {
-      box-shadow: 0 0 10px ${colorFondoBorde};
-    }
-  `;
   
   const VideoPlayer = ({ onClose, url, usuario, descripcion, titulo}) => {
     //console.log(usuario, descripcion, titulo);
@@ -321,12 +307,12 @@ const SliderComponente = ({ tarjeta }) => {
   }
 
   //validaciones
-  const isValidTitulo = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{1,24})$/.test(titulo);
+  const isValidTitulo = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{2,24})$/.test(titulo);
   const isValidVideo = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?([a-zA-Z0-9_-]{11})/.test(video);
   const isValidImgVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(imgVideo);
   const isValidDescription = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{5,400})$/.test(descripcion);
   const isValidCategoria = /^[a-zA-Z0-9\s\S]+$/.test(cate)
-  const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.-_@&()|']{2,30}$/.test(usuario)
+  const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.-_@&()|']{3,30}$/.test(usuario)
   
   return <>
     <SliderContenedor >
@@ -335,11 +321,11 @@ const SliderComponente = ({ tarjeta }) => {
         {cards.length>0 && filteredCards.map((video) => (
           <ContenedorImg  >
             <div key={video.id}>
-              <p>{video.titulo}</p> 
+              <h5>{video.titulo}</h5> 
               <HiOutlinePencilAlt style={editar} onClick={() => handleShow(video)} /> 
               <AiOutlineDelete style={eliminar} onClick={() => eliminarCard(video.id)} />
               <TarjetaImg  src={video.imgVideo} alt={video.titulo} onClick={() => {handleImageClick(video); openModal()}}/>
-              <p>{video.usuario}</p>
+              <h6>{video.usuario}</h6>
             </div>
           </ContenedorImg>
         ))}
@@ -369,7 +355,7 @@ const SliderComponente = ({ tarjeta }) => {
               setTitulo(e.target.value);
             }}
           />
-          {titulo !== null && !isValidTitulo && <div className="invalid-feedback">El título debe tener entre 2 y 25 letras y permitir mayúsculas, minúsculas, espacios, y la letra "ñ".</div>}
+          {titulo !== null && !isValidTitulo && <div className="invalid-feedback">El título debe tener entre 2 y 25 letras (comienza con mayúscula) y permitir mayúsculas, minúsculas, espacios, y la letra "ñ".</div>}
         </FormGroup>
               
         <FormGroup>
@@ -414,7 +400,7 @@ const SliderComponente = ({ tarjeta }) => {
             setDescripcion(e.target.value);
           }}
           />
-          {descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra "ñ"</div>}
+          {descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra "ñ"(de 5 hasta 400 caracteres).</div>}
         </FormGroup>
 
         <FormGroup>
@@ -444,7 +430,7 @@ const SliderComponente = ({ tarjeta }) => {
             setUsuario(e.target.value);
           }}
           />
-          {usuario !== null && !isValidUsuario && <div className="invalid-feedback">En el campo usuario se comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|').</div>}
+          {usuario !== null && !isValidUsuario && <div className="invalid-feedback">En el campo usuario puede comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|').</div>}
         </FormGroup>
       </ModalBody>
 
