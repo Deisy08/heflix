@@ -321,12 +321,12 @@ const SliderComponente = ({ tarjeta }) => {
   }
 
   //validaciones
-  const isValidTitulo = /^[A-Z][a-zA-Z][\w\W][\s\S]{2,25}$/.test(titulo);
-  const isValidVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(video);
+  const isValidTitulo = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{1,24})$/.test(titulo);
+  const isValidVideo = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?([a-zA-Z0-9_-]{11})/.test(video);
   const isValidImgVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(imgVideo);
-  const isValidDescription = /([A-Z][a-z][\w\W][\s\S]{5,115})$/.test(descripcion);
-  const isValidCategoria = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
-  const isValidUsuario = /^[a-zA-Z0-9][\w\W][\s\S]+$/.test(usuario)
+  const isValidDescription = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{5,400})$/.test(descripcion);
+  const isValidCategoria = /^[a-zA-Z0-9\s\S]+$/.test(cate)
+  const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.-_@&()|']{2,30}$/.test(usuario)
   
   return <>
     <SliderContenedor >
@@ -369,7 +369,7 @@ const SliderComponente = ({ tarjeta }) => {
               setTitulo(e.target.value);
             }}
           />
-          {titulo !== null && !isValidTitulo && <div className="invalid-feedback">El nombre de esta categoria debe comenzar en mayúscula.</div>}
+          {titulo !== null && !isValidTitulo && <div className="invalid-feedback">El título debe tener entre 2 y 25 letras y permitir mayúsculas, minúsculas, espacios, y la letra "ñ".</div>}
         </FormGroup>
               
         <FormGroup>
@@ -384,7 +384,7 @@ const SliderComponente = ({ tarjeta }) => {
               setVideo(e.target.value);
             }}
           />
-          {video !== null && !isValidVideo && <div className="invalid-feedback">El video de esta categoria debe ser la original.</div>}
+          {video !== null && !isValidVideo && <div className="invalid-feedback">El enlace de video no es válido.</div>}
         </FormGroup>
               
         <FormGroup>
@@ -399,7 +399,7 @@ const SliderComponente = ({ tarjeta }) => {
             setImgVideo(e.target.value);
           }}
           />
-          {imgVideo !== null && !isValidImgVideo && <div className="invalid-feedback">La imagen del video.</div>}
+          {imgVideo !== null && !isValidImgVideo && <div className="invalid-feedback">El enlace de imagen no es válido.</div>}
         </FormGroup>
 
         <FormGroup>
@@ -414,7 +414,7 @@ const SliderComponente = ({ tarjeta }) => {
             setDescripcion(e.target.value);
           }}
           />
-          {descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar en mayúscula.</div>}
+          {descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra "ñ"</div>}
         </FormGroup>
 
         <FormGroup>
@@ -444,7 +444,7 @@ const SliderComponente = ({ tarjeta }) => {
             setUsuario(e.target.value);
           }}
           />
-          {usuario !== null && !isValidUsuario && <div className="invalid-feedback">La usuario debe de existir.</div>}
+          {usuario !== null && !isValidUsuario && <div className="invalid-feedback">En el campo usuario se comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|').</div>}
         </FormGroup>
       </ModalBody>
 
