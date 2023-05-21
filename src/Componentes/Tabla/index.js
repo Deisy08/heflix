@@ -2,6 +2,8 @@ import styled from "styled-components"
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { buscar } from "../../api/api";
+
 const TableContenedor = styled.table`
     width: 100%;
     border-collapse: collapse;
@@ -47,8 +49,15 @@ const Tabla = () => {
     const [color,setColor]= useState("")
     const [descripcion,setDescripcion]= useState("")
 
+    const [categorias, setcategorias] = useState([])//api enlace
+
+    useEffect(()=>{
+        buscar(`/categorias`, setcategorias)
+        console.log(categorias)
+    }, [])
+
     useEffect(() => {
-        fetch('http://localhost:3000/categorias')
+        fetch('http://localhost:5000/categorias')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
@@ -70,7 +79,7 @@ const Tabla = () => {
 
     const editForm = () =>{
         // Agregar el ID del registro seleccionado a la URL del endpoint
-        const url = `http://localhost:3000/categorias/${btnEditar}`;
+        const url = `http://localhost:5000/categorias/${btnEditar}`;
         console.log(url);
         //console.log(btnEditar);
         // Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
@@ -108,7 +117,7 @@ const Tabla = () => {
         if (!confirmed) {
             return; 
         }
-        const url = `http://localhost:3000/categorias/${item.id}`;
+        const url = `http://localhost:5000/categorias/${item.id}`;
         //console.log(url);
         await fetch(url,{
             method: "DELETE",

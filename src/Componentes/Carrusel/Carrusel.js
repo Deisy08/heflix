@@ -1,15 +1,20 @@
 import SliderComponente from "./Slider"
 import {Container, Box} from '@mui/material';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { buscar } from "../../api/api";
 
+const Carrusel = () => {
+  const [categorias, setCategorias] = useState([])
 
-const Carrusel = ({card}) => {
-    
-    return (
+  useEffect(() => {
+    buscar(`/categorias`, setCategorias)
+  }, [])
+
+  return (
       <Container maxWidth="xl">
         <Box sx={{ padding: '15px' }} />
 
-        {card.map((item)=> <SliderComponente  tarjeta={item}  key={item.id} /> )}
+        {categorias.map((item)=> <SliderComponente  tarjeta={item}  key={item.id} /> )}
         
       </Container>
     );

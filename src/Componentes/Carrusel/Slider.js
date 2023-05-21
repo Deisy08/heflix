@@ -41,7 +41,7 @@ const SliderComponente = ({ tarjeta }) => {
 
   useEffect(() => {
     async function fetchCards() {
-      const response = await fetch('http://localhost:3000/cards');
+      const response = await fetch('http://localhost:5000/cards');
       const data = await response.json();
       setCards(data);
     }
@@ -220,7 +220,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [usuario,setUsuario]= useState("")
  
   useEffect(() => {
-    fetch('http://localhost:3000/cards')
+    fetch('http://localhost:5000/cards')
     .then(response => response.json())
     .then(data => setData(data))
     .catch(error => console.error(error));
@@ -247,7 +247,7 @@ const SliderComponente = ({ tarjeta }) => {
       return;
     }
     
-    const url = `http://localhost:3000/cards/${btnEditar}`;
+    const url = `http://localhost:5000/cards/${btnEditar}`;
     
     axios.put(url, {
       titulo: titulo,
@@ -284,7 +284,7 @@ const SliderComponente = ({ tarjeta }) => {
   // eliminar tarjeta
   const eliminarCard = async (id) =>{
     setBtnEliminar(id)
-    const url = `http://localhost:3000/cards/${id}`;
+    const url = `http://localhost:5000/cards/${id}`;
     //console.log(url);
     const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {

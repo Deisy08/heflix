@@ -80,7 +80,7 @@ const NewVideo = ({ card, addCategoria, location }) =>{
         e.preventDefault()
         console.log(titulo,video,imgVideo,descripcion,usuario,selectedCategory);
         
-        fetch('http://localhost:3000/cards', {
+        fetch('http://localhost:5000/cards', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

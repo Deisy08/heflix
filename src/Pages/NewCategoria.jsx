@@ -89,7 +89,7 @@ const BtnContenido= styled.div`
     justify-content: space-around;
     width: 100%;
 `
-const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
+const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
     const [category,setCategory]= useState({value : "",valid:null})
@@ -108,7 +108,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         // Redirige a NewVideo con la nueva categoría
         navigate('/NewVideo', { state: { categoria } }); 
 
-        fetch('http://localhost:3000/categorias', {
+        fetch('http://localhost:5000/categorias', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,6 +135,8 @@ const NewCategoria = ({ addCategoria, fetchCategorias }) =>{
         setDescripcion({value: ""});
     };
     const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
+
+    
 
     return <><Container maxWidth="xl" style={{ marginTop: "50px", marginBottom: "40px"}}>
         <Box

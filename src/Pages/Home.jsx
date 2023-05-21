@@ -6,7 +6,7 @@ import Carrusel from "../Componentes/Carrusel/Carrusel";
 import styled from 'styled-components';
 
 
-function Home(props) {
+function Home() {
 
   const [isMobileView, setIsMobileView] = useState(true);
 
@@ -38,12 +38,12 @@ function Home(props) {
   const a = {
     color: "none",
     textDecoration:"none"
-}
-  
+  }
+    
     return <>
         
         <Banner />
-        <Carrusel card={props.card} />
+        <Carrusel />
         {isMobileView ? ( <Link to="/NewVideo" style={a}>
         <Enlace onClick={() => console.log("nueva categoria")}>
           <h1>Agregar Video</h1>
