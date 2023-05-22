@@ -164,7 +164,7 @@
       "imgVideo": "https://th.bing.com/th/id/OIP.ILvPxnOCRfmTSNCU65zfKwHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
       "categoria": "Mixto",
-      "usuario": "SEVENTEEN ",
+      "usuario": "SEVENTEEN",
       "id": "Yi8MFeV"
     },
     {
@@ -211,15 +211,6 @@
       "categoria": "Colaboración",
       "usuario": "LEE CHAE YEON",
       "id": "2Qa_YIY"
-    },
-    {
-      "titulo": "Jacson 100 Ways",
-      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
-      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
-      "categoria": "Infantil",
-      "usuario": "Jackson Wang",
-      "id": "cfG_M8g"
     },
     {
       "titulo": "Jacson 100 Ways",
@@ -283,6 +274,24 @@
       "categoria": "Mixto",
       "usuario": "Alan Walker & Ava Max",
       "id": "qgF3VEC"
+    },
+    {
+      "titulo": "Given-Taken",
+      "video": "https://www.youtube.com/watch?v=VzPD009qTN4",
+      "imgVideo": "https://th.bing.com/th/id/OIP.W3j-WncXsnA_R-A6yVVSkAHaEK?pid=ImgDet&rs=1",
+      "descripcion": "Este es el video musical oficial de \"Given-Taken\" de ENHYPEN.",
+      "categoria": "Grupo",
+      "usuario": " ENHYPEN",
+      "id": "-bxf2cn"
+    },
+    {
+      "titulo": "Queencard(퀸카)",
+      "video": "https://www.youtube.com/watch?v=7HDeem-JaSY",
+      "imgVideo": "https://th.bing.com/th?id=OIF.P%2bb5gJKxjIoOvsRiJWKT2w&pid=ImgDet&rs=1",
+      "descripcion": "Episode : '#퀸카 (#Queencard)'\n\n눈부신 조명 속 모두가 기다리던 파티가 시작되고···\n피드 뒤로 숨겨진 진정한 나를 찾기 위한 퀸카들의 노력이 시작된다.\n\n미치도록 동경하던 누군가와 마주하게 되며 느끼는 것\n'가끔 나는 열등감에 빠져 나 자신을 놓치고 있었던 건 아닐까?'\n\n화려한 파티가 끝난 뒤, 긴 잠에서 깨어난 SY\n이제 누군가의 퀸카가 되지 않아도 진짜 퀸카가 될 수 있는 '나'를 찾았다.",
+      "categoria": "Grupo",
+      "usuario": "G I-DLE",
+      "id": "52qQXNK"
     }
   ]
 }

@@ -13,9 +13,7 @@ const Carrusel = () => {
   return (
       <Container maxWidth="xl">
         <Box sx={{ padding: '15px' }} />
-
         {categorias.map((item)=> <SliderComponente  tarjeta={item}  key={item.id} /> )}
-        
       </Container>
     );
   };

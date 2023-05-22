@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player/lazy";
 import { HiOutlinePencilAlt } from "react-icons/hi"
 import { AiOutlineDelete } from "react-icons/ai"
-import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactModal from 'react-modal';
 import axios from 'axios';
@@ -38,7 +38,6 @@ const SliderComponente = ({ tarjeta }) => {
   const [reloadCards, setReloadCards] = useState(false); // Estado adicional para recargar las tarjetas
   const [selectedVideoI, setSelectedVideoI] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-
   useEffect(() => {
     async function fetchCards() {
       const response = await fetch('http://localhost:5000/cards');
@@ -239,16 +238,16 @@ const SliderComponente = ({ tarjeta }) => {
     setUsuario(item.usuario)
 		setShow(true);
   };
-
+  
   //editar tarjeta
   const editarCard = () => {
     const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
     if (!confirmed) {
+      setShow(false)
       return;
     }
-    
+  
     const url = `http://localhost:5000/cards/${btnEditar}`;
-    
     axios.put(url, {
       titulo: titulo,
       video: video,
@@ -312,7 +311,7 @@ const SliderComponente = ({ tarjeta }) => {
   const isValidImgVideo = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(imgVideo);
   const isValidDescription = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{5,400})$/.test(descripcion);
   const isValidCategoria = /^[a-zA-Z0-9\s\S]+$/.test(cate)
-  const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.-_@&()|']{3,30}$/.test(usuario)
+  const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.\-_@&()|']{3,30}$/.test(usuario)
   
   return <>
     <SliderContenedor >

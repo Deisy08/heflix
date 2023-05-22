@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/NewCategorie' element={<NewCategoria addCategoria={addCategoria}  fetch={fetchCategorias}/>} />
-        <Route path='/NewVideo' element={<NewVideo card={categorias} addCategoria={addCategoria}/>} />
+        <Route path='/NewVideo' element={<NewVideo  addCategoria={addCategoria}/>} />
         <Route path='*' element={<Error404 />} />
       </Routes>
     </Router>

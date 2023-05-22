@@ -19,7 +19,7 @@ export const validarDescripcion= (descripcion) =>{
 }
 
 export const validarUsuario = (usuario) =>{
-    const regex = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.-_@&()|']{3,30}$/
+    const regex =  /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.\-_@&()|']{3,30}$/
     return regex.test(usuario)
     
 }

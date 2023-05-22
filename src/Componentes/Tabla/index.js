@@ -41,25 +41,18 @@ const Eliminar = styled.td`
 
 const Tabla = () => {
 
-    const [data, setData] = useState([]);
     const [btnEditar, setBtnEditar] = useState(null);
     const [btnEliminar, setBtnEliminar] = useState(null);
     //elementos de mi modal
 	const [nameCategory,setNameCategory]= useState("")
     const [color,setColor]= useState("")
     const [descripcion,setDescripcion]= useState("")
-
     const [categorias, setcategorias] = useState([])//api enlace
 
-    useEffect(()=>{
-        buscar(`/categorias`, setcategorias)
-        console.log(categorias)
-    }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/categorias')
+        buscar(`/categorias`, setcategorias)
         .then(response => response.json())
-        .then(data => setData(data))
         .catch(error => console.error(error));
     }, []);
 
@@ -80,7 +73,11 @@ const Tabla = () => {
     const editForm = () =>{
         // Agregar el ID del registro seleccionado a la URL del endpoint
         const url = `http://localhost:5000/categorias/${btnEditar}`;
-        console.log(url);
+        const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
+        if (!confirmed) {
+            setShow(false)
+        return;
+        }
         //console.log(btnEditar);
         // Enviar solicitud PUT o PATCH a la API con los datos actualizados del registro seleccionado.
 		   fetch(url, {
@@ -103,7 +100,7 @@ const Tabla = () => {
 		   .then(data => {
 			   // Actualizar el estado de los datos con la respuesta de la API.
                console.log('Datos actualizados:', data);
-			   setData(data);
+			   setcategorias(data);
 			   //setBtnEditar(null);
 			   setShow(false);
 		   })
@@ -128,7 +125,7 @@ const Tabla = () => {
         .then(response => response.json())
         .then(data => {
             console.log('Datos actualizados:', data);
-            setData(data);
+            setcategorias(data);
             setBtnEliminar(null);
         })
         .catch(err => console.log(err)) 
@@ -150,7 +147,7 @@ const Tabla = () => {
                 </tr>
             </CabezaTabla>
             <CuerpoTabla>
-                {data.length > 0 && data.map((item) => (
+                {categorias.length > 0 && categorias.map((item) => (
                     <tr key={item.id}>
                         <td>{item.categoria}</td>
                         <td>{item.descripcion}</td>

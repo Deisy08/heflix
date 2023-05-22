@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones";
 import Footer from "../Componentes/Footer";
-
+import { buscar } from "../api/api";
 const CssTextField = styled(TextField)({
         '& .MuiOutlinedInput-root': {
           '&:hover fieldset': {
@@ -65,45 +65,10 @@ const BtnContenido= styled.div`
     padding-bottom: 30px;
     width: 100%;
 `
-const NewVideo = ({ card, addCategoria, location }) =>{
+const NewVideo = ({ addCategoria, location }) =>{
     
-    const [categorias, setCategorias] = useState(card);
-    
-    useEffect(() => {
-        if (location?.state?.categoria) { // Si hay una nueva categoría en el estado de ubicación
-          addCategoria(location.state.categoria); // Agrega la nueva categoría a la lista de categorías
-          setCategorias([...categorias, location.state.categoria]); // Actualiza el estado de las categorías
-        }
-    }, [location, addCategoria, categorias, card]);
-
-    const manejarEnvio = (e) =>{
-        e.preventDefault()
-        console.log(titulo,video,imgVideo,descripcion,usuario,selectedCategory);
-        
-        fetch('http://localhost:5000/cards', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                titulo: titulo.value,
-                video: video.value,
-                imgVideo: imgVideo.value,
-                descripcion: descripcion.value,
-                categoria: selectedCategory,
-                usuario: usuario.value
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Datos guardados en db.json:', data)
-            
-        })
-        .catch(error => console.error(error))
-
-       window.location.href = '/';
-    }
-   //useStates de mi formulario
+    const [categorias, setCategorias] = useState([])
+     //useStates de mi formulario
     const [titulo,setTitulo]= useState({
         value : "",
         valid:null
@@ -128,10 +93,48 @@ const NewVideo = ({ card, addCategoria, location }) =>{
     const [selectedCategory, setSelectedCategory] = useState("Grupo");
     const [isCategoryValid, setIsCategoryValid] = useState(true);
 
-    //console.log(selectedCategory);
-    //console.log(isCategoryValid);
+    useEffect(() => {
+      buscar(`/categorias`, setCategorias)
+    }, [])
+    
+    useEffect(() => {
+        if (location?.state?.categoria) { // Si hay una nueva categoría en el estado de ubicación
+          addCategoria(location.state.categoria); // Agrega la nueva categoría a la lista de categorías
+          setCategorias([...categorias, location.state.categoria]); // Actualiza el estado de las categorías
+        }
+    }, [location, addCategoria, categorias]);
 
-    const options = card.map((option) => {
+    const manejarEnvio = (e) =>{
+        e.preventDefault()
+        const confirmed = window.confirm('¿Estás seguro de que deseas guardar este elemento?');
+        if (!confirmed) {
+        return;
+        }
+        //console.log(titulo,video,imgVideo,descripcion,usuario,selectedCategory);
+        
+        fetch('http://localhost:5000/cards', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                titulo: titulo.value,
+                video: video.value,
+                imgVideo: imgVideo.value,
+                descripcion: descripcion.value,
+                categoria: selectedCategory,
+                usuario: usuario.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos guardados en db.json:', data)
+        })
+        .catch(error => console.error(error))
+       window.location.href = '/';
+    }
+
+    const options = categorias.map((option) => {
         const firstLetter = option.categoria?.[0]?.toUpperCase() || '';
         return {
           firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
@@ -221,9 +224,6 @@ const NewVideo = ({ card, addCategoria, location }) =>{
                 />}
                 onChange={(event, value) => {
                     setSelectedCategory(value?.categoria || "");
-                    //const categoryValue = value?.categoria;
-                    //const categoryValid = !!categoryValue ;
-                   // setCategory({value:categoryValue, valid:categoryValid})
                 }}
             />
            

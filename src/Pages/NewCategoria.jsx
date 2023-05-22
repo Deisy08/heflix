@@ -98,6 +98,10 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
+        const confirmed = window.confirm('¿Estás seguro de que deseas agregar una nueva categoria?');
+        if (!confirmed) {
+        return;
+        }
         const categoria = {
             categorias: category.value,
             colorFondoBorde: color.value ,
@@ -121,7 +125,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Datos guardados en db.json:', data)
+            //console.log('Datos guardados en db.json:', data)
             fetchCategorias()// Obtener la lista actualizada de categorías    
         })
         .catch(error => console.error(error))
