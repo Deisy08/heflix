@@ -2,32 +2,32 @@
   "categorias": [
     {
       "categoria": "Mixto",
+      "descripcion": "Se utiliza para describir un estilo o género musical que combina elementos de diferentes géneros, estilos o influencias musicales. En un contexto musical, \"mixto\" implica la fusión o mezcla de características y elementos de diferentes tradiciones musicales, creando así un sonido único y distintivo.\n\n",
       "colorFondoBorde": "#ce4646",
-      "descripcion": "Personas que trabajan en conjunto.\n",
       "id": 1
     },
     {
       "categoria": "Solista",
+      "descripcion": "Se refiere a un músico o cantante que interpreta una pieza musical de manera individual, sin la compañía de otros músicos o vocalistas.",
       "colorFondoBorde": "#a14dac",
-      "descripcion": "La persona que canta sola.",
       "id": 2
     },
     {
       "categoria": "Grupo",
+      "descripcion": "Se refiere a un conjunto de músicos que se unen para crear música de forma colaborativa. Un grupo musical generalmente está compuesto por varios miembros que desempeñan diferentes roles y contribuyen con diferentes instrumentos, voces y habilidades musicales.",
       "colorFondoBorde": "#25bec1",
-      "descripcion": "Grupo de personas que cantan en armonia.",
       "id": 3
     },
     {
       "categoria": "Colaboración",
-      "descripcion": "Colaboracion de cantantes.",
+      "descripcion": "Se refiere a la participación conjunta de dos o más artistas, generalmente de diferentes orígenes o estilos musicales, en la creación o interpretación de una canción o proyecto musical.",
       "colorFondoBorde": "#a1b53b",
       "id": 4
     },
     {
       "categoria": "Infantil",
+      "descripcion": "La música infantil es un género musical y una forma de expresión artística diseñada específicamente para el disfrute y el aprendizaje de los niños. Tiene como objetivo principal entretener, educar y estimular el desarrollo de los niños a través de la música.",
       "colorFondoBorde": "#484a8e",
-      "descripcion": "La música que le gusta a los niños(infantes)",
       "id": 5
     }
   ],
@@ -150,15 +150,6 @@
       "id": "bBAnSYK"
     },
     {
-      "titulo": "Jacson 100 Ways",
-      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
-      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
-      "categoria": "Grupo",
-      "usuario": "Jackson Wang",
-      "id": "Yi8Y2_5"
-    },
-    {
       "titulo": "Official 손오공",
       "video": "https://www.youtube.com/watch?v=-GQg25oP0S4",
       "imgVideo": "https://th.bing.com/th/id/OIP.ILvPxnOCRfmTSNCU65zfKwHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
@@ -195,31 +186,13 @@
       "id": "JWYtjNa"
     },
     {
-      "titulo": "Paro(Lyrics)",
-      "video": "https://www.youtube.com/watch?v=cNgL40UfhbA",
-      "imgVideo": "https://th.bing.com/th/id/OIP.BXZ4QPqgKAzb2W0JuoHkYgHaFj?w=283&h=212&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "NEJ' - Paro (Lyrics)\nGet it here:\n\nFollow NEJ'\n https://www.snapchat.com/add/nej3192\n https://www.instagram.com/nejofficial\n https://vm.tiktok.com/ZMe6rjPAB/\n https://www.facebook.com/nejofficiel\n https://twitter.com/NejOfficiel\n    ",
-      "categoria": "Colaboración",
-      "usuario": "NEJ'",
-      "id": "aQ2tTs7"
-    },
-    {
       "titulo": "Knock",
       "video": "https://www.youtube.com/watch?v=3sCZKrxCWMo",
       "imgVideo": "https://64.media.tumblr.com/87c9bf383aaf031664ae0de118f2bf34/5503e68650ec0758-49/s1280x1920/2ad4e5f4ecbdb0b454046b7973921ff29a7f8d98.jpg",
       "descripcion": "LEE CHAE YEON(이채연) 2nd Mini Album \\\"Over The Moon\\\" has been released.\\n*ALBUM EVENT(4/28~4/30): https://bit.ly/3n7LyuC (video call event)",
-      "categoria": "Colaboración",
+      "categoria": "Solista",
       "usuario": "LEE CHAE YEON",
       "id": "2Qa_YIY"
-    },
-    {
-      "titulo": "Jacson 100 Ways",
-      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
-      "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
-      "categoria": "Mixto",
-      "usuario": "Jackson Wang",
-      "id": "ZbPJXGS"
     },
     {
       "titulo": "Jacson 100 Ways",
@@ -271,7 +244,7 @@
       "video": "https://www.youtube.com/watch?v=HhjHYkPQ8F0",
       "imgVideo": "https://th.bing.com/th/id/R.5421b9f3151e359d303faaeaba642d8a?rik=ZIYDU1D7bETe9g&pid=ImgRaw&r=0",
       "descripcion": "Walkers!\nThe music video for my brand new single “Alone, Pt. II” with @avamax  is finally here. This is the second chapter, continuing the story from the \"On My Way\" music video revealing many unanswered questions. I hope you like it, and are as excited as I am!\n\n- Alan\n_______________________________\n\nCheck out the song here:  https://lnk.to/AWAlonePtII",
-      "categoria": "Mixto",
+      "categoria": "Colaboración",
       "usuario": "Alan Walker & Ava Max",
       "id": "qgF3VEC"
     },
