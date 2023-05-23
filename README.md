@@ -1,23 +1,40 @@
-# Getting Started with Create React App
+# Heflix
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+---
+<p align="center" >
+     <img width="600" heigth="100" src="./src/assets/img/Helix_text.png">
+</p>
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### Descripción
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## 📜¿Qué encontrarás?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Hay tres paginas la principal, la de crear nuevo video, la de crear una nueva categoria(todas son responsive).
+#### En la página principal(Header, Banner con imagenes y breve introducción, Body donde estan imagenes la cual puedes hacer click para ver los videos y footer).
+#### En la página Crear nuevo video(Header, formulario, botones y footer).
+#### En la página crear nueva categoria(Header, formulario,una tabla con las categorias descripción solo en pantallas grandes y footer).
+
+### 🔡Tecnologias utilizadas
+
+#### React
+#### Html
+#### JavaScript
+#### Css
+
+## 🥇 Objetivo:
+#### La página fue contruida como proyecto o Challlenge planteado por [Alura Latam](https://www.aluracursos.com/) y [Oracle Next Education (One)](https://www.oracle.com/co/education/oracle-next-education/). 
+#### Para lograrlo me apoye mediante herramientas como:
+#### `Trello` `Discord` `Figma`
+#### brindados por Oracle ONE y Alura Latam como orientación
 
 ### `npm run build`
 
