@@ -1,10 +1,10 @@
-# Heflix
+
 <p align="center" >
      <img width="600" heigth="90" src="./src/assets/img/Helix_text.png">
 </p>
 
 ---
-### Descripción
+## ✍Descripción
 
 Se enfoca el videos de kpop, al inicio sabras un poco a que se refiere el kpop, también hay a su costado un video con mucha más información de que `¿Qué es el kpop?`.
 En la parte del banner encuentras algunos grupos famosos tanto masculonos como femeninos.
@@ -33,7 +33,7 @@ En la parte del Body podras ver las categorias y dentro de ellas un slider con i
 
 ## Learn More
 
-* Enlaces que también e utilizado para este proyecto.
+#### Enlaces que también e utilizado para este proyecto.
 
 - [Mui](https://mui.com/)
 - [Google Fonts](https://fonts.google.com/)
