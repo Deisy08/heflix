@@ -2,11 +2,9 @@
 
 ---
 <p align="center" >
-     <img width="600" heigth="100" src="./src/assets/img/Helix_text.png">
+     <img width="600" heigth="90" src="./src/assets/img/Helix_text.png">
 </p>
-## Available Scripts
 
-In the project directory, you can run:
 
 ### Descripción
 
@@ -18,17 +16,18 @@ You may also see any lint errors in the console.
 
 ## 📜¿Qué encontrarás?
 
-#### Hay tres paginas la principal, la de crear nuevo video, la de crear una nueva categoria(todas son responsive).
-#### En la página principal(Header, Banner con imagenes y breve introducción, Body donde estan imagenes la cual puedes hacer click para ver los videos y footer).
-#### En la página Crear nuevo video(Header, formulario, botones y footer).
-#### En la página crear nueva categoria(Header, formulario,una tabla con las categorias descripción solo en pantallas grandes y footer).
+* Hay tres paginas la principal, la de crear nuevo video, la de crear una nueva categoria(todas son responsive).
+* En la página principal(Header, Banner con imagenes y breve introducción, Body donde estan imagenes la cual puedes hacer click para ver los videos y footer).
+* En la página Crear nuevo video(Header, formulario, botones y footer).
+* En la página crear nueva categoria(Header, formulario,una tabla con las categorias descripción solo en pantallas grandes y footer).
 
 ### 🔡Tecnologias utilizadas
 
-#### React
-#### Html
-#### JavaScript
-#### Css
+[![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=react&logoColor=white&labelColor=101010)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010)]()
+[![HTML](https://img.shields.io/badge/Html-red?style=for-the-badge&logo=html5&logoColor=white&labelColor=101010)]()
+[![CSS](https://img.shields.io/badge/Css-blue?style=for-the-badge&logo=Css3&logoColor=white&labelColor=101010)]()
+
 
 ## 🥇 Objetivo:
 #### La página fue contruida como proyecto o Challlenge planteado por [Alura Latam](https://www.aluracursos.com/) y [Oracle Next Education (One)](https://www.oracle.com/co/education/oracle-next-education/). 
