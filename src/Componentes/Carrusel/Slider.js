@@ -217,7 +217,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [descripcion,setDescripcion]= useState("")
   const [cate,setCate]= useState("")
   const [usuario,setUsuario]= useState("")
- 
+ console.log(btnEliminar);
   useEffect(() => {
     fetch('http://localhost:5000/cards')
     .then(response => response.json())
@@ -312,7 +312,7 @@ const SliderComponente = ({ tarjeta }) => {
   const isValidDescription = /(^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s\S]{5,400})$/.test(descripcion);
   const isValidCategoria = /^[a-zA-Z0-9\s\S]+$/.test(cate)
   const isValidUsuario = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s.\-_@&()|']{3,30}$/.test(usuario)
-  
+  //json-server -w db.json -p 5000
   return <>
     <SliderContenedor >
       <Titulo >{categoria}</Titulo>

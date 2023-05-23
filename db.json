@@ -1,15 +1,15 @@
 {
   "categorias": [
     {
-      "categoria": "Mixto",
-      "descripcion": "Se utiliza para describir un estilo o género musical que combina elementos de diferentes géneros, estilos o influencias musicales. En un contexto musical, \"mixto\" implica la fusión o mezcla de características y elementos de diferentes tradiciones musicales, creando así un sonido único y distintivo.\n\n",
-      "colorFondoBorde": "#ce4646",
+      "categoria": "Bangtan Sonyeondan ",
+      "descripcion": "BTS ha sido considerada la «boy band más grande del mundo», ​ además de recibir otros apodos y descripciones por diversos medios, entre ellos «Príncipes del Pop» por la revista Time ​ y «el artista de K-pop más grande y exitoso del mundo» que puede «hacer cosas que ningún otro en su género» por Forbes. ​ \n\n",
+      "colorFondoBorde": "#800080",
       "id": 1
     },
     {
       "categoria": "Solista",
       "descripcion": "Se refiere a un músico o cantante que interpreta una pieza musical de manera individual, sin la compañía de otros músicos o vocalistas.",
-      "colorFondoBorde": "#a14dac",
+      "colorFondoBorde": "#ca4949",
       "id": 2
     },
     {
@@ -114,15 +114,6 @@
       "id": "wr_V8KF"
     },
     {
-      "titulo": "Shoong",
-      "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
-      "categoria": "Solista",
-      "usuario": "Taeyang",
-      "id": "iUsmA4v"
-    },
-    {
       "titulo": "What is Love?",
       "video": "https://www.youtube.com/watch?v=i0p1bmr0EmE",
       "imgVideo": "https://res.cloudinary.com/teepublic/image/private/s--980HgZyn--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1527675982/production/designs/2737778_0.jpg",
@@ -154,24 +145,15 @@
       "video": "https://www.youtube.com/watch?v=-GQg25oP0S4",
       "imgVideo": "https://th.bing.com/th/id/OIP.ILvPxnOCRfmTSNCU65zfKwHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
       "descripcion": "Credits:\nProduction｜OUI PRODUCTION\nDirector｜Oui Kim\nProducer｜Yeonjin Kim, Hyunsik Bang\n1st AD｜Huiwon Song",
-      "categoria": "Mixto",
-      "usuario": "SEVENTEEN",
+      "categoria": "Grupo",
+      "usuario": "Seventeen",
       "id": "Yi8MFeV"
     },
     {
       "titulo": "Shoong",
       "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
-      "categoria": "Mixto",
-      "usuario": "Taeyang&Lisa",
-      "id": "iUsmA4v"
-    },
-    {
-      "titulo": "Shoong",
-      "video": "https://www.youtube.com/watch?v=NFnAuiklEug",
-      "imgVideo": "https://th.bing.com/th/id/OIF.MfUSPW8L0yJJOzhwBDOocw?w=292&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Performe Video (feat. LISA of BLACKPINK)",
+      "imgVideo": "https://th.bing.com/th/id/OIP.1_1rytuxol04suTV3cdhggHaFB?pid=ImgDet&rs=1",
+      "descripcion": "TAEYANG - ‘Shoong! (feat. LISA of BLACKPINK)’ PERFORMANCE VIDEO\n\n[Credits]\nLyrics by TAEYANG, KUSH, Vince, Bekuh BOOM\nComposed by KUSH, Vince, Dominsuk, Bekuh BOOM\nArranged by 24, R.Tee, Vince, Dominsuk\n\nChoreography by Bailey Sok\n\nTAEYANG EP ALBUM [Down to Earth]\nThe Official Merch PRE-ORDER\nhttps://TAEYANG.bio.to/D.t.E_Merch",
       "categoria": "Colaboración",
       "usuario": "Taeyang&Lisa",
       "id": "b8FC0ZH"
@@ -196,9 +178,9 @@
     },
     {
       "titulo": "Jacson 100 Ways",
-      "video": "https://www.youtube.com/watch?v=PGTF4ctJ5no",
+      "video": "https://www.youtube.com/watch?v=87VRaM5_bAE",
       "imgVideo": "https://th.bing.com/th/id/OIP.DcciJOV6-luu6h--ulqoxAHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7",
-      "descripcion": "Sugerido por WMG\nJackson Wang - Come Alive (Official Music Video)",
+      "descripcion": "Music video by Jackson Wang performing \"100 Ways\", out now.\\n\n\nMusic Produced by: Lostboy\nMusic Video Directed by Daniel Cloud Campos\nProduction Company: Collidoscope LLC\n\nFollow Jackson Wang\nOfficial Instagram: http://instagram.com/jacksonwang852g7\nOfficial Twitter: http://twitter.com/JacksonWang852\nOfficial Facebook: http://facebook.com/jacksonwang852g7",
       "categoria": "Colaboración",
       "usuario": "Jackson Wang",
       "id": "W6g_WeC"
@@ -215,8 +197,8 @@
     {
       "titulo": "Billy Poco",
       "video": "https://www.youtube.com/watch?v=wWKu3cCLJWc",
-      "imgVideo": "https://th.bing.com/th/id/OIP.9qRhrDMIZejLzuY17kM_UgHaE8?pid=ImgDet&rs=1",
-      "descripcion": "Gdfgdfg dfgdfgdfgdfgdffg",
+      "imgVideo": "https://th.bing.com/th/id/OIP.Pl2gIjTWvnJLRzkI8o8-hwAAAA?pid=ImgDet&rs=1",
+      "descripcion": "ENHYPEN (엔하이픈) X TAYO - 'BILLY POCO' Official MV \n☞ (  \n\n • 'BILLY POCO' Offi...  )\n\n#ENHYPEN #엔하이픈 #ENHYPEN_TAYO #BillyPoco #TayotheLittleBus\n",
       "categoria": "Infantil",
       "usuario": "Enhypen",
       "id": "OXikayA"
@@ -225,19 +207,10 @@
       "titulo": "Tayo tayo",
       "video": "https://www.youtube.com/watch?v=xTCiQoZPHFM",
       "imgVideo": "https://th.bing.com/th/id/R.db860fde152ce46b370d759758666f6b?rik=%2fU8ChoW9h%2bEvVg&pid=ImgRaw&r=0",
-      "descripcion": "Fffffffffffffffffff",
+      "descripcion": "ENHYPEN (엔하이픈) X TAYO - 'HEY TAYO' Official MV\n☞ (  \n\n • 'HEY TAYO' Offici...  )\n\n#ENHYPEN #엔하이픈\n#ENHYPEN_TAYO\n#HeyTayo\n#TayotheLittleBus",
       "categoria": "Infantil",
       "usuario": "Enhypen",
       "id": "E2OQVyV"
-    },
-    {
-      "titulo": "Centuries",
-      "video": "https://www.youtube.com/watch?v=_99B2liNNek",
-      "imgVideo": "https://th.bing.com/th/id/OIP.-24BVJhKWnc9V2pJyRFT1gHaC0?pid=ImgDet&rs=1",
-      "descripcion": "Gato con botas Jurassic",
-      "categoria": "Infantil",
-      "usuario": "Jurassic Park/World ",
-      "id": "bKwIUSK"
     },
     {
       "titulo": "Alone, Pt. II",
@@ -265,6 +238,123 @@
       "categoria": "Grupo",
       "usuario": "G I-DLE",
       "id": "52qQXNK"
+    },
+    {
+      "titulo": "Song 곰 세 마리 ",
+      "video": "https://www.youtube.com/watch?v=99-TFvoeLVU",
+      "imgVideo": "https://i.pinimg.com/originals/6e/c9/22/6ec9222afd524d639e713ac20a53e122.jpg",
+      "descripcion": "Lyrics\n\n곰 세 마리가 한집에 있어\n아빠곰 엄마곰 애기곰 \n아빠곰은 뚱뚱해\n엄마곰은 날씬해\n애기곰은 너무 귀여워\n히쭉히쭉 잘한다\n\n곰 세 마리가 한집에 있어\n아빠곰 엄마곰 애기곰 \n아빠곰은 뚱뚱해\n엄마곰은 날씬해\n애기곰은 너무 귀여워\n히쭉히쭉 잘한다",
+      "categoria": "Infantil",
+      "usuario": "Korean Children's Song",
+      "id": "GQbUqbN"
+    },
+    {
+      "titulo": "Song 멋쟁이 토마토",
+      "video": "https://www.youtube.com/watch?v=_HGBw-emF0I",
+      "imgVideo": "https://th.bing.com/th/id/R.379c81a9695851d63fa685c0d17913e4?rik=XALB0w%2bEHZuMSw&pid=ImgRaw&r=0",
+      "descripcion": "Lirycs 멋쟁이 토마토\n\n울퉁불퉁 멋진 몸매에  \nultungbultung meosjin mommaee \n\n빨간 옷을 입고 \nppalgan os-eul ibgo \n\n새콤 달콤 향내 풍기는\nsaekom dalkom hyangnae pung-gineun \n\n 멋쟁이 토마토 (토마토) \nmeosjaeng-i tomato (tomato)\n\n \n나는야 주스 될 거야 (꿀꺽) \nnaneun-ya juseu doel geoya (kkulkkeog)\n\n나는야 케첩 될 거야 (찍) \nnaneun-ya kecheob doel geoya (jjig) \n\n나는야 춤을 출 거야 (헤이) \nnaneun-ya chum-eul chul geoya (hey) \n\n뽐내는 토마토 (토마토)\nppomnaeneun tomato (tomato)",
+      "categoria": "Infantil",
+      "usuario": "susi",
+      "id": "1vWZ68G"
+    },
+    {
+      "titulo": "GWIYOMI ",
+      "video": "https://www.youtube.com/watch?v=XvERzAXaZXQ",
+      "imgVideo": "https://th.bing.com/th/id/R.045c6b1c5433b235efac9404c9a5c901?rik=wUZoi33cFrf8yA&pid=ImgRaw&r=0",
+      "descripcion": "Sub español\n\nGwiyomi Song Hari (Original Version).\nhttps://www.facebook.com/pages/Gwiyom...\nPlease click Like & Share page Gwiyomi Malaysia to support.\nThank you\n",
+      "categoria": "Infantil",
+      "usuario": " Grecia",
+      "id": "5AYgbDR"
+    },
+    {
+      "titulo": "Banana Cha Cha",
+      "video": "https://www.youtube.com/watch?v=ocHnL2geo4U",
+      "imgVideo": "https://th.bing.com/th/id/R.80e5d9c0ffad600389b7d0e429bec816?rik=GoXwXfTvgcF4RQ&pid=ImgRaw&r=0",
+      "descripcion": "Preparados para aventuras con Pororo y sus amigos?\n¡Estás viendo \"Las Mejores Animación\" creadas por Pororo!",
+      "categoria": "Infantil",
+      "usuario": "Pororo",
+      "id": "pNu9cCV"
+    },
+    {
+      "titulo": "I Know I Love You",
+      "video": "https://www.youtube.com/watch?v=d5bbqKYu51w",
+      "imgVideo": "https://img.kpopmap.com/680x384/2021/05/TXT-%ED%88%AC%EB%AA%A8%EB%A1%9C%EC%9A%B0%EB%B0%94%EC%9D%B4%ED%88%AC%EA%B2%8C%EB%8D%94-0X1LOVESONG-I-Know-I-Love-You-feat.-Seori-Official-Teaser-2.jpeg",
+      "descripcion": "TXT (투모로우바이투게더) '0X1=LOVESONG (I Know I Love You) feat. Seori' Official MV\n\n\nCredits: \nDirector: Yong Seok Choi, Guzza (Lumpens)\nAssistant Director: Hyunhee Lim\nPA: Jihye Yoon, Ran Ro, Jingyu Lee\n\nDirector of Photography: Hyunwoo Nam (MOTHER)\nB Camera Operator: Eumko\nFocus Puller: Sangwoo Yun, Youngwoo Lee\n2nd AC: Eunki Kim, Eunil Lee\n3rd AC: Youngseo Park\nDIT: Yuntae Go",
+      "categoria": "Colaboración",
+      "usuario": "TXT",
+      "id": "YSAwGrx"
+    },
+    {
+      "titulo": "Yummy Yummy Love",
+      "video": "https://www.youtube.com/watch?v=crUnaCpci2U",
+      "imgVideo": "https://kmagazine.mx/wp-content/uploads/2022/01/Momoland-Yummy-Yummy-Love.jpeg",
+      "descripcion": "MOMOLAND X NATTI NATASHA 'Yummy Yummy Love' M/V\n\n#MOMOLAND #NATTINATASHA #YummyYummyLove\n\n☆Official Twitter\nhttp://www.twitter.com/MMLD_Official\n\n☆Official Instagram\nhttps://www.instagram.com/momoland_of...\n\n☆Official Facebook\nhttp://www.facebook.com/MOMOLANDOfficial\n\n☆Official Homepage\nhttp://www.mldenter.com",
+      "categoria": "Colaboración",
+      "usuario": "MLD ENTERTAINMENT",
+      "id": "TIZ_77n"
+    },
+    {
+      "titulo": "My Universe",
+      "video": "https://www.youtube.com/watch?v=3YqPKLZF_WU",
+      "imgVideo": "https://th.bing.com/th/id/R.dd328da3509ab3b3fcb8ff8b93c2ea5f?rik=j437Ag%2fsFZ5PKg&pid=ImgRaw&r=0",
+      "descripcion": "Coldplay X BTS - My Universe - The new single, taken from the album Music Of The Spheres\nCREDITS\n\nDirector: Dave Meyers\nEP/Producer: Nathan Scherrer\nDirector Rep: Jamie Rabineau\nProduction Co: Freenjoy\nDirector of Photography: Scott Cunningham\nProduction Designer: François Audouy\nEditor: Nick Gilberg\nAdditional score: Jon Hopkins\n",
+      "categoria": "Colaboración",
+      "usuario": "Coldplay",
+      "id": "iMfr7Ik"
+    },
+    {
+      "titulo": "DOPE",
+      "video": "https://www.youtube.com/watch?v=BVwAVbKYYeM",
+      "imgVideo": "https://i1.sndcdn.com/artworks-000263226377-f7vv9i-t500x500.jpg",
+      "descripcion": "BTS returns with a third mini-album [The most beautiful moment in life pt.1]. In this album, BTS proves they are no longer boys, but mature men. Each track is filled with sensational pop vibes, showing BTS's various kinds of musical growth and change.\nThe song \"DOPE\" is an electronic hiphop number, with impressive saxophone in the background.",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "mDHzTqC"
+    },
+    {
+      "titulo": "Boy In Luv",
+      "video": "https://www.youtube.com/watch?v=m8MfJg68oCs",
+      "imgVideo": "https://th.bing.com/th/id/R.b5ca5aadacedbfbfb635eb4b79945b24?rik=8WHCaw3xsC%2fSZg&pid=ImgRaw&r=0",
+      "descripcion": "BTS, mini album [Skool Luv Affair] Teenagers' love song! The best rookie BTS, is back on February 12t with their mini album!\n\nBTS, who always sang about dream and happiness, is back with a song about love. The title song 'Boy in Luv' is like the movie 'Romance of their own', where Gang dong won's wild side and pure love is both shown.",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "7rohD2Z"
+    },
+    {
+      "titulo": "Save ME",
+      "video": "https://www.youtube.com/watch?v=GZjt_sA2eso",
+      "imgVideo": "https://i.ytimg.com/vi/SURTVwLTSjA/hqdefault.jpg",
+      "descripcion": "BTS (방탄소년단) 'Save ME' Official MV\nÁLBUM\nThe most beautiful moment in life(화양연화) : Young Forever",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "b4poJsQ"
+    },
+    {
+      "titulo": "FAKE LOVE",
+      "video": "https://www.youtube.com/watch?v=7C2z4GqqS5E",
+      "imgVideo": "https://0.soompi.io/wp-content/uploads/sites/8/2018/07/01032713/bts-fake-love-2.jpg",
+      "descripcion": "Director : YongSeok Choi (Lumpens)\nAssistant Director : WonJu Lee, Guzza, HyeJeong Park, MinJe Jeong (Lumpens)\nDirector of Photography : HyunWoo Nam(GDW)\nGaffer : HyunSuk Song (Real Lighting)\nArt Director : JinSil Park Bona Kim (MU:E)\nConstruction Manager : SukKi Song \nSpecial Effect : Demolition\n",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "X_a5pim"
+    },
+    {
+      "titulo": "Stay Gold",
+      "video": "https://www.youtube.com/watch?v=9IHwqdz8Xhw",
+      "imgVideo": "https://i.ytimg.com/vi/HIN5ccDByLo/maxresdefault.jpg",
+      "descripcion": "Credits:\nWritten by UTA\nWritten by SUNNY BOY\nWritten by Melanie Joy Fontana\nWritten by Michel \"Lindgren\" Schulz\nWritten by JUN\nWritten by KM-MARKIT\n\nDirector：Ko Yoo Jeong",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "j9nis-R"
+    },
+    {
+      "titulo": "Dynamite",
+      "video": "https://www.youtube.com/watch?v=gdZLi9oWNZg",
+      "imgVideo": "https://th.bing.com/th/id/OIP.W4SaX0URxQM_g9MQY9oSHgHaE7?pid=ImgDet&rs=1",
+      "descripcion": "Credits:\nDirector: Yong Seok Choi (Lumpens)\nAssistant Director: Jihye Yoon (Lumpens)\n\nDirector of Photography: Hyunwoo Nam (GDW)\nB Camera Operator: Eumko\nFocus Puller: Sangwoo Yun, Youngwoo Lee\n2nd AC: Eunki Kim\n3rd AC: Kyuwon Seo\nDIT: Eunil Lee",
+      "categoria": "Bangtan Sonyeondan ",
+      "usuario": "HYBE LABELS",
+      "id": "6FgrIiX"
     }
   ]
 }
