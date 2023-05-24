@@ -38,9 +38,9 @@ const btnContenido= {
 const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
-    const [category,setCategory]= useState({value : "",valid:null})
+    const [category,setCategory]= useState({value : "Infantil",valid:null})
     const [color,setColor]= useState("#2a7ae4")
-    const [descripcion,setDescripcion]= useState({value : "Infantil",valid:null})
+    const [descripcion,setDescripcion]= useState({value : "",valid:null})
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
