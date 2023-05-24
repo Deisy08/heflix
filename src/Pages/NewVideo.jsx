@@ -6,15 +6,11 @@ import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDe
 import Footer from "../Componentes/Footer";
 import { buscar } from "../api/api";
 
-const ValidationTextField = styled(TextField)(({ theme }) => ({
+const CssTextField = styled(TextField)(({ theme }) => ({
     
-    '& .MuiInput-underline:after': {
-      borderBottomColor: '#2A7AE4',
-    },
+    
     '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: '#2A7AE4',
-      },
+      
       '&:hover fieldset': {
         borderColor: '#2A7AE4',
       },
@@ -28,48 +24,7 @@ const ValidationTextField = styled(TextField)(({ theme }) => ({
     },
 }));
   
-const CssTextField = styled(TextField)({
-    '& label.Mui-focused': {
-        color: '#2A7AE4',
-    },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: '#2A7AE4',
-    },
-    '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: '#2A7AE4',
-        },
-        '&:hover fieldset': {
-            borderBottom:"2px solid #2A7AE4",
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: '#2A7AE4',
-        },
-        "&.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
-            color: "white",
-            background: "#53585D",
-            borderRadius : "5px",
-        },
-        "&.css-wb57ya-MuiFormControl-root-MuiTextField-root":{
-            margin:"20px 0 10px 0",
-        },
-        "&.MuiOutlinedInput-root fieldset" : {
-            borderColor: "transparent",
-        },
-        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root":{
-            color: "#fff",
-            background: "#53585D",
-        },
-        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
-            borderColor: "2px solid #bf2e2e",
-            borderBottom: "2px solid #bf2e2e",
-        },
-        "&.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
-            color:"#fff",
-            background: "#53585D",
-        }
-    }  
-});
+
 
 const CssTextFieldTextarea = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -201,7 +156,7 @@ const NewVideo = ({ addCategoria, location }) =>{
         >
             <h1 style={{textAlign:"center"}}>Create new video</h1>
             
-            <ValidationTextField  required 
+            <CssTextField  required 
                 fullWidth margin="normal" 
                 placeholder="Title..." type="text"
                 error={titulo.valid === false} 
