@@ -214,7 +214,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 }}
             />
            
-            <CssTextFieldTextarea required 
+            <CssTextField required 
                 placeholder="Description..."
                 fullWidth margin="normal" 
                 rows={4}
