@@ -6,6 +6,30 @@ import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDe
 import Footer from "../Componentes/Footer";
 import { buscar } from "../api/api";
 
+const ValidationTextField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: '#2A7AE4',
+    },
+    '&.MuiInput-underline:after': {
+        borderBottomColor: '#2A7AE4',
+    },
+    '&.MuiOutlinedInput-root': {
+        '& fieldset': {
+          borderColor: '#2A7AE4',
+          
+        },
+        '&:hover fieldset': {
+          borderColor: '#2A7AE4',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: '#2A7AE4',
+        },
+        '&.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
+            color: 'white',
+        },
+    },
+});
+  
 const CssTextField = styled(TextField)({
     '& label.Mui-focused': {
         color: '#2A7AE4',
@@ -62,6 +86,7 @@ const CssTextFieldTextarea = styled(TextField)({
         }
     },
 });
+
 const BtnContenedor = styled.div`
     display: flex;
     flex-direction: column;
@@ -178,7 +203,7 @@ const NewVideo = ({ addCategoria, location }) =>{
         >
             <h1 style={{textAlign:"center"}}>Create new video</h1>
             
-            <CssTextField  required 
+            <ValidationTextField  required 
                 fullWidth margin="normal" 
                 placeholder="Title..." type="text"
                 error={titulo.valid === false} 
