@@ -46,7 +46,7 @@ function Home() {
         <Carrusel />
         {isMobileView ? ( <Link to="/NewVideo" style={a}>
         <Enlace onClick={() => console.log("nueva categoria")}>
-          <h1>Agregar Video</h1>
+          <h1>Add video</h1>
         </Enlace></Link>
       ) : (
         <Footer />

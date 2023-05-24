@@ -40,7 +40,7 @@ function Header() {
             alt="nombre logo"/>
         </Link>
         <Link to="/NewVideo" style={a}>
-            <Enlace color={"#FFF"}>Nuevo Video</Enlace>
+            <Enlace color={"#FFF"}>add video</Enlace>
         </Link>
     </HeaderContenedor>
 }

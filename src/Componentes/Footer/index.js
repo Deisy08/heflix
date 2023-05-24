@@ -17,7 +17,7 @@ const Footer = () =>{
 
     return <Contenedor >
         <ImgLogo src={texto_logo} alt="nombre logo"/>
-        <p style={{marginBottom:"0.8rem"}}>Site hecho en #challengeAlura por TSG</p>
+        <p style={{marginBottom:"0.8rem"}}>Site made in #challengeAlways by TSG</p>
     </Contenedor>
 }
 

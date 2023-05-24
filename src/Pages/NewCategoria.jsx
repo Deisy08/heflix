@@ -10,60 +10,60 @@ import Tabla from "../Componentes/Tabla";
 import Footer from "../Componentes/Footer";
 
 const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: '#2A7AE4',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: '#2A7AE4',
+    },
     '& .MuiOutlinedInput-root': {
-      '&:hover fieldset': {
-        borderBottom:"2px solid #2A7AE4",
-      }
-    },
-    ".css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
-        color: "white",
-        background: "#53585D",
-        borderRadius : "5px",
-    },
-    ".css-nxo287-MuiInputBase-input-MuiOutlinedInput-input" : {
-        color: "white",
-    },
-    ".css-wb57ya-MuiFormControl-root-MuiTextField-root":{
-        margin:"20px 0 10px 0",
-    },
-    ".css-ptiqhd-MuiSvgIcon-root ":{
-        color: "white",
-    },
-    ".css-i4bv87-MuiSvgIcon-root":{
-        color: "white",
-    },
-    ".MuiOutlinedInput-root fieldset" : {
-        borderColor: "transparent",
-    },
-    ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
-        background: "#53585D",
-    },
-    ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
-        borderColor: "2px solid #bf2e2e",
-        borderBottom: "2px solid #bf2e2e",
-    },
-    ".css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root":{
-        color:"#FFF",
-        fontSize:"1rem",
-        top:"-15px"
-    },
-    ".css-1jy569b-MuiFormLabel-root-MuiInputLabel-root":{
-        display:"none"
-    }
+        '& fieldset': {
+            borderColor: '#2A7AE4',
+        },
+        '&:hover fieldset': {
+            borderBottom:"2px solid #2A7AE4",
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: '#2A7AE4',
+        },
+        "&.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
+            color: "white",
+            background: "#53585D",
+            borderRadius : "5px",
+        },
+        "&.css-wb57ya-MuiFormControl-root-MuiTextField-root":{
+            margin:"20px 0 10px 0",
+        },
+        "&.MuiOutlinedInput-root fieldset" : {
+            borderColor: "transparent",
+        },
+        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root":{
+            color: "#fff",
+            background: "#53585D",
+        },
+        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
+            borderColor: "2px solid #bf2e2e",
+            borderBottom: "2px solid #bf2e2e",
+        },
+        "&.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
+            color:"#fff",
+            background: "#53585D",
+        }
+    }  
 });
 
 const CssTextFieldTextarea = styled(TextField)({
-'& .MuiOutlinedInput-root': {
-  '&:hover fieldset': {
-    borderBottom:"2px solid #2A7AE4",
-  }
-},
-".css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
-    background: "#53585D",
-},
-".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input" : {
-    color: "white",
-}
+    '& .MuiOutlinedInput-root': {
+        '&:hover fieldset': {
+            borderBottom:"2px solid #2A7AE4",
+        },
+        "&.css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
+            background: "#53585D",
+        },
+        ".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input":{
+            color:"#fff"
+        }
+    },
 });
 
 const Mensaje =styled.h5`

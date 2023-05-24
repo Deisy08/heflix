@@ -234,7 +234,7 @@ function Banner() {
             width="calc(80vh - 300px)"
             height="300px"
             />
-            <Enlace  style={{marginTop:"25px"}} onClick={onClose}>Cerrar</Enlace>
+            <Enlace  style={{marginTop:"25px"}} onClick={onClose}>Close</Enlace>
         </VideoMovilC>
         );
     };
@@ -248,7 +248,7 @@ function Banner() {
                     <div>
                     <H1>K-POP</H1>
                     <P>
-                        Es un género musical que incluye diversos estilos musicales como el{' '}
+                    It is a musical genre that includes various musical styles such as{' '}
                         <span style={{ color: '#ce4646', fontWeight: 'bold' }}>
                         <Typewriter
                             words={['POP', 'RAP', 'Rock', 'EDM', 'Hip Hop']}
@@ -259,10 +259,10 @@ function Banner() {
                             deleteSpeed={50}
                         />
                         </span>{' '}
-                        y que se refiere específicamente a la música popular de Corea del Sur.
+                        and specifically refers to popular South Korean music.
                     </P>
                     <Enlace type="button" onClick={handleVerClick}>
-                        Ver
+                    click here
                     </Enlace>
                     </div>
                     <VideoT><VideoPlayerT /></VideoT>

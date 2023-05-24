@@ -5,53 +5,62 @@ import styled from "styled-components";
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones";
 import Footer from "../Componentes/Footer";
 import { buscar } from "../api/api";
+
 const CssTextField = styled(TextField)({
-        '& .MuiOutlinedInput-root': {
-          '&:hover fieldset': {
-            borderBottom:"2px solid #2A7AE4",
-          }
+    '& label.Mui-focused': {
+        color: '#2A7AE4',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: '#2A7AE4',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: '#2A7AE4',
         },
-        ".css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
+        '&:hover fieldset': {
+            borderBottom:"2px solid #2A7AE4",
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: '#2A7AE4',
+        },
+        "&.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
             color: "white",
             background: "#53585D",
             borderRadius : "5px",
         },
-        ".css-nxo287-MuiInputBase-input-MuiOutlinedInput-input" : {
-            color: "white",
-        },
-        ".css-wb57ya-MuiFormControl-root-MuiTextField-root":{
+        "&.css-wb57ya-MuiFormControl-root-MuiTextField-root":{
             margin:"20px 0 10px 0",
         },
-        ".css-ptiqhd-MuiSvgIcon-root ":{
-            color: "white",
-        },
-        ".css-i4bv87-MuiSvgIcon-root":{
-            color: "white",
-        },
-        ".MuiOutlinedInput-root fieldset" : {
+        "&.MuiOutlinedInput-root fieldset" : {
             borderColor: "transparent",
         },
-        ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
+        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root":{
+            color: "#fff",
             background: "#53585D",
         },
-        ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
+        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
             borderColor: "2px solid #bf2e2e",
             borderBottom: "2px solid #bf2e2e",
+        },
+        "&.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
+            color:"#fff",
+            background: "#53585D",
         }
+    }  
 });
 
 const CssTextFieldTextarea = styled(TextField)({
     '& .MuiOutlinedInput-root': {
-      '&:hover fieldset': {
-        borderBottom:"2px solid #2A7AE4",
-      }
+        '&:hover fieldset': {
+            borderBottom:"2px solid #2A7AE4",
+        },
+        "&.css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
+            background: "#53585D",
+        },
+        ".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input":{
+            color:"#fff"
+        }
     },
-    ".css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
-        background: "#53585D",
-    },
-    ".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input" : {
-        color: "white",
-    }
 });
 const BtnContenedor = styled.div`
     display: flex;
@@ -165,13 +174,13 @@ const NewVideo = ({ addCategoria, location }) =>{
                 flexDirection:"column",
             }}
             onSubmit={manejarEnvio}
-            
+            style={{color:"white"}}
         >
             <h1 style={{textAlign:"center"}}>Create new video</h1>
-
+            
             <CssTextField  required 
                 fullWidth margin="normal" 
-                placeholder="Título..." type="text"
+                placeholder="Title..." type="text"
                 error={titulo.valid === false} 
                 helperText={titulo.valid === false && "El título debe tener entre 2 y 25 letras(comienza con mayúscula)  y permitir mayúsculas, minúsculas, espacios, y la letra ñ."}
                 value={titulo.value}
@@ -184,7 +193,7 @@ const NewVideo = ({ addCategoria, location }) =>{
 
             <CssTextField  required 
                 fullWidth margin="normal"
-                placeholder="Link del video..." type="text"
+                placeholder="Video link..." type="text"
                 error={video.valid === false}
                 helperText={video.valid === false && "Este campo es para la URL no es válido, asegurese que sea válido."}
                 value={video.value}
@@ -197,7 +206,7 @@ const NewVideo = ({ addCategoria, location }) =>{
 
             <CssTextField required
                 fullWidth margin="normal"
-                placeholder="Link de la imagen del video..." type="imgVideo"
+                placeholder="Video Image Link..." type="imgVideo"
                 error={imgVideo.valid === false}
                 helperText={imgVideo.valid === false && "El enlace de imagen no es válido, asegurece que su imagen sea válido."}
                 value={imgVideo.value}
@@ -218,7 +227,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                     {...params} 
                     margin="normal" 
                     required 
-                    placeholder={"Escoja una categoría..."} 
+                    placeholder={"Choose a category..."} 
                     error={!isCategoryValid }
                     helperText={!isCategoryValid  && "Este campo no puede estar vacio, elija una categoría."}
                 />}
@@ -228,7 +237,7 @@ const NewVideo = ({ addCategoria, location }) =>{
             />
            
             <CssTextFieldTextarea required 
-                placeholder="Describa el video..."
+                placeholder="Description..."
                 fullWidth margin="normal" 
                 rows={4}
                 multiline
@@ -244,7 +253,7 @@ const NewVideo = ({ addCategoria, location }) =>{
 
             <CssTextField required 
                 fullWidth margin="normal" 
-                placeholder="Usuário..." type="Usuario"
+                placeholder="User..." type="Usuario"
                 error={usuario.valid === false}
                 helperText={usuario.valid === false && "En el campo usuario puede comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|')."}
                 value={usuario.value}
