@@ -60,7 +60,7 @@ const NewVideo = ({ addCategoria, location }) =>{
         valid:null
     })
 
-    const [selectedCategory, setSelectedCategory] = useState("Grupo");
+    const [selectedCategory, setSelectedCategory] = useState("Group");
     const [isCategoryValid, setIsCategoryValid] = useState(true);
 
     useEffect(() => {
