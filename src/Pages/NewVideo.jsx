@@ -1,34 +1,32 @@
 import { Container, Box, Button, TextField, Autocomplete} from "@mui/material";
 import { Link } from "react-router-dom"
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import { styled } from '@mui/system';
 import { validarTitulo, validarVideo, validarImgVideo, validarUsuario, validarDescripcion } from "../Componentes/validaciones";
 import Footer from "../Componentes/Footer";
 import { buscar } from "../api/api";
 
-const ValidationTextField = styled(TextField)({
-    '& label.Mui-focused': {
-        color: '#2A7AE4',
+const ValidationTextField = styled(TextField)(({ theme }) => ({
+    
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#2A7AE4',
     },
-    '&.MuiInput-underline:after': {
-        borderBottomColor: '#2A7AE4',
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#2A7AE4',
+      },
+      '&:hover fieldset': {
+        borderColor: '#2A7AE4',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#2A7AE4',
+      },
+      '& .MuiInputBase-input': {
+        color: 'white',
+      },
+      backgroundColor: '#53585D',
     },
-    '&.MuiOutlinedInput-root': {
-        '& fieldset': {
-          borderColor: '#2A7AE4',
-          
-        },
-        '&:hover fieldset': {
-          borderColor: '#2A7AE4',
-        },
-        '&.Mui-focused fieldset': {
-          borderColor: '#2A7AE4',
-        },
-        '&.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
-            color: 'white',
-        },
-    },
-});
+}));
   
 const CssTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -87,18 +85,18 @@ const CssTextFieldTextarea = styled(TextField)({
     },
 });
 
-const BtnContenedor = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-`
-const BtnContenido= styled.div`
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 30px;
-    width: 100%;
-`
+const btnContenedor = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "30px",
+}
+const btnContenido= {
+    display: "flex",
+    justifyContent: "space-around",
+    paddingBottom: "30px",
+    width: "100%",
+}
 const NewVideo = ({ addCategoria, location }) =>{
     
     const [categorias, setCategorias] = useState([])
@@ -289,19 +287,19 @@ const NewVideo = ({ addCategoria, location }) =>{
                 }}
             />
 
-            <BtnContenedor>
-                <BtnContenido>
+            <div style={btnContenedor}>
+                <div style={btnContenido}>
                     <Button  variant="contained" 
                     type="submit">Guardar</Button> 
                     <Button  variant="outlined"  color="primary" type="reset"
                         onClick={handleFormReset}  >limpiar</Button>
-                </BtnContenido>
+                </div>
                 <Link to="/NewCategorie">
                     <Button  
                         variant="outlined" color="secondary" size="large"
-                        >Nueva Categoría</Button>  
+                    >Nueva Categoría</Button>  
                 </Link>
-            </BtnContenedor>
+            </div>
             
         </Box> 
     </Container>
