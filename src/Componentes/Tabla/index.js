@@ -72,7 +72,7 @@ const Tabla = () => {
 
     const editForm = () =>{
         // Agregar el ID del registro seleccionado a la URL del endpoint
-        const url = `http://localhost:5000/categorias/${btnEditar}`;
+        const url = `https://646d54f79c677e232189ed4f.mockapi.io/api/categorias/${btnEditar}`;
         const confirmed = window.confirm('¿Estás seguro de que deseas editar este elemento?');
         if (!confirmed) {
             setShow(false)
@@ -114,7 +114,7 @@ const Tabla = () => {
         if (!confirmed) {
             return; 
         }
-        const url = `http://localhost:5000/categorias/${item.id}`;
+        const url = `https://646d54f79c677e232189ed4f.mockapi.io/api/categorias/${item.id}`;
         //console.log(url);
         await fetch(url,{
             method: "DELETE",

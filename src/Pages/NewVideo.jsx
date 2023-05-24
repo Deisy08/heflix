@@ -112,7 +112,7 @@ const NewVideo = ({ addCategoria, location }) =>{
         }
         //console.log(titulo,video,imgVideo,descripcion,usuario,selectedCategory);
         
-        fetch('http://localhost:5000/cards', {
+        fetch('https://646d54f79c677e232189ed4f.mockapi.io/api/cards', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

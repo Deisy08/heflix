@@ -40,7 +40,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     async function fetchCards() {
-      const response = await fetch('http://localhost:5000/cards');
+      const response = await fetch('https://646d54f79c677e232189ed4f.mockapi.io/api/cards');
       const data = await response.json();
       setCards(data);
     }
@@ -192,7 +192,6 @@ const SliderComponente = ({ tarjeta }) => {
         <ReactPlayer 
             url={url}
             controls
-            volume="0.5"
             playing={true}
             width="auto"
             height="calc(60vh - 200px)"
@@ -219,7 +218,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [usuario,setUsuario]= useState("")
  console.log(btnEliminar);
   useEffect(() => {
-    fetch('http://localhost:5000/cards')
+    fetch('https://646d54f79c677e232189ed4f.mockapi.io/api/cards')
     .then(response => response.json())
     .then(data => setData(data))
     .catch(error => console.error(error));
@@ -247,7 +246,7 @@ const SliderComponente = ({ tarjeta }) => {
       return;
     }
   
-    const url = `http://localhost:5000/cards/${btnEditar}`;
+    const url = `https://646d54f79c677e232189ed4f.mockapi.io/api/cards/${btnEditar}`;
     axios.put(url, {
       titulo: titulo,
       video: video,
@@ -283,7 +282,7 @@ const SliderComponente = ({ tarjeta }) => {
   // eliminar tarjeta
   const eliminarCard = async (id) =>{
     setBtnEliminar(id)
-    const url = `http://localhost:5000/cards/${id}`;
+    const url = `https://646d54f79c677e232189ed4f.mockapi.io/api/cards/${id}`;
     //console.log(url);
     const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
       if (!confirmed) {

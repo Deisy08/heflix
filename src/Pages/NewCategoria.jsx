@@ -112,7 +112,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
         // Redirige a NewVideo con la nueva categoría
         navigate('/NewVideo', { state: { categoria } }); 
 
-        fetch('http://localhost:5000/categorias', {
+        fetch('https://646d54f79c677e232189ed4f.mockapi.io/api/categorias', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

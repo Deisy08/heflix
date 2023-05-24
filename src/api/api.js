@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "https://646d54f79c677e232189ed4f.mockapi.io/api"
 });
 
 export const buscar = async (url, setData) => {
