@@ -8,7 +8,6 @@ import { buscar } from "../api/api";
 
 const CssTextField = styled(TextField)(({ theme }) => ({
     
-    
     '& .MuiOutlinedInput-root': {
       
       '&:hover fieldset': {
@@ -24,21 +23,6 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     },
 }));
   
-
-
-const CssTextFieldTextarea = styled(TextField)({
-    '& .MuiOutlinedInput-root': {
-        '&:hover fieldset': {
-            borderBottom:"2px solid #2A7AE4",
-        },
-        "&.css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
-            background: "#53585D",
-        },
-        ".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input":{
-            color:"#fff"
-        }
-    },
-});
 
 const btnContenedor = {
     display: "flex",

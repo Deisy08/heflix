@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { buscar } from "../../api/api";
+import 좋아 from "../../assets/img/img좋아.svg"
 
 const TableContenedor = styled.table`
     width: 100%;
@@ -37,6 +38,25 @@ const Editar = styled.td`
 `
 const Eliminar = styled.td`
     cursor: pointer;
+`
+const EspContenedor=styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+`
+const Simg=styled.img`
+    width: 80%;
+    @media (min-width: 768px) {
+        display: none;
+    }
+`
+const Mensaje =styled.h5`
+    margin-bottom: 10px;
+    display: none;
+    @media (min-width: 768px){
+       display: block;
+    }
 `
 
 const Tabla = () => {
@@ -137,13 +157,19 @@ const Tabla = () => {
     const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
 
     return <>
+        <EspContenedor >
+            <Simg src={좋아} alt="img de apreciación"/>
+        </EspContenedor>
+
+        <Mensaje>* Here you can edit or delete by category.</Mensaje>
         <TableContenedor>
+            
             <CabezaTabla>
                 <tr>
-                <th style={{width:"15%"}}>Nombre</th>
-                <th style={{width:"70%"}}>Descripción</th>
-                <th>Editar</th>
-                <th>Remover</th>
+                <th style={{width:"15%"}}>Name</th>
+                <th style={{width:"70%"}}>Description</th>
+                <th>Edit</th>
+                <th>Remove</th>
                 </tr>
             </CabezaTabla>
             <CuerpoTabla>
@@ -151,8 +177,8 @@ const Tabla = () => {
                     <tr key={item.id}>
                         <td>{item.categoria}</td>
                         <td>{item.descripcion}</td>
-                        <Editar onClick={() => handleShow(item)}>Editar</Editar>
-                        <Eliminar onClick={() => eliminar(item)} >Remover</Eliminar>
+                        <Editar onClick={() => handleShow(item)}>Edit</Editar>
+                        <Eliminar onClick={() => eliminar(item)} >Remove</Eliminar>
                     </tr>
                 ))}
             </CuerpoTabla>
@@ -166,11 +192,11 @@ const Tabla = () => {
             style={{color:"black"}}
         >
             <ModalHeader closeButton>
-                <Modal.Title>Editar Registro</Modal.Title>
+                <Modal.Title>Edit Registry</Modal.Title>
             </ModalHeader>
             <ModalBody>
             <FormGroup>
-				<label>Nombre:</label>
+				<label>Name:</label>
 				<input
 					className={`form-control ${nameCategory !== null ? (isValidName ? 'is-valid' : 'is-invalid') : ''}`}
 					type="text"
@@ -179,12 +205,12 @@ const Tabla = () => {
 						setNameCategory(e.target.value)
 					}}
 				/>
-				{nameCategory !== null && !isValidName && <div className="invalid-feedback">El nombre de esta categoria debe comenzar en mayúscula.</div>}
+				{nameCategory !== null && !isValidName && <div className="invalid-feedback">The name of this category should begin in capital letters.</div>}
             </FormGroup>
             
             <FormGroup>
 				<label>
-					Descripción: 
+                    Description: 
 				</label>
 				<textarea
 					className={`form-control ${descripcion !== null ? (isValidDescription ? 'is-valid' : 'is-invalid') : ''}`}
@@ -194,7 +220,7 @@ const Tabla = () => {
 						setDescripcion(e.target.value)
 					}}
 				/>
-				{descripcion !== null && !isValidDescription && <div className="invalid-feedback">La descripción debe comenzar en mayúscula.</div>}
+				{descripcion !== null && !isValidDescription && <div className="invalid-feedback">The description should begin in capital letters.</div>}
 			</FormGroup>
             
             <FormGroup>
@@ -209,7 +235,7 @@ const Tabla = () => {
                     setColor(e.target.value)
                 }}
               />
-              {color !== null && !isValidColor && <div className="invalid-feedback">Por favor, seleccione un código de color hexadecimal válido.</div>}
+              {color !== null && !isValidColor && <div className="invalid-feedback">Please select a valid hexadecimal color code.</div>}
             </FormGroup>
           </ModalBody>
 
@@ -218,13 +244,13 @@ const Tabla = () => {
               color="primary"
               onClick={editForm}
             >
-              Editar
+              Edit
             </Button>
             <Button
               color="danger"
               onClick={handleClose}
             >
-              Cancelar
+              Cancel
             </Button>
           </ModalFooter>
         </Modal>

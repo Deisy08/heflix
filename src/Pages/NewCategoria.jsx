@@ -3,92 +3,39 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
-import 좋아 from "../assets/img/img좋아.svg"
 import { validarTitulo, validarDescripcion } from "../Componentes/validaciones";
 import { useNavigate } from 'react-router-dom';
 import Tabla from "../Componentes/Tabla";
 import Footer from "../Componentes/Footer";
 
-const CssTextField = styled(TextField)({
-    '& label.Mui-focused': {
-        color: '#2A7AE4',
-    },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: '#2A7AE4',
-    },
+const CssTextField = styled(TextField)(({ theme }) => ({
+    
     '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: '#2A7AE4',
-        },
-        '&:hover fieldset': {
-            borderBottom:"2px solid #2A7AE4",
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: '#2A7AE4',
-        },
-        "&.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input" : {
-            color: "white",
-            background: "#53585D",
-            borderRadius : "5px",
-        },
-        "&.css-wb57ya-MuiFormControl-root-MuiTextField-root":{
-            margin:"20px 0 10px 0",
-        },
-        "&.MuiOutlinedInput-root fieldset" : {
-            borderColor: "transparent",
-        },
-        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root":{
-            color: "#fff",
-            background: "#53585D",
-        },
-        "&.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
-            borderColor: "2px solid #bf2e2e",
-            borderBottom: "2px solid #bf2e2e",
-        },
-        "&.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root":{
-            color:"#fff",
-            background: "#53585D",
-        }
-    }  
-});
-
-const CssTextFieldTextarea = styled(TextField)({
-    '& .MuiOutlinedInput-root': {
-        '&:hover fieldset': {
-            borderBottom:"2px solid #2A7AE4",
-        },
-        "&.css-8ewcdo-MuiInputBase-root-MuiOutlinedInput-root" : {
-            background: "#53585D",
-        },
-        ".css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input":{
-            color:"#fff"
-        }
+      
+      '&:hover fieldset': {
+        borderColor: '#2A7AE4',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#2A7AE4',
+      },
+      '& .MuiInputBase-input': {
+        color: 'white',
+      },
+      backgroundColor: '#53585D',
     },
-});
+}));
 
-const Mensaje =styled.h5`
-    margin-bottom: 10px;
-    @media (max-width: 768px){
-      display: none;  
-    }
-`
-const EspContenedor=styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-`
-const Simg=styled.img`
-    width: 80%;
-    @media (min-width: 768px) {
-        display: none;
-    }
-`
-const BtnContenido= styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-`
+const espContenedor={
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "30px",
+}
+const btnContenido= {
+    display: "flex",
+    justifyContent: "space-around",
+    width: "100%",
+}
 const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
     const navigate = useNavigate();
    //useStates de mi formulario
@@ -184,7 +131,7 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
                 }}
             />
         
-            <CssTextFieldTextarea required 
+            <CssTextField required 
                 placeholder="Describa porque agregar esta categoria..."
                 fullWidth margin="normal" 
                 rows={4}
@@ -199,25 +146,18 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
                 }}
             />
 
-            <EspContenedor>
-                <BtnContenido >
+            <div style={espContenedor}>
+                <div style={btnContenido}>
                     <Button  variant="contained" 
                     type="submit" >Guardar</Button> 
                     
                     <Button  variant="outlined"  color="primary" type="reset"
                         onClick={handleFormReset}  >limpiar</Button>
-                </BtnContenido>
+                </div>
                 <div id="contact-form-loader" style={{display:"none"}}>
                     <img src={loader} alt="loading"/>
                 </div>
-            </EspContenedor>
-
-            <EspContenedor>
-                <Simg src={좋아} alt="img de apreciación"/>
-            </EspContenedor>
-
-            <Mensaje>* Aquí se puede editar o eliminar por categoria </Mensaje>
-
+            </div>
             <Tabla />
         </Box> 
         
