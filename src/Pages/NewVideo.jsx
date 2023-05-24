@@ -23,7 +23,6 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     },
 }));
   
-
 const btnContenedor = {
     display: "flex",
     flexDirection: "column",
@@ -77,7 +76,7 @@ const NewVideo = ({ addCategoria, location }) =>{
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
-        const confirmed = window.confirm('¿Estás seguro de que deseas guardar este elemento?');
+        const confirmed = window.confirm('Are you sure you want to keep this element?');
         if (!confirmed) {
         return;
         }
@@ -144,7 +143,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 fullWidth margin="normal" 
                 placeholder="Title..." type="text"
                 error={titulo.valid === false} 
-                helperText={titulo.valid === false && "El título debe tener entre 2 y 25 letras(comienza con mayúscula)  y permitir mayúsculas, minúsculas, espacios, y la letra ñ."}
+                helperText={titulo.valid === false && "The title must be between 2 and 25 letters (starting with capital letter) and you can write capital letters, lowercase letters, spaces, and letter ñ."}
                 value={titulo.value}
                 onChange={(input)=>{ 
                     const titulo= input.target.value
@@ -157,7 +156,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 fullWidth margin="normal"
                 placeholder="Video link..." type="text"
                 error={video.valid === false}
-                helperText={video.valid === false && "Este campo es para la URL no es válido, asegurese que sea válido."}
+                helperText={video.valid === false && "This field is for the URL not valid, make sure it is valid."}
                 value={video.value}
                 onChange={(input)=>{ 
                     const video= input.target.value
@@ -170,7 +169,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 fullWidth margin="normal"
                 placeholder="Video Image Link..." type="imgVideo"
                 error={imgVideo.valid === false}
-                helperText={imgVideo.valid === false && "El enlace de imagen no es válido, asegurece que su imagen sea válido."}
+                helperText={imgVideo.valid === false && "The image link is not valid, make sure your image is valid."}
                 value={imgVideo.value}
                 onChange={(input)=>{ 
                     const imgVideo= input.target.value
@@ -191,7 +190,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                     required 
                     placeholder={"Choose a category..."} 
                     error={!isCategoryValid }
-                    helperText={!isCategoryValid  && "Este campo no puede estar vacio, elija una categoría."}
+                    helperText={!isCategoryValid  && "This field cannot be empty, choose a category."}
                 />}
                 onChange={(event, value) => {
                     setSelectedCategory(value?.categoria || "");
@@ -204,7 +203,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 rows={4}
                 multiline
                 error={descripcion.valid === false}
-                helperText={descripcion.valid === false && "La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra ñ(de 5 hasta 400 caracteres)."}
+                helperText={descripcion.valid === false && "The description should begin with a capital letter and may contain letters, spaces, tildes and letter (from 5 to 400 characters)."}
                 value={descripcion.value}
                 onChange={(input)=>{ 
                     const descripcion= input.target.value
@@ -217,7 +216,7 @@ const NewVideo = ({ addCategoria, location }) =>{
                 fullWidth margin="normal" 
                 placeholder="User..." type="Usuario"
                 error={usuario.valid === false}
-                helperText={usuario.valid === false && "En el campo usuario puede comienza con mayúscula ,tildes y puede tener carecteres especiales(-_@&()|')."}
+                helperText={usuario.valid === false && "In the user field I was able to start with capital letter, tildes and I was able to have special characters (-_@&()|')."}
                 value={usuario.value}
                 onChange={(input)=>{ 
                     const usuario= input.target.value
@@ -229,14 +228,14 @@ const NewVideo = ({ addCategoria, location }) =>{
             <div style={btnContenedor}>
                 <div style={btnContenido}>
                     <Button  variant="contained" 
-                    type="submit">Guardar</Button> 
+                    type="submit">Save</Button> 
                     <Button  variant="outlined"  color="primary" type="reset"
-                        onClick={handleFormReset}  >limpiar</Button>
+                        onClick={handleFormReset}  >Clear</Button>
                 </div>
                 <Link to="/NewCategorie">
                     <Button  
                         variant="outlined" color="secondary" size="large"
-                    >Nueva Categoría</Button>  
+                    >New Category</Button>  
                 </Link>
             </div>
             

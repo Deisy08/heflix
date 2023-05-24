@@ -1,6 +1,5 @@
 import { Container, Box, Button ,TextField} from "@mui/material";
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import styled from "styled-components";
 import loader from "../assets/img/loading.svg"
 import { validarTitulo, validarDescripcion } from "../Componentes/validaciones";
@@ -41,11 +40,11 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
    //useStates de mi formulario
     const [category,setCategory]= useState({value : "",valid:null})
     const [color,setColor]= useState("#2a7ae4")
-    const [descripcion,setDescripcion]= useState({value : "",valid:null})
+    const [descripcion,setDescripcion]= useState({value : "Infantil",valid:null})
 
     const manejarEnvio = (e) =>{
         e.preventDefault()
-        const confirmed = window.confirm('¿Estás seguro de que deseas agregar una nueva categoria?');
+        const confirmed = window.confirm('Are you sure you want to add a new category?');
         if (!confirmed) {
         return;
         }
@@ -77,8 +76,6 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
         })
         .catch(error => console.error(error))
     }
-    // Generar el ID único
-    const idUnico = uuidv4();
   
     const handleFormReset = () => {
         setCategory({value: ""});
@@ -87,7 +84,6 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
     };
     const isValidColor = /^#[0-9a-fA-F]{6}$/.test(color)
 
-    
 
     return <><Container maxWidth="xl" style={{ marginTop: "50px", marginBottom: "40px"}}>
         <Box
@@ -100,15 +96,14 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
                 flexDirection:"column",
             }}
             onSubmit={manejarEnvio}
-            id={idUnico}
         >
             <h1 style={{textAlign:"center"}}>Create new category</h1>
 
             <CssTextField  required 
                 fullWidth margin="normal" 
-                placeholder="Categoria..." type="text"
+                placeholder="Category..." type="text"
                 error={category.valid === false} 
-                helperText={category.valid === false && "Escribe el nombre de la nueva categoria la cual debe tener al comienzo una letra en mayúscula y de entre 5 y 15 caracteres."}
+                helperText={category.valid === false && "Type the name of the new category which should initially have a capital letter and between 5 and 15 characters."}
                 value={category.value}
                 onChange={(e)=>{ 
                     const category= e.target.value
@@ -132,12 +127,12 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
             />
         
             <CssTextField required 
-                placeholder="Describa porque agregar esta categoria..."
+                placeholder="Describe why add this category..."
                 fullWidth margin="normal" 
                 rows={4}
                 multiline
                 error={descripcion.valid === false}
-                helperText={descripcion.valid === false && "La descripción debe comenzar con mayúscula y puede contener letras, espacios, tildes y la letra ñ."}
+                helperText={descripcion.valid === false && "The description should begin with a capital letter and may contain letters, spaces, tildes and letter ñ."}
                 value={descripcion.value}
                 onChange={(input)=>{ 
                     const descripcion= input.target.value
@@ -149,13 +144,10 @@ const NewCategoria = ({ addCategoria, fetchCategorias, url}) =>{
             <div style={espContenedor}>
                 <div style={btnContenido}>
                     <Button  variant="contained" 
-                    type="submit" >Guardar</Button> 
+                    type="submit" >Save</Button> 
                     
                     <Button  variant="outlined"  color="primary" type="reset"
-                        onClick={handleFormReset}  >limpiar</Button>
-                </div>
-                <div id="contact-form-loader" style={{display:"none"}}>
-                    <img src={loader} alt="loading"/>
+                    onClick={handleFormReset}  >Clear</Button>
                 </div>
             </div>
             <Tabla />

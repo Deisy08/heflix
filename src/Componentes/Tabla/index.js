@@ -205,7 +205,7 @@ const Tabla = () => {
 						setNameCategory(e.target.value)
 					}}
 				/>
-				{nameCategory !== null && !isValidName && <div className="invalid-feedback">The name of this category should begin in capital letters.</div>}
+				{nameCategory !== null && !isValidName && <div className="invalid-feedback">The name of this category should begin in capital letter.</div>}
             </FormGroup>
             
             <FormGroup>
@@ -220,7 +220,7 @@ const Tabla = () => {
 						setDescripcion(e.target.value)
 					}}
 				/>
-				{descripcion !== null && !isValidDescription && <div className="invalid-feedback">The description should begin in capital letters.</div>}
+				{descripcion !== null && !isValidDescription && <div className="invalid-feedback">The description should begin in capital letter.</div>}
 			</FormGroup>
             
             <FormGroup>

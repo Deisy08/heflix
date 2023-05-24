@@ -33,7 +33,7 @@ const bannerD = keyframes`
 const BannerContenedor = styled.section`
     position: relative;
     widows: 100%;
-    height: 550px;
+    height: 560px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,7 +42,7 @@ const BannerContenedor = styled.section`
     
     @media (min-width: 768px) {
         background-size: cover;
-        height: 300px;
+        height: 310px;
         animation: ${bannerT} 20s infinite linear alternate;
     }
 
@@ -99,20 +99,19 @@ const H1 = styled(Contenido)`
     }
 `
 const P = styled.p`
-    margin: 20px 20px 30px;
+    margin: 20px 2%;
     font-size: 20px;
     text-align: center;
-    width: 95%;
     @media (min-width: 768px) {
-        width: 350px;
         text-align: start;
+        font-size: 15px;
+        margin: 20px 4%;   
     }
     @media (min-width: 1024px) {
-        width: 75%;
         font-size: 21.5px;
     }
     @media (min-width: 1424px) {
-        width: 60%;
+        margin: 20px 4% 20px 2%;
     }
 `
 const Enlace = styled.button`
@@ -248,10 +247,10 @@ function Banner() {
                     <div>
                     <H1>K-POP</H1>
                     <P>
-                    It is a musical genre that includes various musical styles such as{' '}
+                    K-pop, It is characterized by a wide range of musical styles, including{' '}
                         <span style={{ color: '#ce4646', fontWeight: 'bold' }}>
                         <Typewriter
-                            words={['POP', 'RAP', 'Rock', 'EDM', 'Hip Hop']}
+                            words={['Pop', 'Rap', 'Rock', 'R&B', 'Hip Hop','Electronic']}
                             loop
                             cursor
                             cursorStyle='<'
@@ -259,7 +258,7 @@ function Banner() {
                             deleteSpeed={50}
                         />
                         </span>{' '}
-                        and specifically refers to popular South Korean music.
+                        and more. K-pop typically features a combination of catchy melodies, synchronized dance routines, stylish fashion, and visually appealing music videos.
                     </P>
                     <Enlace type="button" onClick={handleVerClick}>
                     click here
