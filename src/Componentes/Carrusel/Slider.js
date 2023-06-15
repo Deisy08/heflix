@@ -216,7 +216,7 @@ const SliderComponente = ({ tarjeta }) => {
   const [descripcion,setDescripcion]= useState("")
   const [cate,setCate]= useState("")
   const [usuario,setUsuario]= useState("")
- console.log(btnEliminar);
+ //console.log(btnEliminar);
   useEffect(() => {
     fetch('https://646d54f79c677e232189ed4f.mockapi.io/api/cards')
     .then(response => response.json())
