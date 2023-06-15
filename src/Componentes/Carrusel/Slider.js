@@ -104,11 +104,13 @@ const SliderComponente = ({ tarjeta }) => {
   `;
   const descript ={
     padding: "10px 20px 0",
+    whiteSpace: "pre-line",
   }
   const Btn= styled.button`
     padding: 10px;
     background-color: ${colorFondoBorde};
     border: none;
+    margin-bottom: 10px;
     border-radius: 10px;
     color: #fff;
     margin-left: 10px;
