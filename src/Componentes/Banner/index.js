@@ -140,7 +140,7 @@ const VideoC = styled.div`
         width:19.5rem;
         @media (min-width: 800px){
             width: 20rem;
-            height: calc(90vh - 450px)
+            height: 10rem;
         }
         @media (min-width: 900px){
             width: 25rem;
@@ -228,7 +228,7 @@ function Banner() {
             <ReactPlayer
             url="https://www.youtube.com/watch?v=x0sASwK5t2M"
             controls
-            width="calc(80vh - 300px)"
+            width=" calc(90vh - 300px);"
             height="300px"
             />
             <Enlace  style={{marginTop:"25px"}} onClick={onClose}>Close</Enlace>
