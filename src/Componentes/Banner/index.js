@@ -48,7 +48,7 @@ const BannerContenedor = styled.section`
 
     @media (min-width: 1024px) {
         background-size: cover;
-        height: calc(100vh - 400px);
+        height: calc(100vh - 250px);
         animation: ${bannerD} 20s infinite linear alternate;
     }
     @media (min-width: 1424px) {
