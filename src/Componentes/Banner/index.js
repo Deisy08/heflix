@@ -148,8 +148,7 @@ const VideoC = styled.div`
         }
         @media (min-width: 1024px){
             width: 30rem;
-
-            height: calc(90vh - 620px)
+            height: calc(90vh - 450px)
         }
         @media (min-width: 1424px){
             width: 560px;
