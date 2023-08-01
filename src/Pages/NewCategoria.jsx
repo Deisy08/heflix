@@ -1,7 +1,6 @@
 import { Container, Box, Button ,TextField} from "@mui/material";
 import React, { useState } from 'react';
 import styled from "styled-components";
-import loader from "../assets/img/loading.svg"
 import { validarTitulo, validarDescripcion } from "../Componentes/validaciones";
 import { useNavigate } from 'react-router-dom';
 import Tabla from "../Componentes/Tabla";
